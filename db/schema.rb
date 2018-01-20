@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180120210052) do
+ActiveRecord::Schema.define(version: 20180120213754) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.boolean "assistant", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,28 +26,27 @@ ActiveRecord::Schema.define(version: 20180120210052) do
     t.index ["location_id"], name: "index_companies_on_location_id"
   end
 
+  create_table "contract_categories", force: :cascade do |t|
+    t.integer "contract_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_contract_categories_on_category_id"
+    t.index ["contract_id"], name: "index_contract_categories_on_contract_id"
+  end
+
   create_table "contracts", force: :cascade do |t|
     t.integer "venue_id"
     t.integer "user_id"
-    t.integer "category_id"
     t.string "type"
     t.integer "fee"
     t.date "opening_date"
     t.boolean "musical", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_contracts_on_category_id"
+    t.boolean "assistant"
     t.index ["user_id"], name: "index_contracts_on_user_id"
     t.index ["venue_id"], name: "index_contracts_on_venue_id"
-  end
-
-  create_table "designer_categories", force: :cascade do |t|
-    t.integer "designer_id"
-    t.integer "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_designer_categories_on_category_id"
-    t.index ["designer_id"], name: "index_designer_categories_on_designer_id"
   end
 
   create_table "designers", force: :cascade do |t|
