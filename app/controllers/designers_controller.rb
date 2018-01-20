@@ -1,0 +1,2 @@
+class DesignersController < ApplicationController
+end
