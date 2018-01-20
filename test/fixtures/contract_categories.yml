@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  designer: one
+  contract: one
   category: one
 
 two:
-  designer: two
+  contract: two
   category: two
