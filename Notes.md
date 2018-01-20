@@ -35,9 +35,9 @@ To Do
 	- Graphs / Data Visualization / Interesting UI (ruby gems?)
   - Tests
   - IF THERE IS TIME: Job Posting Board / Classifieds
+  - What data do we want to display?
 
   Julien Notes 1/20/18
-  -> Added all of our models as resources except for 'DesignerCategory' that we'll be able to access as pages for stats etc. Using generate model for the join table since don't think we'll need it.
   -> Should the assistant:boolean be in the Category table, or should it be in the Contract? I'm thinking maybe the Contract because it could change on a case by case basis, but I also wouldn't know. Doing it now as part of the Category model.
     --> moved to contract
   -> What if the contract were the join table between user and category? would that make sense?
