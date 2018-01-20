@@ -35,7 +35,7 @@ To Do
 	- Graphs / Data Visualization / Interesting UI (ruby gems?)
   - Tests
   - IF THERE IS TIME: Job Posting Board / Classifieds
-  - What data do we want to display?
+  - What data do we want to display? So we can prepare algorithms
 
   Julien Notes 1/20/18
   -> Should the assistant:boolean be in the Category table, or should it be in the Contract? I'm thinking maybe the Contract because it could change on a case by case basis, but I also wouldn't know. Doing it now as part of the Category model.
