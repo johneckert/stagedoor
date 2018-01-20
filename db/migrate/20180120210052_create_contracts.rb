@@ -7,7 +7,7 @@ class CreateContracts < ActiveRecord::Migration[5.1]
       t.string :type
       t.integer :fee
       t.date :opening_date
-      t.boolean :musical
+      t.boolean :musical, default: false
 
       t.timestamps
     end
