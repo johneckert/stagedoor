@@ -42,3 +42,9 @@ To Do
     --> moved to contract
   -> What if the contract were the join table between user and category? would that make sense?
     --> Since contracts can have multiple categories, the join table should be there. Many to Many Category-Contract, and Designer has many categories through contracts that they've submitted. This allows us to remove the designer categories model/table.
+
+  John Notes 1/21/18
+  -> Contract has User ID not Designer ID, we should rename one or the other
+  -> Wondering if we should remove union_id since we don't really need it.
+  -> we don't need to track minimum fees
+  -> Assistant will require a little extra work, pay structure is different - we should talk about
