@@ -2,6 +2,10 @@ class ContractsController < ApplicationController
 
   def new
     @contract = Contract.new
+    @venues = Venue.all
+  end
+
+  def create
   end
 
   def show
