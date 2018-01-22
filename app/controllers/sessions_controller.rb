@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @designer = Designer.find_by(username: params[:login][:username])
-    if @designer && @designer.authenticate(params[:login][:password])
+    byebug
+    @designer = Designer.find_by(username: params[:username])
+    if @designer && @designer.authenticate(params[:password])
       session[:designer_id] = @designer.id
       redirect_to root_path
     else
