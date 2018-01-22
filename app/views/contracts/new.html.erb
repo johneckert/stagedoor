@@ -1,4 +1,10 @@
 <h3>New Contract</h3>
 
 <%= form_for @contract do |f| %>
-  <%=  %>
+  <br />
+
+  <%= f.label :musical %>
+  <%= f.check_box :musical %><br />
+
+  <%= f.submit "Submit New Contract." %>
+<% end %>
