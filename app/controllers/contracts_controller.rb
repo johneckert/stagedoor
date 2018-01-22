@@ -6,6 +6,7 @@ class ContractsController < ApplicationController
   end
 
   def create
+    byebug
     @contract = Contract.new(contract_params)
     if @contract.valid?
       @contract.save
@@ -22,6 +23,6 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:contract).permit(:venue_id, :type, :opening_date, :musical, :fee, :category_ids)
+    params.require(:contract).permit(:venue_id, :show_name, :opening_date, :musical, :fee, :category_ids)
   end
 end
