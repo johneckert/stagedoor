@@ -3594,3 +3594,4 @@ Migrating to MoveLocationBelongsToToVenue (20180122192951)
             FROM sqlite_temp_master
             WHERE name='index_venues_on_company_id' AND type='index'
 [0m
+  [1m[36mContract Load (0.9ms)[0m  [1m[34mSELECT  "contracts".* FROM "contracts" LIMIT ?[0m  [["LIMIT", 11]]
