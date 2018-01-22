@@ -1,6 +1,5 @@
 <%= form_for @designer do |f| %>
-  <%= f.label :username %>:
-  <%= f.text_field :username %><br />
+  <%= f.label :username %>: <%= f.text_field :username %><br />
 
   <%= f.label :gender %>:
   <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :to_s, :to_s %><br />
@@ -9,16 +8,13 @@
   <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :to_s, :to_s %><br />
 
 
-  <%= f.label :birth_year %>:
-  <%= f.number_field :birth_year %><br />
+  <%= f.label :birth_year %>: <%= f.number_field :birth_year %><br />
 
 
-  <%= f.label :password %>:
-  <%= f.password_field :password %><br />
+  <%= f.label :password %>: <%= f.password_field :password %><br />
 
 
-  <%= f.label :password_confirmation %>:
-  <%= f.password_field :password_confirmation %><br />
+  <%= f.label :password_confirmation %>: <%= f.password_field :password_confirmation %><br />
 
   <%= f.submit %>
 <% end %>
