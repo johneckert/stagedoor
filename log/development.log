@@ -3595,3 +3595,106 @@ Migrating to MoveLocationBelongsToToVenue (20180122192951)
             WHERE name='index_venues_on_company_id' AND type='index'
 [0m
   [1m[36mContract Load (0.9ms)[0m  [1m[34mSELECT  "contracts".* FROM "contracts" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:01:20 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 288ms (Views: 278.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:01:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 15:01:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t8N1WZc7jTMp3MSXzWMuR6DyJljoD/h/ZUeWPy6pWh0K5zTwJALHuNr3/0PeZkjXbMUi9Y3Ue/MqrPNhQGqg5A==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:01:26 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 15:02:26 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GnujSH52KYC2K5+ylPToN1KNrDFsfosjLPFhBjKNlGSHuxDo72qjmOCIvXB5qelaNg750zMNYaTAh+F9MNbUcg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:02:26 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:06:28 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 47.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:06:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 62ms (Views: 59.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:06:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 63ms (Views: 59.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 15:06:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nh7rbB7E0LiAtv6fZvIAYOhVFezIi5HDiOd0aMId3hnXDoEA0JZyREp4C5unq6RT5ZQ+tb5rctByPiPzcuNgQ==", "login"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:06:50 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 15:06:52 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DeeRYEfj0iWp+u8+S2QkwDvYXd1LwyF+kHbgB8hALeaQJyLA1v9YPf9ZzfymOSWtX1sIPxSwy/l8AGB8yhtt8A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:06:52 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+

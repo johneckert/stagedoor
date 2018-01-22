@@ -1,6 +1,6 @@
 <%= render 'error' %>
 
-<%= form_for :designer, url: authenticate_path, method: 'post' do |f| %>
+<%= form_for :login, url: authenticate_path, method: 'post' do |f| %>
   <%= f.label :username %>: <%= f.text_field :username %><br />
   <%= f.label :password %>: <%= f.password_field :password %><br />
   <%= f.submit "Login" %>
