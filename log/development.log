@@ -1495,6 +1495,7 @@ Migrating to MoveContractTypeToVenue (20180122180458)
             FROM sqlite_temp_master
             WHERE name='index_venues_on_company_id' AND type='index'
 [0m
+<<<<<<< HEAD
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Scenic Design"], ["created_at", "2018-01-22 18:57:22.839973"], ["updated_at", "2018-01-22 18:57:22.839973"]]
@@ -6019,3 +6020,2400 @@ Migrating to MoveContractTypeToVenue (20180122180458)
   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 87], ["LIMIT", 1]]
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "venues" ("company_id", "created_at", "updated_at", "contract_type") VALUES (?, ?, ?, ?)[0m  [["company_id", 87], ["created_at", "2018-01-22 19:00:33.410510"], ["updated_at", "2018-01-22 19:00:33.410510"], ["contract_type", " + "]]
   [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+=======
+Started POST "/designers" for 127.0.0.1 at 2018-01-22 13:11:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DesignersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lHunU6XS0xGDBim86MCx9dale9qPjhOYrKDRmRg0NIoCyGyW5+PzCkuvR1QmHPuZ0dTXPnLpszfcMwqF53zNvg==", "designer"=>{"username"=>"jtregoat", "gender"=>"Male", "ethnicity"=>["", "White", "Other"], "birth_year"=>"1994", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Designer"}
+Unpermitted parameter: :ethnicity
+Started POST "/designers" for 127.0.0.1 at 2018-01-22 13:13:57 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DesignersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cBAgS2bdIvkeXTV7rQHroZWBBybP/jm9jBZG3tqHHv3t0JPr98Go4Uj+F7lAXOrM8QJSxJCN0zpgYMal2Nxe6w==", "designer"=>{"username"=>"jtregoat", "gender"=>"Male", "ethnicity"=>["", "White", "Other"], "birth_year"=>"1994", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Designer"}
+Unpermitted parameter: :ethnicity
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "designers" ("gender", "created_at", "updated_at", "username", "password_digest", "birth_year") VALUES (?, ?, ?, ?, ?, ?)[0m  [["gender", "Male"], ["created_at", "2018-01-22 18:14:06.193872"], ["updated_at", "2018-01-22 18:14:06.193872"], ["username", "jtregoat"], ["password_digest", "$2a$10$5rA3dHHd6/MOmQrqzvI3I.qqQe2TB10Lh5lKUw0EyUhDzWw8S1Ac2"], ["birth_year", 1994]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Unpermitted parameter: :ethnicity
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "designers" ("gender", "created_at", "updated_at", "username", "password_digest", "birth_year") VALUES (?, ?, ?, ?, ?, ?)[0m  [["gender", "Male"], ["created_at", "2018-01-22 18:14:18.083425"], ["updated_at", "2018-01-22 18:14:18.083425"], ["username", "jtregoat"], ["password_digest", "$2a$10$FytpbI.BShbbvsKzQhz9oOAMZhbyGzZhDKcK66AhvyBDMOIG.jmv2"], ["birth_year", 1994]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDesigner Load (0.3ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" ORDER BY "designers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 20306ms (ActiveRecord: 10.9ms)
+
+
+  
+NameError (undefined local variable or method `root' for #<DesignersController:0x007f8e5cd1ad70>):
+  
+app/controllers/designers_controller.rb:13:in `create'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:14:30 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 222ms (Views: 219.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:14:41 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 29.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:14:44 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 89ms (Views: 84.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:14:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ObkRDeZLAkn4oi274JyWBQ4VOq4sCh5dnNXaelRMiR+EnVCkVXJIwguJFm/zmfCVwiI+A0nRndHTPr8kOo9z5g==", "designer"=>{"username"=>"jtregoat", "password_digest"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.3ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:15:21 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 42ms (Views: 39.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:15:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KH85JJrz2boKon1S6UCgaAKgN8dVibfdTRMjEHUKoeu1v4qEC+9TolwBX5AEHaEFZiNiJQr6XVqhZaNrd1Hh/Q==", "designer"=>{"username"=>"jtregoat", "password_digest"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26644ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:16:01 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KH85JJrz2boKon1S6UCgaAKgN8dVibfdTRMjEHUKoeu1v4qEC+9TolwBX5AEHaEFZiNiJQr6XVqhZaNrd1Hh/Q==", "designer"=>{"username"=>"jtregoat", "password_digest"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 73ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:16:02 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:16:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TyygfRd7wFxa8R2p8MVNwPloLS9izctbVGnDzEtKJMPS7BPdhmdKRAxSP2sdmEytnet4zT2+Idy4H0O3SRFk1Q==", "designer"=>{"username"=>"jtregoat", "password_digest"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 64ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:16:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:16:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FonYjHFsNSfZ5SoZMyUqjeq+e10REALvjzXIlIHZBT+LSWss4HC/P49GCNveeCvgjj0uv05j6GhjQ0jvg4JFKQ==", "designer"=>{"username"=>"jtregoat", "password_digest"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 65ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:16:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:16:11 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N4mN+IduKQqGQbhPhH1It2z5OrRLjihSE/khunTUogqqST5YFnKjEtDimo1pIEnaCHpvVhT9wtX/j6HBdo/iHA==", "designer"=>{"username"=>"jtregoat", "password_digest"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 63ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:16:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:16:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"siyoTso7VFFAqbl3pGZkHsJXVNev8atErujNzSybLYwv7BvuWyfeSRYKm7VJO2VzptQBNfCCQcNCnk22LsBtmg==", "designer"=>{"username"=>"jtregoat", "password_digest"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 99191ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:18:03 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:18:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RdXtg3/bH5oOHGUVL+NJulr/GM0tckBI/a8evdL4vJHYFV4j7seVgli/R9fCvkjXPnxNL3IBqs8R2Z7G0KP8hw==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 9466ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:18:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:18:32 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tx+sHOj/QlTcAvmOk0ZPjMo3ah4yk+s0/FJDtNzeaXIq3x+8eePITIqh20x+G07hrrQ//G3gAbMQJMPP3oUpZA==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 43652ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:19:16 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:19:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cxsJBywv/r0rCEiXKAb6xwaku+l+Ys6J7H4Ykrtm3d3u27qnvTN0pX2ralXFW/uqYifuCyERJA4ACJjpuT2dyw==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5400ms (ActiveRecord: 0.1ms)
+
+
+  
+NameError (undefined local variable or method `designer_path' for #<SessionsController:0x007f8e66ab51c0>
+Did you mean?  designers_path):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:19:58 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 30.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:20:00 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (1.0ms)
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 64ms (Views: 59.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:20:05 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VLmFtiynRoEifK8UOT0vLPPnis6EWh+GWaKR7BjOZwTpncQfn54MCtFXlMAqOEm8P9COY+GBnAoWSfSydg2d/Q==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6499ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:20:12 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:20:28 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for 1:Fixnum):
+    1: <% if current_user %>
+    2:   <%= "Hi, #{current_user.username}" %>
+    3: <% else %>
+    4:   <%= link_to "fuck you log in", login_path %>
+    5: <% end %>
+  
+app/views/application/index.html.erb:2:in `_app_views_application_index_html_erb__663519804221759426_70124799710480'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:22:02 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 24.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:22:26 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveAssistantsFromContract (20180122182618)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acontracts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "venue_id" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "fee" integer DEFAULT NULL, "opening_date" date DEFAULT NULL, "musical" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assistant" boolean DEFAULT NULL, "designer_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acontracts_on_designer_id" ON "acontracts" ("designer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acontracts_on_venue_id" ON "acontracts" ("venue_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acontracts" ("id","venue_id","type","fee","opening_date","musical","created_at","updated_at","assistant","designer_id")
+                     SELECT "id","venue_id","type","fee","opening_date","musical","created_at","updated_at","assistant","designer_id" FROM "contracts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "contracts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "contracts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "venue_id" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "fee" integer DEFAULT NULL, "opening_date" date DEFAULT NULL, "musical" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "designer_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acontracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acontracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acontracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acontracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_contracts_on_venue_id" ON "contracts" ("venue_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_contracts_on_designer_id" ON "contracts" ("designer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "contracts" ("id","venue_id","type","fee","opening_date","musical","created_at","updated_at","designer_id")
+                     SELECT "id","venue_id","type","fee","opening_date","musical","created_at","updated_at","designer_id" FROM "acontracts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acontracts"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122182618"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_companies_on_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_companies_on_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:27:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 20.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:34:01 -0500
+Processing by ApplicationController#index as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms)
+
+
+  
+ArgumentError (You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`.):
+  
+app/controllers/application_controller.rb:6:in `index'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:34:16 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:38:27 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 50ms (Views: 40.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:39:29 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:42:30 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:42:39 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/destroy" for 127.0.0.1 at 2018-01-22 13:42:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/destroy"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:44:11 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (2.3ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 52.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 13:44:13 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CSJGH2lqukjWwQ7Xe0w+JOvduDyhazxhrE0x76AIDBWU4vW/+HYwUIBiLBWWET9Jj17t3v4Y1uZAO7GUolNMAw=="}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:44:13 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Designer with 'id'=):
+  
+app/controllers/application_controller.rb:11:in `current_user'
+app/views/application/index.html.erb:1:in `_app_views_application_index_html_erb__663519804221759426_70124761111260'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:45:44 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Designer with 'id'=):
+  
+app/controllers/application_controller.rb:11:in `current_user'
+app/views/application/index.html.erb:1:in `_app_views_application_index_html_erb__663519804221759426_70124728005980'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:45:47 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Designer with 'id'=):
+  
+app/controllers/application_controller.rb:11:in `current_user'
+app/views/application/index.html.erb:1:in `_app_views_application_index_html_erb__663519804221759426_70124805229340'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:47:28 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (152629.0ms)
+Completed 500 Internal Server Error in 152635ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Designer with 'id'=):
+  
+app/controllers/application_controller.rb:12:in `current_user'
+app/views/application/index.html.erb:1:in `_app_views_application_index_html_erb__663519804221759426_70124799859220'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:50:04 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 25.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 3ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 3ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:06 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:10 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:50:14 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 31.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 2ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 15ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 3ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:16 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:17 -0500
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:50:20 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 24.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:50:58 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 30ms (Views: 27.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:51:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uR98cH2qRZKVLD/fkQtkHUN2E+aFyiDF9+N//nzULoIEOz3ZzpMPGWYHBAuCDgKNj0EXS+ARo0m4CBqgEhfUew==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:51:02 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:51:09 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 13:51:11 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"epULL5/p9z30T/fOHyrGhvoELicdS5WDFTE09CistITnVbiPDvV9JaLs1Qzyd8frnod7xUI4fwT5R7SPKvf0kg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:51:11 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2018-01-22 13:51:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/tracks"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/index" for 127.0.0.1 at 2018-01-22 13:51:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:51:27 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:51:30 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:51:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rWiw2SSURCHz+8gu19B4/lbyIohWQGWDnWFTnIBOTIsQTPFwl60OqgDQ8/rE1R5umsUmJTOb5g/SijbC7o22cg==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 61ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:51:37 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:51:47 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 13:51:53 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"c7vt5RcHRXxhnGDOkQuvMVHjscWqMnqUrlcn3qLwkbzue15FhhvPZDc/Qgx8Vq5cNWDkJ/VBkBNCIaeloKvRqg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:51:53 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:52:06 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:52:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:52:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OKAnMfwO+xqsTC7si+GmntVFQ2qAF6aGp/2od4xbtJCFhGaYTzexkV9nFTiY5MAOGXJHx+XMJQroFs0p4phOaQ==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 63ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:52:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:52:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lKFgllDdDyvS9bnKZxczSNr7yr+m7cmybHBsB4EQTZgJYdM2wcGFM4RWmwiKSjIlvnifXfmeIzWABux8g0sNjg==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:52:15 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:52:19 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (4.9ms)
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:57:21 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (15.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:57:26 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :logged_out? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:57:29 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.5ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:57:33 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :logged_out? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:57:33 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 13:57:36 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8k01SHN9IYlo81DDflAJGDscFJNwVKCVVH6Pa3y07A9vjYbo4mGrkT5QcgGTDQh1X59BcS8nShK4CA8Qfu+sGQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:57:36 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:57:38 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:59:36 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 27.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 13:59:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 47ms (Views: 43.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 13:59:47 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bf4iEUD0/ZB3yXyWLrpL62CImGhXtgLgz4M8LGR7RVXQ2mO48823G4TiR0I9vy17rL+cxTJtgWyAaFlyCri/rA==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:59:47 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 13:59:49 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"p7pZgMz3R83wr+zGYhjlp4REV3y+fkMobU8dlja9e8c6euogXevN1aYMzgSPReTK4McCnuENqa+BOZ3tNOY70Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:59:49 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:20 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 14:16:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 56ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 14:16:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pOCE1EBTgy4p/BOfsGKZhBMCiZZv44wMjwCH6zjemIwZxMV982rJpdrXKEujZ/8U3zWNOwo4D4DA6+K1Vh1idQ==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:25 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:48 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:57 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 14:19:33 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6Zo0VLzvl+45Xc8XU9lJUSSefdUuRe+BvjZUi0PGlKl0Wof0LfMd9m/+7dW+hEg8QB0oN3E2BQZSQNTwQZ3Uvw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:19:33 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MoveLocationBelongsToToVenue (20180122192951)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acompanies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "location_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_companies_on_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_companies_on_location_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_acompanies_on_location_id" ON "acompanies" ("location_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acompanies" ("id","name","location_id","created_at","updated_at")
+                     SELECT "id","name","location_id","created_at","updated_at" FROM "companies"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acompanies_on_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acompanies_on_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "companies" ("id","name","created_at","updated_at")
+                     SELECT "id","name","created_at","updated_at" FROM "acompanies"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acompanies"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "venues" ADD "location_id" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_venues_on_location_id" ON "venues" ("location_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122192951"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+[0m
+  [1m[36mContract Load (0.9ms)[0m  [1m[34mSELECT  "contracts".* FROM "contracts" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:01:20 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 288ms (Views: 278.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:01:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 15:01:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t8N1WZc7jTMp3MSXzWMuR6DyJljoD/h/ZUeWPy6pWh0K5zTwJALHuNr3/0PeZkjXbMUi9Y3Ue/MqrPNhQGqg5A==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 77ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:01:26 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 15:02:26 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GnujSH52KYC2K5+ylPToN1KNrDFsfosjLPFhBjKNlGSHuxDo72qjmOCIvXB5qelaNg750zMNYaTAh+F9MNbUcg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:02:26 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:06:28 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 47.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:06:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 62ms (Views: 59.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:06:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 63ms (Views: 59.6ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 15:06:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nh7rbB7E0LiAtv6fZvIAYOhVFezIi5HDiOd0aMId3hnXDoEA0JZyREp4C5unq6RT5ZQ+tb5rctByPiPzcuNgQ==", "login"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:06:50 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 15:06:52 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DeeRYEfj0iWp+u8+S2QkwDvYXd1LwyF+kHbgB8hALeaQJyLA1v9YPf9ZzfymOSWtX1sIPxSwy/l8AGB8yhtt8A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:06:52 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:14:26 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/jtregoat/Github/stagedoor/app/views/sessions/new.html.erb:3: syntax error, unexpected ')'
+...ticate_path, method: 'post'do );@output_buffer.safe_append='
+...                               ^
+/Users/jtregoat/Github/stagedoor/app/views/sessions/new.html.erb:12: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/jtregoat/Github/stagedoor/app/views/sessions/new.html.erb:14: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/sessions/new.html.erb:3: syntax error, unexpected ')'
+app/views/sessions/new.html.erb:12: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/sessions/new.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:14:38 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions/new?method=post&url=%2Fsessions" for 127.0.0.1 at 2018-01-22 15:15:06 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/sessions/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:15:28 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 31.5ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:15:30 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 58ms (Views: 53.7ms)
+
+
+Started POST "/sessions/new?method=post&url=%2Fsessions" for 127.0.0.1 at 2018-01-22 15:15:33 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/sessions/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:16:03 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 39.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:16:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 55ms (Views: 52.0ms)
+
+
+Started POST "/sessions/new?method=post&url=%2Fsessions" for 127.0.0.1 at 2018-01-22 15:16:29 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/sessions/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:16:32 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 32.8ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:16:34 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 54ms (Views: 51.1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 15:16:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GY6pwRUKNuzxB/+GB2n3ZDAGE5A3Bptx3xFcHK26BEykquhopjN8ZwIsxFIUbJH0/DEXPVLdGP2Q+jlCw3n+tQ==", "username"=>"jtregoat", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 500 Internal Server Error in 78554ms
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 15:18:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R/p5T0IlG6tljn2C9jjadSJKQfCyqFqam5Jv9z+CP/jaOsrv0zmRszMtX0AbZdsYRskUEu3bsB135O+MPdl/7g==", "username"=>"jtregoat", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 33503ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:18:37 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+>>>>>>> d1a95df59d21fe7a006a729f70616aaa8e15aadc

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180122180458) do
+ActiveRecord::Schema.define(version: 20180122192951) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -20,10 +20,8 @@ ActiveRecord::Schema.define(version: 20180122180458) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_companies_on_location_id"
   end
 
   create_table "contract_categories", force: :cascade do |t|
@@ -43,7 +41,6 @@ ActiveRecord::Schema.define(version: 20180122180458) do
     t.boolean "musical", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "assistant"
     t.integer "designer_id"
     t.index ["designer_id"], name: "index_contracts_on_designer_id"
     t.index ["venue_id"], name: "index_contracts_on_venue_id"
@@ -71,7 +68,9 @@ ActiveRecord::Schema.define(version: 20180122180458) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "contract_type"
+    t.integer "location_id"
     t.index ["company_id"], name: "index_venues_on_company_id"
+    t.index ["location_id"], name: "index_venues_on_location_id"
   end
 
 end
