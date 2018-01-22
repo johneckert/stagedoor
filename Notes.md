@@ -39,6 +39,7 @@ To Do
   - Limit our routes to what's necessary
   - 'Project Only' contract autofill venue, allows user to type in / datalist
   - Function to calculate designer age based on birth_year / time.now.year
+  - VALIDATIONS
 
   Julien Notes 1/20/18
   -> Should the assistant:boolean be in the Category table, or should it be in the Contract? I'm thinking maybe the Contract because it could change on a case by case basis, but I also wouldn't know. Doing it now as part of the Category model.
@@ -48,25 +49,29 @@ To Do
 
   John Notes 1/21/18
   -> Contract has User ID not Designer ID, we should rename one or the other
-    - done
+    - DONE
   -> Wondering if we should remove union_id since we don't really need it.
-    -done
+    -DONE
   -> we don't need to track minimum fees
     -all good
   -> Assistant will require a little extra work, pay structure is different - we should talk about
     - fuck assistants remove this later
+    - DONE
 
   Discussion Notes 1/22/18
   -> 'Project Only' contract is a one off contract that freelancers will experience, and will be where the database info is most key. Venue can be filled in to 'N/A' or something, but Company will need to be a datalist to fill in.
   -> change name to username
-    - done
+    - DONE
   -> remove union id
-    - done
+    - DONE
   -> add password column and bcrypt to user
+    - DONE
   -> add age range, ethnicity, and optional for ALL
-    - preselect ethnicity
+    - DONE
   -> add session controller
+    - DONE
   -> switch: venue belongs to location and company, company has many locations through venue and vice versa
+    - DONE
   -> data calcs
       - min, max, median, mean
       - within a time window (based on show date)
@@ -75,7 +80,6 @@ To Do
   -> import list of theaters/locations/companies/contract_type via google sheets csv
     --> location = city, contract_type = contract + rating
     --> how to load contract template based on venue? for now, drop down for each option, later, validates? > move contract_type to venue
-    ---> done
-  -> load list of venues when you select a company for datalist
-  --> validates that company owns venue on form submit
+    ---> DONE
+  -> validates that company owns venue on form submit
   -> integrate ruby google charts wrapper in order to create graphs!
