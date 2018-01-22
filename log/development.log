@@ -24126,3 +24126,983 @@ Migrating to ActuallyRemoveTypeFromContract (20180122223438)
             FROM sqlite_temp_master
             WHERE name='index_venues_on_company_id' AND type='index'
 [0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddShowNameToContract (20180122224856)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "contract_type" ADD "show_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddShowNameToContract (20180122224856)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "contracts" ADD "show_name" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122224856"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Scenic Design"], ["created_at", "2018-01-22 22:50:01.600793"], ["updated_at", "2018-01-22 22:50:01.600793"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Costume Design"], ["created_at", "2018-01-22 22:50:01.608999"], ["updated_at", "2018-01-22 22:50:01.608999"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lighting Design"], ["created_at", "2018-01-22 22:50:01.611331"], ["updated_at", "2018-01-22 22:50:01.611331"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sound Design"], ["created_at", "2018-01-22 22:50:01.613922"], ["updated_at", "2018-01-22 22:50:01.613922"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Projection Design"], ["created_at", "2018-01-22 22:50:01.616810"], ["updated_at", "2018-01-22 22:50:01.616810"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Seattle"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "ACT Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Allen Arena Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Seattle"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "ACT Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Falls Thrust Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Lousiville"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Actors Theatre of Louisville"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Pamela Brown Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Lousiville"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Actors Theatre of Louisville"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Bingham Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Lousiville"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Actors Theatre of Louisville"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Victor Jory Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Montgomery"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Alabama Shakespeare Festival"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Festival Stage"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Montgomery"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Alabama Shakespeare Festival"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Octagon Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Houston "], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Alley Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Patricia Peckinpaugh Hubbard Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Houston "], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Alley Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Hugo V. Neuhaus Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Atlanta"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Allience Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Alliance Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Atlanta"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Allience Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Hertz Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "San Francisco"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "American Conservatory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Geary Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "San Francisco"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "American Conservatory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Strand Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cambridge"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "American Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Loeb Drama Center"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cambridge"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "American Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Oberon Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Philadelphia"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arden Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "F. Otto Haas Stage"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Philadelphia"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arden Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Arcadia Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Washington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arena Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Fichandler Stege"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Washington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arena Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Kreeger Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Washington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arena Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Kogod Cradle"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Tucson"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arizona Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Alice Holsclaw Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Phoenix"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arizona Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Herberger Center Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Phoenix"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arizona Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Stage West"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Tucson"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arizona Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Modified Space"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Little Rock"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Arkansas Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Cindy Murphy Auditorium"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Portland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Artist Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Alder Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Portland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Artist Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Morrison Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Sarasota"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Asolo Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mertz Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Sarasota"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Asolo Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Cook Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Sarasota"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Asolo Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Historic Asolo"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Baltimore"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Baltimore Center Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Pearlstone Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Baltimore"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Baltimore Center Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Head Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Abingdon"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Barter Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Gilliam Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Abingdon"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Barter Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Stage II"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["company_id", 15], ["location_id", 16], ["updated_at", "2018-01-22 22:50:01.753292"], ["id", 34]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Berkeley"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Berkeley Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Peet's Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Berkeley"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Berkeley Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Roda Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Albany"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Capitol Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Capitol Repertory Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Center Theatre Group"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Ahmanson Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Center Theatre Group"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mark Taper Forum"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Center Theatre Group"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Kirk Douglas Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cincinnati"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Cincinnati Playhouse in the Park"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Robert S. Marx Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cincinnati"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Cincinnati Playhouse in the Park"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Thompson Shelterhouse Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Pittsburgh"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "City Theare Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "LORT D"], ["company_id", 20], ["location_id", 21], ["updated_at", "2018-01-22 22:50:01.789924"], ["id", 43]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Pittsburgh"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "City Theare Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Lester Hamburg Studio Theare"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Knoxville"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Clarence Brown Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Clarence Brown Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Knoxville"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Clarence Brown Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Ula Love Doughty Carousel Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Chicago"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Court Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Abelson Auditorium"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cleveland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Cleveland Play House"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Allen Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cleveland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Cleveland Play House"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Outcult Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cleveland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Cleveland Play House"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Rosenfeld Lewis Lab Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Dallas"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Dallas Theater Center"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Kalita Humphreys Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Dallas"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Dallas Theater Center"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Potter Rose Performance Hall"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Dallas"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Dallas Theater Center"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Wyly Studio"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Dallas"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Dallas Theater Center"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Black Box"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Wilmington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Delaware Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Delaware Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Denver"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Denver Center Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Stage Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Denver"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Denver Center Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Space Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Denver"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Denver Center Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Ricketson Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Denver"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Denver Center Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Buell Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Sarasota"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Florida Studio Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Keating Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Sarasota"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Florida Studio Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Gompertz Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Sarasota"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Florida Studio Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Keating Second Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Washington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Ford's Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Ford's Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Geffen Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Gil Cates Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Geffen Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Audrey Skirball Kenis Theater"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New Brunswick"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "George Street Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "LORT C-2"], ["company_id", 30], ["location_id", 28], ["updated_at", "2018-01-22 22:50:01.844802"], ["id", 43]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Rochester "], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Geva Theatre Center"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Elaine P. Wilson Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Rochester "], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Geva Theatre Center"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Ron and Donna Fielding Nextstage"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Chicago"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Goodman Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Albert Ivar Goodman Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Chicago"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Goodman Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Owen Bruner Goodman Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "East Haddam"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Goodspeed Musicals"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Goodspeed Opera House "], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Chester"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Goodspeed Musicals"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Norma Terris Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cleveland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Great Lakes Theater Festival"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Hanna Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Cleveland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Great Lakes Theater Festival"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Ohio Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Minneapolis"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Guthrie Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Wurtele Thrust Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Minneapolis"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Guthrie Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "McGuire Proscenium Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Minneapolis"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Guthrie Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Dowling Studio"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Hartford"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Hartford Stage Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "John W. Huntington Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Boston"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Huntington Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Huntington Avenue Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Boston"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Huntington Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Virginia Wimberly Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Boston"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Huntington Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Roberts Studio"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Indianapolis"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Indiana Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "LORT C-1"], ["company_id", 38], ["location_id", 35], ["updated_at", "2018-01-22 22:50:01.885067"], ["id", 43]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Indianapolis"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Indiana Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Upperstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Kansas City "], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Kansas City Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Helen F. Spencer Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Kansas City "], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Kansas City Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Copaken Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Laguna Beach"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Laguna Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Moulton Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "La Jolla"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "La Jolla Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mandell Weiss Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "La Jolla"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "La Jolla Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Potiker Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "La Jolla"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "La Jolla Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mandell Weiss Forum"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Lincoln Center Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Vivian Beaumont Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Lincoln Center Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mitzi E. Newhouse Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Lincoln Center Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Claire Tow Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New Haven"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Long Wharf Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Claire Tow Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New Haven"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Long Wharf Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Stage II"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["company_id", 43], ["location_id", 40], ["updated_at", "2018-01-22 22:50:01.914731"], ["id", 34]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Jupiter"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Maltz Jupiter Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "LORT B"], ["company_id", 44], ["location_id", 41], ["updated_at", "2018-01-22 22:50:01.928470"], ["id", 43]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Manhattan Theatre Club"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Samuel J. Friedman Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Manhattan Theatre Club"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "City Center Stage I"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Manhattan Theatre Club"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "City Center Stage II"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Mill Valley"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Marin Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Herb and Grace Boyer Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Princeton"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "McCarter Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Matthews Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Princeton"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "McCarter Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Berlind Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Lowell"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Merrimack Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Nancy Donahue Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Milwaukee"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Milwaukee Repertory Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Quadracci Powerhouse Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Milwaukee"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Milwaukee Repertory Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Pabst Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Milwaukee"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Milwaukee Repertory Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Stackner Cabaret"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Milwaukee"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Milwaukee Repertory Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Stiemke Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Skokie"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Northlight Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Northlight Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "San Diego"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Old Globe"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Old Globe Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "San Diego"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Old Globe"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Lowell Davies Festival Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "San Diego"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Old Globe"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Sheryl and Harvey White Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Pasadena"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Pasadena Playhouse"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Pasadena Playhouse"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Malvern"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "People's Light"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Hass Stage"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Malvern"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "People's Light"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Steinbright Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Philadelphia"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Philadelphia Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Suzanne Roberts Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Pittsburgh"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Pittsburgh Public Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Anthony J. O'Reilly Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Chapel Hill"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Playmakers Repertory Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Paul Green Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Chapel Hill"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Playmakers Repertory Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Kenan Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Portland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Portland Center Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "U.S. Bank Main Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Portland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Portland Center Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Ellyn Bye Studio"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Portland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Portland Stage Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Portland Stage Company"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Portland"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Portland Stage Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Studio Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "venues" SET "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["company_id", 58], ["location_id", 13], ["updated_at", "2018-01-22 22:50:01.989288"], ["id", 117]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "St. Louis"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Repertory Theatre of St. Louis"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["company_id", 59], ["location_id", 51], ["updated_at", "2018-01-22 22:50:01.995301"], ["id", 43]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "St. Louis"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Repertory Theatre of St. Louis"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Studio Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "venues" SET "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["company_id", 59], ["location_id", 51], ["updated_at", "2018-01-22 22:50:01.999719"], ["id", 117]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Roundabout Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "American Airlines Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Roundabout Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Studio 54"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Roundabout Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Stephen Sondheim Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Roundabout Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Laura Pels Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Bethesda"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Round House Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Bethesda"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Seattle"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Seattle Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Bagley Wright Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Seattle"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Seattle Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Leo Kreielsheimer Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Washington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Shakespeare Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Lansburgh"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Washington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Shakespeare Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Harman Hall"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Arlington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Signature Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "MAX Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Arlington"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Signature Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "ARK Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Costa Mesa"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "South Coast Repertory"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Segerstrom Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Costa Mesa"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "South Coast Repertory"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Argyros Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Syracuse"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Syracuse Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Archbold Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Syracuse"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Syracuse Stage"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Storch Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Theatre For A New Audience"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Samuel H. Scripps Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Mountain View"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "TheatreWorks"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mountain View Center"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Palo Alto"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "TheatreWorks"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Lucie Stern Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Providence"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Trinity Repertory Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Chace Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Providence"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Trinity Repertory Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Dowling Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Red Bank"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Two River Theater Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Rechnitz Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Red Bank"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Two River Theater Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Marion Huber Stage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "Philadelphia"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Wilma Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Wilma Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New Haven"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Yale Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Yale Repertory Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New Haven"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Yale Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "University Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Ars Nova"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Below 4Million) Tier 2"], ["company_id", 73], ["location_id", 39], ["updated_at", "2018-01-22 22:50:02.066071"], ["id", 143]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Classic Stage Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Below 4Million) Tier 4"], ["company_id", 74], ["updated_at", "2018-01-22 22:50:02.071712"], ["id", 143]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "irish Repertory Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Below 4Million) Tier 3"], ["company_id", 75], ["updated_at", "2018-01-22 22:50:02.076820"], ["id", 143]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Labyrinth Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Below 4Million) Tier 1"], ["company_id", 76], ["updated_at", "2018-01-22 22:50:02.082338"], ["id", 143]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "MCC Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Below 4Million) Tier 5"], ["company_id", 77], ["updated_at", "2018-01-22 22:50:02.085979"], ["id", 143]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The New Group"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "venues" SET "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["company_id", 78], ["updated_at", "2018-01-22 22:50:02.090251"], ["id", 143]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Primary Stages"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Below 4Million) Tier 4"], ["company_id", 79], ["updated_at", "2018-01-22 22:50:02.094917"], ["id", 143]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Vineyard Theatre"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["company_id", 80], ["updated_at", "2018-01-22 22:50:02.098571"], ["id", 143]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Women's Project Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Below 4Million) Tier 2"], ["company_id", 81], ["updated_at", "2018-01-22 22:50:02.102175"], ["id", 143]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Atlantic Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Linda Gross Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Atlantic Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Atlantic Stage 2 Theater"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "New York Theatre Workshop"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Theatre 79 - Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Playwrights Horizons"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Mainstage"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Off-Broadway (Above 4Million) Tier B"], ["company_id", 84], ["location_id", 39], ["updated_at", "2018-01-22 22:50:02.111927"], ["id", 43]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Playwrights Horizons"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Peter Jay Sharp"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Public Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Anspacher"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Public Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "LuEsther"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Public Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Joe's Pub"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Public Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Newman"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Public Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Martinson"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "The Public Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Delacorte"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Second Stage Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "Tony Kiser Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Second Stage Theater"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "McGinn/Cazale Theatre"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Signature Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Diamond"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Signature Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Linney"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Signature Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Griffin"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" = ? LIMIT ?[0m  [["name", "New York"], ["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" = ? LIMIT ?[0m  [["name", "Signature Theatre Company"], ["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" = ? LIMIT ?[0m  [["name", "The Ford Studio"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "company_id" = ?, "location_id" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "UnionProject Only Agreement "], ["company_id", 87], ["location_id", 61], ["updated_at", "2018-01-22 22:50:02.150975"], ["id", 143]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mVenue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Broadway Contract "], ["updated_at", "2018-01-22 22:50:02.154814"], ["id", 143]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
