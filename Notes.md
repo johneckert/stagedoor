@@ -32,7 +32,7 @@ Things that should be built in:
 To Do
 	- Venue contract type method
   - Base built in data listed above
-	- Graphs / Data Visualization / Interesting UI (ruby gems?)
+	- Graphs / Data Visualization / Interesting UI (ruby gems?) -- GOOGLE
   - Tests
   - IF THERE IS TIME: Job Posting Board / Classifieds
   - What data do we want to display at each route?
@@ -72,4 +72,10 @@ To Do
       - within a time window (based on show date)
     ---> graph data visualization on this ^
     ---> use 'date select'
-  -> do above updates
+  -> import list of theaters/locations/companies/contract_type via google sheets csv
+    --> location = city, contract_type = contract + rating
+    --> how to load contract template based on venue? for now, drop down for each option, later, validates? > move contract_type to venue
+    ---> done
+  -> load list of venues when you select a company for datalist
+  --> validates that company owns venue on form submit
+  -> integrate ruby google charts wrapper in order to create graphs!
