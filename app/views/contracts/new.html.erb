@@ -3,10 +3,12 @@
 <%= form_for @contract do |f| %>
   <br />
 
-  <%= f.label :venue %>
+  <%= f.label :fee %>
+  <%= f.number_field :fee %>
+  <%= f.label :venue %>:
   <%= f.collection_select :venue, @venues, :id, :name %><br />
-  
-  <%= f.label :musical %>
+
+  <%= f.label :musical %>:
   <%= f.check_box :musical %><br />
 
   <%= f.submit "Submit New Contract." %>
