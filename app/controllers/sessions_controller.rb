@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    byebug
     @designer = Designer.find_by(username: params[:username])
     if @designer && @designer.authenticate(params[:password])
       session[:designer_id] = @designer.id

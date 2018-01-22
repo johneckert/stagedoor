@@ -6,6 +6,14 @@ class ContractsController < ApplicationController
   end
 
   def create
+    @contract = Contract.new(contract_params)
+    if @contract.valid?
+      @contract.save
+      @contract.user = current_user
+    else
+      flash[:error]
+      render :new
+    end
   end
 
   def show
@@ -14,6 +22,6 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:contract).permit(:venue_id, :designer_id, :type, :opening_date, :musical, :fee, :category_ids)
+    params.require(:contract).permit(:venue_id, :type, :opening_date, :musical, :fee, :category_ids)
   end
 end

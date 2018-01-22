@@ -3890,3 +3890,214 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:30:49 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (25.6ms)
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 202ms (Views: 193.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:31:52 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:31:54 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered contracts/new.html.erb within layouts/application (107.1ms)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `checkbox' for #<ActionView::Helpers::FormBuilder:0x007ffa10065560>
+Did you mean?  check_box):
+    2: 
+    3: <%= form_for @contract do |f| %>
+    4:   <%=  %>
+    5:   <%= f.checkbox :musical %>
+    6: 
+    7:   <%= f.submit "Submit New Contract." %>
+    8: <% end %>
+  
+app/views/contracts/new.html.erb:5:in `block in _app_views_contracts_new_html_erb__311953227503500686_70355945305680'
+app/views/contracts/new.html.erb:3:in `_app_views_contracts_new_html_erb__311953227503500686_70355945305680'
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:33:26 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.3ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 62ms (Views: 58.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:35:01 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  [1m[36mVenue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered contracts/new.html.erb within layouts/application (93.6ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `checkbox' for #<ActionView::Helpers::FormBuilder:0x007ffa0c5ac568>
+Did you mean?  check_box):
+    2: 
+    3: <%= form_for @contract do |f| %>
+    4:   <%=  %>
+    5:   <%= f.checkbox :musical %>
+    6: 
+    7:   <%= f.submit "Submit New Contract." %>
+    8: <% end %>
+  
+app/views/contracts/new.html.erb:5:in `block in _app_views_contracts_new_html_erb__311953227503500686_70355962736060'
+app/views/contracts/new.html.erb:3:in `_app_views_contracts_new_html_erb__311953227503500686_70355962736060'
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:35:26 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (13.7ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:35:51 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (6.5ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:36:36 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (1.7ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:39:15 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.3ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contracts/new.html.erb within layouts/application (2.3ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:39:39 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contracts/new.html.erb within layouts/application (1.9ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:43:36 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (1.5ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 24.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:46:13 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 15:46:20 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 15:46:23 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4312wRHfS3dpuYxzohhUhLcHh1lyyiBkWcKaEcqYoB1+vcVhgMPBbz8arrFPRVXp04TSuy25yuO1tBpqyMPgCw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:46:23 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:46:25 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 15:46:26 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 15:46:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"99h8VUdVe9sVOj1ku4NGG3WCHY/SvWBmMNrZGk6P0vBK/D389GwxUOYRBrCohiCLubUZIrdm4+p/MbxEIEwoCQ==", "username"=>"jtregoat", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mDesigner Load (0.3ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 11809ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 15:46:41 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.1ms)
+
+
