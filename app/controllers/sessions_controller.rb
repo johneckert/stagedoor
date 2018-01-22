@@ -5,12 +5,11 @@ class SessionsController < ApplicationController
 
   def create
     @designer = Designer.find_by(username: params[:designer][:username])
-    byebug
     if @designer && @designer.authenticate(params[:designer][:password])
       session[:designer_id] = @designer.id
       redirect_to root_path
     else
-      flash[:error] = ["incorrect login, try again"]
+      flash[:error] = ["Incorrect login."]
       redirect_to login_path
     end
   end
