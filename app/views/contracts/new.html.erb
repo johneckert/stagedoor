@@ -3,8 +3,15 @@
 <%= form_for @contract do |f| %>
   <br />
 
+  <%= f.label :show_name %>
+  <%= f.text_field :show_name %>
+  
+  <%= f.label :opening_date %>
+  <%= f.date_field :opening_date %><br />
+
   <%= f.label :fee %>
-  <%= f.number_field :fee %>
+  <%= f.number_field :fee %><br />
+
   <%= f.label :venue %>:
   <%= f.collection_select :venue, @venues, :id, :name %><br />
 
