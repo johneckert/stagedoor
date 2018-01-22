@@ -11,7 +11,7 @@
 /test/version_tmp/
 /tmp/
 /db/development.sqlite3
-
+/log/development.log
 
 # Used by dotenv library to load environment variables.
 # .env
@@ -51,5 +51,3 @@ build-iPhoneSimulator/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
-
-log/development.log
