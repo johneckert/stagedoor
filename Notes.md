@@ -55,6 +55,7 @@ To Do
     -all good
   -> Assistant will require a little extra work, pay structure is different - we should talk about
     - fuck assistants remove this later
+    - done
 
   Discussion Notes 1/22/18
   -> 'Project Only' contract is a one off contract that freelancers will experience, and will be where the database info is most key. Venue can be filled in to 'N/A' or something, but Company will need to be a datalist to fill in.
@@ -63,9 +64,11 @@ To Do
   -> remove union id
     - done
   -> add password column and bcrypt to user
+    - done
   -> add age range, ethnicity, and optional for ALL
-    - preselect ethnicity
+    - done
   -> add session controller
+    - done
   -> switch: venue belongs to location and company, company has many locations through venue and vice versa
   -> data calcs
       - min, max, median, mean
@@ -76,6 +79,5 @@ To Do
     --> location = city, contract_type = contract + rating
     --> how to load contract template based on venue? for now, drop down for each option, later, validates? > move contract_type to venue
     ---> done
-  -> load list of venues when you select a company for datalist
-  --> validates that company owns venue on form submit
+  -> validates that company owns venue on form submit
   -> integrate ruby google charts wrapper in order to create graphs!
