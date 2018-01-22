@@ -35,16 +35,30 @@ To Do
 	- Graphs / Data Visualization / Interesting UI (ruby gems?)
   - Tests
   - IF THERE IS TIME: Job Posting Board / Classifieds
-  - What data do we want to display? So we can prepare algorithms
+  - What data do we want to display at each route?
+  - Limit our routes to what's necessary
+  - 'Project Only' contract autofill venue, allows user to type in / datalist
 
   Julien Notes 1/20/18
   -> Should the assistant:boolean be in the Category table, or should it be in the Contract? I'm thinking maybe the Contract because it could change on a case by case basis, but I also wouldn't know. Doing it now as part of the Category model.
-    --> moved to contract
+    --> moved to contract -JT
   -> What if the contract were the join table between user and category? would that make sense?
     --> Since contracts can have multiple categories, the join table should be there. Many to Many Category-Contract, and Designer has many categories through contracts that they've submitted. This allows us to remove the designer categories model/table.
 
   John Notes 1/21/18
   -> Contract has User ID not Designer ID, we should rename one or the other
+    --> change to username
   -> Wondering if we should remove union_id since we don't really need it.
+    --> removed
   -> we don't need to track minimum fees
   -> Assistant will require a little extra work, pay structure is different - we should talk about
+    --> removed
+
+  Discussion Notes 1/22/18
+  -> 'Project Only' contract is a one off contract that freelancers will experience, and will be where the database info is most key. Venue can be filled in to 'N/A' or something, but Company will need to be a datalist to fill in.
+  -> change name to username
+  -> remove union id
+  -> add password column and bcrypt to user
+  -> add age range, ethnicity, and optional for ALL
+  -> add session controller
+  -> switch: venue belongs to location and company, company has many locations through venue and vice versa
