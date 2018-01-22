@@ -1,22 +1,26 @@
-<h3>New Contract</h3>
+<u><h3>Create New Contract</h3></u>
 
 <%= form_for @contract do |f| %>
+
+  <%= f.label :show_name %>:
+  <%= f.text_field :show_name %><br />
   <br />
 
-  <%= f.label :show_name %>
-  <%= f.text_field :show_name %>
-  
-  <%= f.label :opening_date %>
+  <%= f.label :opening_date %>:
   <%= f.date_field :opening_date %><br />
+  <br />
 
-  <%= f.label :fee %>
-  <%= f.number_field :fee %><br />
+  <%= f.label :musical, "Musical?" %>:
+  <%= f.check_box :musical %><br />
+  <br />
 
   <%= f.label :venue %>:
-  <%= f.collection_select :venue, @venues, :id, :name %><br />
+  <%= f.collection_select :venue_id, @venues, :id, :name %><br />
+  <br />
 
-  <%= f.label :musical %>:
-  <%= f.check_box :musical %><br />
+  <%= f.label :fee %>:
+  <%= f.number_field :fee %><br />
+  <br />
 
   <%= f.submit "Submit New Contract." %>
 <% end %>
