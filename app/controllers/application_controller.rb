@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    session[:designer_id]? Designer.find(session[:designer_id]) : nil
+    session[:designer_id] ? Designer.find(session[:designer_id]) : nil
   end
 
   private

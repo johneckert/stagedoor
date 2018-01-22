@@ -3,6 +3,9 @@
 <%= form_for @contract do |f| %>
   <br />
 
+  <%= f.label :venue %>
+  <%= f.collection_select :venue, @venues, :id, :name %><br />
+  
   <%= f.label :musical %>
   <%= f.check_box :musical %><br />
 
