@@ -62,3 +62,8 @@ To Do
   -> add age range, ethnicity, and optional for ALL
   -> add session controller
   -> switch: venue belongs to location and company, company has many locations through venue and vice versa
+  -> data calcs
+    --> min, max, median, mean
+    --> within a time window (based on show date)
+    ---> graph data visualization on this ^
+    ---> use 'date select'
