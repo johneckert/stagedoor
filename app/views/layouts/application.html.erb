@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <h5><% if current_user %>
+          <%= "logged in -> #{current_user.username}" %>
+        <% else %>
+          <%= link_to "login", login_path %>
+        <% end %>
+    </h5>
     <%= yield %>
   </body>
 </html>

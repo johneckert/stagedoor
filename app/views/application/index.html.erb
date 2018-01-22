@@ -1,5 +1,6 @@
 <% if current_user %>
-  <%= "Hi, #{current_user.username}" %>
+  <%= "welcome!" %><br />
+  <%= link_to "logout", logout_path, method: 'post' %>
 <% else %>
-  <%= link_to "fuck you log in", login_path %>
+  <%= "fuck you log in" %>
 <% end %>
