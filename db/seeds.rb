@@ -22,11 +22,11 @@ theatre_data.each do |theatre_hash|
 
   #find or create company and associate with location
   company = Company.find_or_create_by(name: theatre_hash["COMPANY"])
-  company.location_id = location.id
-  company.save
 
   #create venue and associate to company
-  contract_and_rating = "#{theatre_hash["CONTRACT"]} + #{theatre_hash["RATING"]}"
-  Venue.create(name: theatre_hash["VENUE"], contract_type: contract_and_rating, company_id: company.id)
+  venue = Venue.find_or_create_by(name: theatre_hash["VENUE"])
+  venue.contract_type = "#{theatre_hash["CONTRACT "]} #{theatre_hash["RATING"]}"
+  venue.company = company
+  venue.location = location
+  venue.save
 end
-binding.pry
