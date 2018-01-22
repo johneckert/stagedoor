@@ -1,5 +1,5 @@
 <% if current_user %>
-  <%= "Hi, #{current_user}" %>
+  <%= "Hi, #{@designer.username}" %>
 <% else %>
   <%= link_to "fuck you log in", login_path %>
 <% end %>
