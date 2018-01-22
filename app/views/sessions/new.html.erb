@@ -1,0 +1,11 @@
+<%= render 'error' %>
+
+<%= form_for :designer, url: authenticate_path, method: 'post' do |f| %>
+  <%= f.label :username %>:
+  <%= f.text_field :username %><br />
+  <%= f.label :password_digest, "Password" %>:
+  <%= f.password_field :password_digest %><br />
+  <%= f.submit "Login" %>
+<% end %>
+
+<%= link_to "Create an Account", new_designer_path %>

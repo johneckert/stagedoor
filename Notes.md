@@ -38,6 +38,7 @@ To Do
   - What data do we want to display at each route?
   - Limit our routes to what's necessary
   - 'Project Only' contract autofill venue, allows user to type in / datalist
+  - Function to calculate designer age based on birth_year / time.now.year
 
   Julien Notes 1/20/18
   -> Should the assistant:boolean be in the Category table, or should it be in the Contract? I'm thinking maybe the Contract because it could change on a case by case basis, but I also wouldn't know. Doing it now as part of the Category model.
@@ -47,23 +48,28 @@ To Do
 
   John Notes 1/21/18
   -> Contract has User ID not Designer ID, we should rename one or the other
-    --> change to username
+    - done
   -> Wondering if we should remove union_id since we don't really need it.
-    --> removed
+    -done
   -> we don't need to track minimum fees
+    -all good
   -> Assistant will require a little extra work, pay structure is different - we should talk about
-    --> removed
+    - fuck assistants remove this later
 
   Discussion Notes 1/22/18
   -> 'Project Only' contract is a one off contract that freelancers will experience, and will be where the database info is most key. Venue can be filled in to 'N/A' or something, but Company will need to be a datalist to fill in.
   -> change name to username
+    - done
   -> remove union id
+    - done
   -> add password column and bcrypt to user
   -> add age range, ethnicity, and optional for ALL
+    - preselect ethnicity
   -> add session controller
   -> switch: venue belongs to location and company, company has many locations through venue and vice versa
   -> data calcs
-    --> min, max, median, mean
-    --> within a time window (based on show date)
+      - min, max, median, mean
+      - within a time window (based on show date)
     ---> graph data visualization on this ^
     ---> use 'date select'
+  -> do above updates
