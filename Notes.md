@@ -71,6 +71,7 @@ To Do
   -> add session controller
     - done
   -> switch: venue belongs to location and company, company has many locations through venue and vice versa
+    - done
   -> data calcs
       - min, max, median, mean
       - within a time window (based on show date)
