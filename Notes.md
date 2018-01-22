@@ -49,29 +49,29 @@ To Do
 
   John Notes 1/21/18
   -> Contract has User ID not Designer ID, we should rename one or the other
-    - done
+    - DONE
   -> Wondering if we should remove union_id since we don't really need it.
-    -done
+    -DONE
   -> we don't need to track minimum fees
     -all good
   -> Assistant will require a little extra work, pay structure is different - we should talk about
     - fuck assistants remove this later
-    - done
+    - DONE
 
   Discussion Notes 1/22/18
   -> 'Project Only' contract is a one off contract that freelancers will experience, and will be where the database info is most key. Venue can be filled in to 'N/A' or something, but Company will need to be a datalist to fill in.
   -> change name to username
-    - done
+    - DONE
   -> remove union id
-    - done
+    - DONE
   -> add password column and bcrypt to user
-    - done
+    - DONE
   -> add age range, ethnicity, and optional for ALL
-    - done
+    - DONE
   -> add session controller
-    - done
+    - DONE
   -> switch: venue belongs to location and company, company has many locations through venue and vice versa
-    - done
+    - DONE
   -> data calcs
       - min, max, median, mean
       - within a time window (based on show date)
@@ -80,6 +80,6 @@ To Do
   -> import list of theaters/locations/companies/contract_type via google sheets csv
     --> location = city, contract_type = contract + rating
     --> how to load contract template based on venue? for now, drop down for each option, later, validates? > move contract_type to venue
-    ---> done
+    ---> DONE
   -> validates that company owns venue on form submit
   -> integrate ruby google charts wrapper in order to create graphs!
