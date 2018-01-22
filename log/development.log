@@ -1223,3 +1223,275 @@ Migrating to ChangeAgeToBirthYear (20180122155128)
             FROM sqlite_temp_master
             WHERE name='index_venues_on_company_id' AND type='index'
 [0m
+Started GET "/superheroes" for 127.0.0.1 at 2018-01-22 10:55:22 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/superheroes"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 10:55:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/designers/new" for 127.0.0.1 at 2018-01-22 10:55:26 -0500
+Processing by DesignersController#new as HTML
+  Rendering designers/new.html.erb within layouts/application
+  Rendered designers/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+    3:   <%= f.text_field :username %><br />
+    4: 
+    5:   <%= f.label :gender %>:
+    6:   <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :gender %><br />
+    7: 
+    8:   <%= f.label :ethnicity %>:
+    9:   <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :ethnicity %><br />
+  
+app/views/designers/new.html.erb:6:in `block in _app_views_designers_new_html_erb__111879152826055537_70167944466940'
+app/views/designers/new.html.erb:1:in `_app_views_designers_new_html_erb__111879152826055537_70167944466940'
+Started GET "/designers/new" for 127.0.0.1 at 2018-01-22 10:56:19 -0500
+Processing by DesignersController#new as HTML
+  Rendering designers/new.html.erb within layouts/application
+  Rendered designers/new.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `gender' for "Male":String):
+    3:   <%= f.text_field :username %><br />
+    4: 
+    5:   <%= f.label :gender %>:
+    6:   <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :gender, :gender %><br />
+    7: 
+    8:   <%= f.label :ethnicity %>:
+    9:   <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :ethnicity %><br />
+  
+app/views/designers/new.html.erb:6:in `block in _app_views_designers_new_html_erb__111879152826055537_70167964502540'
+app/views/designers/new.html.erb:1:in `_app_views_designers_new_html_erb__111879152826055537_70167964502540'
+Started GET "/designers/new" for 127.0.0.1 at 2018-01-22 10:58:16 -0500
+Processing by DesignersController#new as HTML
+  Rendering designers/new.html.erb within layouts/application
+  Rendered designers/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 4..6)):
+     6:   <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :to_s, :to_s %><br />
+     7: 
+     8:   <%= f.label :ethnicity %>:
+     9:   <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :ethnicity %><br />
+    10: 
+    11: 
+    12:   <%= f.label :birth_year %>:
+  
+app/views/designers/new.html.erb:9:in `block in _app_views_designers_new_html_erb__111879152826055537_70167892394840'
+app/views/designers/new.html.erb:1:in `_app_views_designers_new_html_erb__111879152826055537_70167892394840'
+Started GET "/designers/new" for 127.0.0.1 at 2018-01-22 10:58:35 -0500
+Processing by DesignersController#new as HTML
+  Rendering designers/new.html.erb within layouts/application
+  Rendered designers/new.html.erb within layouts/application (96.9ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `password' for #<Designer:0x007fa280311e18>
+Did you mean?  password_digest):
+    14: 
+    15: 
+    16:   <%= f.label :password %>:
+    17:   <%= f.text_field :password %><br />
+    18: 
+    19: 
+    20:   <%= f.label :password_confirmation %>:
+  
+app/views/designers/new.html.erb:17:in `block in _app_views_designers_new_html_erb__111879152826055537_70167956062840'
+app/views/designers/new.html.erb:1:in `_app_views_designers_new_html_erb__111879152826055537_70167956062840'
+Started GET "/designers/new" for 127.0.0.1 at 2018-01-22 10:58:52 -0500
+Processing by DesignersController#new as HTML
+  Rendering designers/new.html.erb within layouts/application
+  Rendered designers/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/designers" for 127.0.0.1 at 2018-01-22 10:59:33 -0500
+Processing by DesignersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QF6MV3G8J7Ro75rYs/Zg6SdLUzpx45fXcYgz4BKZQHzdnj/34KCtrD5MuBpeq2GEQ8gG2C6QfVCd/rObEMIAag==", "designer"=>{"username"=>"julien", "gender"=>"Male", "ethnicity"=>["", "Asian/Indian subcontinent", "Black", "Hispanic"], "birth_year"=>"1994", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Designer"}
+Unpermitted parameters: :ethnicity, :password_confirmation
+Completed 500 Internal Server Error in 193587ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/designers_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2018-01-22 12:51:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 184ms (Views: 174.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 12:51:49 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/designers/new" for 127.0.0.1 at 2018-01-22 12:51:50 -0500
+Processing by DesignersController#new as HTML
+  Rendering designers/new.html.erb within layouts/application
+  Rendered designers/new.html.erb within layouts/application (126.7ms)
+Completed 200 OK in 175ms (Views: 151.8ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mDesigner Load (1.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MoveContractTypeToVenue (20180122180458)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acontracts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "venue_id" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "fee" integer DEFAULT NULL, "opening_date" date DEFAULT NULL, "musical" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assistant" boolean DEFAULT NULL, "designer_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acontracts_on_designer_id" ON "acontracts" ("designer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acontracts_on_venue_id" ON "acontracts" ("venue_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acontracts" ("id","venue_id","type","fee","opening_date","musical","created_at","updated_at","assistant","designer_id")
+                     SELECT "id","venue_id","type","fee","opening_date","musical","created_at","updated_at","assistant","designer_id" FROM "contracts"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "contracts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "contracts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "venue_id" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "fee" integer DEFAULT NULL, "opening_date" date DEFAULT NULL, "musical" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assistant" boolean DEFAULT NULL, "designer_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acontracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acontracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acontracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acontracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_contracts_on_venue_id" ON "contracts" ("venue_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_contracts_on_designer_id" ON "contracts" ("designer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "contracts" ("id","venue_id","type","fee","opening_date","musical","created_at","updated_at","assistant","designer_id")
+                     SELECT "id","venue_id","type","fee","opening_date","musical","created_at","updated_at","assistant","designer_id" FROM "acontracts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acontracts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "venues" ADD "contract_type" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122180458"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_companies_on_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_companies_on_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+[0m

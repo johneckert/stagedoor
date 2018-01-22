@@ -16,4 +16,8 @@ class DesignersController < ApplicationController
     end
   end
 
+  def designer_params
+    params.require(:designer).permit(:username, :gender, :ethnicity, :birth_year, :password, :password_confirmation)
+  end
+
 end
