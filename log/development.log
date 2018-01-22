@@ -3434,3 +3434,70 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:20 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 14:16:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 56ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 14:16:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pOCE1EBTgy4p/BOfsGKZhBMCiZZv44wMjwCH6zjemIwZxMV982rJpdrXKEujZ/8U3zWNOwo4D4DA6+K1Vh1idQ==", "designer"=>{"username"=>"jtregoat", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "jtregoat"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:25 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:48 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:16:57 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/sessions/destroy" for 127.0.0.1 at 2018-01-22 14:19:33 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6Zo0VLzvl+45Xc8XU9lJUSSefdUuRe+BvjZUi0PGlKl0Wof0LfMd9m/+7dW+hEg8QB0oN3E2BQZSQNTwQZ3Uvw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:19:33 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+

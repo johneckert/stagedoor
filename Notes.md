@@ -39,6 +39,7 @@ To Do
   - Limit our routes to what's necessary
   - 'Project Only' contract autofill venue, allows user to type in / datalist
   - Function to calculate designer age based on birth_year / time.now.year
+  - VALIDATIONS
 
   Julien Notes 1/20/18
   -> Should the assistant:boolean be in the Category table, or should it be in the Contract? I'm thinking maybe the Contract because it could change on a case by case basis, but I also wouldn't know. Doing it now as part of the Category model.
