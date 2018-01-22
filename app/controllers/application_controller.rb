@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def index
+    @designer = Designer.try(:find, current_user)
   end
 
   def current_user
