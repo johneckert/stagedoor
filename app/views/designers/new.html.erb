@@ -1,0 +1,14 @@
+<%= form_for @designer do |f| %>
+  <%= f.label :username %>:
+  <%= f.text_field :username %><br />
+
+  <%= f.label :gender %>:
+  <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :gender %><br />
+
+  <%= f.label :ethnicity %>
+  <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :ethnicity %>
+
+  <%= f.label :birth_year %>
+  <%= f.number_field :birth_year %>
+
+  <%= f.label :password %>
