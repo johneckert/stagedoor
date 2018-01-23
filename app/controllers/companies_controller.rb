@@ -3,6 +3,7 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @venues = @company.venues
+
     @charts = {}
     @venues.each do |ven|
       data_table = GoogleVisualr::DataTable.new
