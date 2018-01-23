@@ -4,6 +4,10 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     @venues = @company.venues
     data_table = GoogleVisualr::DataTable.new
+      fee_by_year = {}
+    @venues.contracts.each do |c|
+      year = c.opening_date.split("-").first
+      fee = 
     # Add Column Headers
     data_table.new_column('string', 'Date' )
     data_table.new_column('number', 'Fee')
