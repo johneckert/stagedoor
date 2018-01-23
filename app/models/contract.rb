@@ -15,4 +15,5 @@ class Contract < ApplicationRecord
   def company_id=(id)
     self.venue.company_id = id
   end
+
 end
