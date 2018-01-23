@@ -1,6 +1,10 @@
-<% if current_user %>
-  <%= "welcome!" %><br />
-  <%= link_to "new contract", new_contract_path %><br />
-<% else %>
+<% if !current_user %>
   <%= "fuck you log in" %>
+<% else %>
+  <%= "welcome!" %><br />
+
+  <%= link_to "new contract", new_contract_path %><br />
+  <%= link_to "view all contracts", contracts_path %>
+
+
 <% end %>

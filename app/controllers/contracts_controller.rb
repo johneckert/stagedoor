@@ -1,25 +1,27 @@
 class ContractsController < ApplicationController
 
+  def index
+  end
+
   def new
     @contract = Contract.new
     @venues = Venue.all
     @companies = Company.all
+    @categories = Category.all
   end
 
   def create
-    # byebug
+    @venues = Venue.all
+    @companies = Company.all
     @contract = Contract.new(contract_params)
+    @contract.designer = current_user
     if @contract.valid?
       @contract.save
-      @contract.user = current_user
       redirect_to root_path
     else
-      flash[:error]
+      flash[:error] = @contract.errors.full_messages
       render :new
     end
-  end
-
-  def show
   end
 
   private
