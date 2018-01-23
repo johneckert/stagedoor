@@ -1,6 +1,21 @@
 class ContractsController < ApplicationController
 
   def index
+    data_table = GoogleVisualr::DataTable.new
+    con_type_hash = Hash.new(0)
+    current_user.contracts.map do |con|
+      con_type_hash[con.venue.contract_type] += 1
+    end
+
+    data_table.new_column('string', 'Contract Type')
+    data_table.new_column('number', 'Number of Contracts')
+    data_table.add_rows(con_type_hash.keys.count)
+    con_type_hash.each do |h|
+      data_table.add_rows([h])
+    end
+
+    opts   = { :width => 400, :height => 240, :title => 'My Daily Activities', :is3D => true }
+    @piechart = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
   end
 
   def new
