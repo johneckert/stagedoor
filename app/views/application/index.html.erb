@@ -8,11 +8,18 @@
 
   <u><h5>View Analytics</h5></u>
 
+  View by company:
   <%= form_tag analytics_select_path do %>
-    <%= select_tag "View by Company", options_from_collection_for_select(@companies, "id", "name")%>
-    <%= submit_tag %>
+    <%= select_tag "company", options_from_collection_for_select(@companies, "id", "name")%>
+    <%= submit_tag "Go!"%>
   <% end %><br />
 
-  <%= link_to "View All", designers_path %>
+  View by location:
+  <%= form_tag analytics_select_path do %>
+    <%= select_tag "location", options_from_collection_for_select(@locations, "id", "name")%>
+    <%= submit_tag "Go!"%>
+  <% end %><br />
+
+  <%= link_to "View all", designers_path %>
 
 <% end %>
