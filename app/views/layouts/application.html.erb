@@ -10,15 +10,21 @@
   </head>
 
   <body>
-    <h2>StageDoor</h2>
+    <div id="nav">
+    <h1 id="logo">StageDoor</h1>
+    <ul class="nav_menu">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Contracts", contracts_path %></li>
+      <li><%= link_to "Companies", root_path %></li>
+    </ul>
     <h5><% if current_user %>
           <%= "Logged in -> #{current_user.username}" %> <br />
-           <%= link_to "Home", root_path %> ||
           <%= link_to "Logout?", logout_path, method: 'post' %>
         <% else %>
           <%= link_to "login", login_path %>
         <% end %>
     </h5>
+  </div>
     <%= yield %>
   </body>
 </html>
