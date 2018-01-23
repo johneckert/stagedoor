@@ -5,16 +5,19 @@ class CompaniesController < ApplicationController
     @venues = @company.venues
     data_table = GoogleVisualr::DataTable.new
     # Add Column Headers
-    data_table.new_column('string', 'Year' )
-    data_table.new_column('number', 'Sales')
-    data_table.new_column('number', 'Expenses')
+    data_table.new_column('string', 'Date' )
+    data_table.new_column('number', 'Fee')
+    # @venues.each do |venue|
+    #   venue.contracts.each do |contract|
+    #     data_table.add_rows([contract.opening_date, contract.fee])
+    #   end
+    # end
 
-    # Add Rows and Values
     data_table.add_rows([
-    	['2004', 1000, 400],
-    	['2005', 1170, 460],
-    	['2006', 660, 1120],
-    	['2007', 1030, 540]
+    	['2004', 1000],
+    	['2005', 1170],
+    	['2006', 660],
+    	['2007', 1030]
     ])
 
     option = { width: 600, height: 240, title: 'Company Performance' }
