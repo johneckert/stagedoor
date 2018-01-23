@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'application#index'
   post '/analytics_select', to: 'application#analytics_select'
   resources :contracts, only: [:new, :create, :index]
-  resources :companies, only: :show
+  resources :companies, only: [:index, :show]
   resources :locations, only: :show
   resources :categories, only: []
   resources :designers, only: [:new, :create, :index]
