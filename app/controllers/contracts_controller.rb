@@ -3,6 +3,7 @@ class ContractsController < ApplicationController
   def new
     @contract = Contract.new
     @venues = Venue.all
+    @companies = Company.all
   end
 
   def create
@@ -22,6 +23,6 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:contract).permit(:venue_id, :type, :opening_date, :musical, :fee, :category_ids)
+    params.require(:contract).permit(:venue_id, :type, :opening_date, :musical, :fee, :category_ids, :contract)
   end
 end

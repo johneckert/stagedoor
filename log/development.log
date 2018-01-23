@@ -25106,3 +25106,374 @@ Migrating to AddShowNameToContract (20180122224856)
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "venues" SET "contract_type" = ?, "updated_at" = ? WHERE "venues"."id" = ?[0m  [["contract_type", "Broadway Contract "], ["updated_at", "2018-01-22 22:50:02.154814"], ["id", 143]]
   [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-01-22 19:11:55 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:12:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ActuallyRemoveTypeFromContract (20180122223438)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acontracts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "venue_id" integer DEFAULT NULL, "type" varchar DEFAULT NULL, "fee" integer DEFAULT NULL, "opening_date" date DEFAULT NULL, "musical" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "designer_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acontracts_on_designer_id" ON "acontracts" ("designer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acontracts_on_venue_id" ON "acontracts" ("venue_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "acontracts" ("id","venue_id","type","fee","opening_date","musical","created_at","updated_at","designer_id")
+                     SELECT "id","venue_id","type","fee","opening_date","musical","created_at","updated_at","designer_id" FROM "contracts"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "contracts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "contracts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "venue_id" integer DEFAULT NULL, "fee" integer DEFAULT NULL, "opening_date" date DEFAULT NULL, "musical" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "designer_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acontracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acontracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_acontracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_acontracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_contracts_on_venue_id" ON "contracts" ("venue_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_contracts_on_designer_id" ON "contracts" ("designer_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "contracts" ("id","venue_id","fee","opening_date","musical","created_at","updated_at","designer_id")
+                     SELECT "id","venue_id","fee","opening_date","musical","created_at","updated_at","designer_id" FROM "acontracts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acontracts"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122223438"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddShowNameToContract (20180122224856)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "contracts" ADD "show_name" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122224856"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contract_categories_on_contract_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_designer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contracts_on_venue_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_location_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_location_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_venues_on_company_id' AND type='index'
+[0m
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:12:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContractsController#new as HTML
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 19:12:37 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 343ms (Views: 340.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-01-22 19:12:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4TJnZCRDlvXlno+2xteHHSFywhnQO3SQHbCPWPc2xNZzlfvVLyCwA7hHeR6AwPvzWs73Ilp06fifI/JWUSaxrg==", "username"=>"julien", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mDesigner Load (0.5ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."username" = ? LIMIT ?[0m  [["username", "julien"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 21ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2018-01-22 19:12:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered application/_error.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/designers/new" for 127.0.0.1 at 2018-01-22 19:12:50 -0500
+Processing by DesignersController#new as HTML
+  Rendering designers/new.html.erb within layouts/application
+  Rendered designers/new.html.erb within layouts/application (96.0ms)
+Completed 200 OK in 136ms (Views: 121.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/designers" for 127.0.0.1 at 2018-01-22 19:13:12 -0500
+Processing by DesignersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ODLfxXQbkzac6+coXr2OlpDZNUEb4mvy/mxLbwdbkDbgKZPN+1sMhm5vq3FQMmdYKZCgMk9LrSxNRwPesY5dSg==", "designer"=>{"username"=>"John", "gender"=>"Male", "ethnicity"=>["", "White"], "birth_year"=>"1978", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Designer"}
+Unpermitted parameter: :ethnicity
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "designers" ("gender", "created_at", "updated_at", "username", "password_digest", "birth_year") VALUES (?, ?, ?, ?, ?, ?)[0m  [["gender", "Male"], ["created_at", "2018-01-23 00:13:12.714898"], ["updated_at", "2018-01-23 00:13:12.714898"], ["username", "John"], ["password_digest", "$2a$10$8R9GgpfX31n3rJsuKDkOpu0thcSgI6K/8OcWmn3B0FzcSGk/6.ZHC"], ["birth_year", 1978]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" ORDER BY "designers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 19:13:12 -0500
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:13:17 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (uninitialized constant ContractsController::Companies):
+  
+app/controllers/contracts_controller.rb:6:in `new'
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:13:48 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `compayn' for #<Contract:0x007f9317869000>):
+    13:   <%= f.number_field :fee %><br />
+    14: 
+    15:   <%= f.label :company %>:
+    16:   <%= f.collection_select :compayn, @companies, :id, :name %><br />
+    17: 
+    18:   <%= f.text_field :venue, list: "venues" %>
+    19:   <datalist id="venues">
+  
+app/views/contracts/new.html.erb:16:in `block in _app_views_contracts_new_html_erb___4230666654136788640_70134805208380'
+app/views/contracts/new.html.erb:3:in `_app_views_contracts_new_html_erb___4230666654136788640_70134805208380'
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:14:22 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `company' for #<Contract:0x007f9317b82700>):
+    13:   <%= f.number_field :fee %><br />
+    14: 
+    15:   <%= f.label :company %>:
+    16:   <%= f.collection_select :company, @companies, :id, :name %><br />
+    17: 
+    18:   <%= f.text_field :venue, list: "venues" %>
+    19:   <datalist id="venues">
+  
+app/views/contracts/new.html.erb:16:in `block in _app_views_contracts_new_html_erb___4230666654136788640_70134867429200'
+app/views/contracts/new.html.erb:3:in `_app_views_contracts_new_html_erb___4230666654136788640_70134867429200'
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:26:12 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  Rendered contracts/new.html.erb within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `company_id' for nil:NilClass):
+    13:   <%= f.number_field :fee %><br />
+    14: 
+    15:   <%= f.label :company %>:
+    16:   <%= f.collection_select :company, @companies, :id, :name %><br />
+    17: 
+    18:   <%= f.text_field :venue, list: "venues" %>
+    19:   <datalist id="venues">
+  
+app/models/contract.rb:8:in `company'
+app/views/contracts/new.html.erb:16:in `block in _app_views_contracts_new_html_erb___4230666654136788640_70134872032780'
+app/views/contracts/new.html.erb:3:in `_app_views_contracts_new_html_erb___4230666654136788640_70134872032780'
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:32:13 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  [1m[36mCompany Load (2.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mVenue Load (1.4ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered contracts/new.html.erb within layouts/application (25.1ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 47.4ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:33:23 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.2ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered contracts/new.html.erb within layouts/application (7.3ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contracts/new" for 127.0.0.1 at 2018-01-22 19:33:58 -0500
+Processing by ContractsController#new as HTML
+  [1m[36mDesigner Load (0.1ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering contracts/new.html.erb within layouts/application
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT "venues".* FROM "venues"[0m
+  Rendered contracts/new.html.erb within layouts/application (10.9ms)
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Designer Load (0.0ms)[0m  [1m[34mSELECT  "designers".* FROM "designers" WHERE "designers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 36.0ms | ActiveRecord: 1.2ms)
+
+
