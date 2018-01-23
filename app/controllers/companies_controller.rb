@@ -15,7 +15,6 @@ class CompaniesController < ApplicationController
 
       sorted_contracts = ven.contracts.sort_by{|contract| contract.opening_date}
       sorted_contracts.each do |contract|
-        byebug
         case contract.categories.first.id
         when 1
           data_table.add_rows([[contract.opening_date, contract.fee, nil, nil, nil, nil]])
