@@ -7,39 +7,58 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @venues = @company.venues
-
     @charts = {}
+
     @venues.each do |ven|
       data_table = GoogleVisualr::DataTable.new
-      data_table.new_column('date', 'Year' )
+      data_table.new_column('string', 'Year' )
       data_table.new_column('number', 'Scenic Design Fees')
       data_table.new_column('number', 'Costume Design Fees')
       data_table.new_column('number', 'Lighting Design Fees')
       data_table.new_column('number', 'Sound Design Fees')
       data_table.new_column('number', 'Projection Design Fees')
 
-      sorted_contracts = ven.contracts.sort_by{|contract| contract.opening_date}
-      sorted_contracts.each do |contract|
-        case contract.categories.first.id
-        when 1
-          data_table.add_rows([[contract.opening_date, contract.fee, nil, nil, nil, nil]])
-        when 2
-          data_table.add_rows([[contract.opening_date, nil, contract.fee, nil, nil, nil]])
-        when 3
-          data_table.add_rows([[contract.opening_date, nil, nil, contract.fee, nil, nil]])
-        when 4
-          data_table.add_rows([[contract.opening_date, nil, nil, nil, contract.fee, nil]])
-        when 5
-          data_table.add_rows([[contract.opening_date, nil, nil, nil, nil, contract.fee]])
-        else
-          data_table.add_rows([[contract.opening_date, nil, nil, nil, nil, nil]])
-        end
+      scenic = Category.find(1)
+      costume = Category.find(2)
+      lighting = Category.find(3)
+      sound = Category.find(4)
+      projection = Category.find(5)
+
+      fees = {
+        scenic => {},
+        costume => {},
+        lighting => {},
+        sound => {},
+        projection => {}
+      }
+
+      ven.contracts.each do |contract|
+        year = contract.opening_date.year.to_s
+        category = contract.categories.first
+        fees[category][year] == nil ? fees[category][year] = [] : true
+        fees[category][year] << contract.fee
       end
 
-      option = { width: 600, height: 240, title: 'Company Performance', trendlines: {
-        0 => {type: 'polynomial', degree: 3}
-        } }
-      @charts[ven.id] = GoogleVisualr::Interactive::ScatterChart.new(data_table, option)
+      start_year = ven.contracts.map{|con| con.opening_date.year}.min
+      end_year = ven.contracts.map{|con| con.opening_date.year}.max
+      i = start_year
+
+      while i <= end_year do
+
+        data_table.add_row(
+          [
+          i.to_s,
+          avg(fees[scenic][i.to_s]),
+          avg(fees[costume][i.to_s]),
+          avg(fees[lighting][i.to_s]),
+          avg(fees[sound][i.to_s]),
+          avg(fees[projection][i.to_s])
+        ])
+        i +=1
+      end
+
+      option = { width: 600, height: 240, title: 'Company Performance'}
+      @charts[ven.id] = GoogleVisualr::Interactive::LineChart.new(data_table, option)
     end
   end
 
@@ -47,5 +66,13 @@ class CompaniesController < ApplicationController
 
   def company_params
     params.require(:company).permit(:name)
+  end
+
+  def avg(num_array)
+    if num_array == nil
+      return 0
+    else
+      num_array.inject(:+) / num_array.count
+    end
   end
 end
