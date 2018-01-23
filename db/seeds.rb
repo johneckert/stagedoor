@@ -1,11 +1,11 @@
 require 'csv'
 
 #create design categories
-scenic = Category.create(name: "Scenic Design")
-costumes = Category.create(name: "Costume Design")
-lighting = Category.create(name: "Lighting Design")
-sound = Category.create(name: "Sound Design")
-projections = Category.create(name: "Projection Design")
+scenic = Category.find_or_create_by(name: "Scenic Design")
+costumes = Category.find_or_create_by(name: "Costume Design")
+lighting = Category.find_or_create_by(name: "Lighting Design")
+sound = Category.find_or_create_by(name: "Sound Design")
+projections = Category.find_or_create_by(name: "Projection Design")
 
 
 #parse data from csv file and create theatre_data hash
