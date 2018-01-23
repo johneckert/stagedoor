@@ -1,7 +1,7 @@
 <h1>Your Contracts:</h1>
 <ul>
   <%  current_user.contracts.each do |contract| %>
-    <li><%= contract.show_name %> |
+    <li><%= link_to contract.show_name, edit_contract_path(contract) %> |
       <%= link_to contract.company.name, company_path(contract.company) %> |
       $<%= contract.fee %>
       </li>

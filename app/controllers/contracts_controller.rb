@@ -55,6 +55,23 @@ class ContractsController < ApplicationController
     end
   end
 
+  def edit
+    @contract = Contract.find(params[:id])
+    @venues = Venue.all
+    @companies = Company.all
+    @categories = Category.all
+  end
+
+  def update
+    @contract = Contract.find(params[:id])
+    @contract.update(contract_params)
+    if @contract.valid?
+      redirect_to contracts_path
+    else
+      redirect_to edit_contract_path(@contract)
+    end
+  end
+
   private
 
   def contract_params
