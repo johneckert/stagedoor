@@ -1,0 +1,11 @@
+<h1>All Companies</h1>
+<ul>
+<% @companies.each do |company| %>
+<li><h4><%= link_to company.name, company_path(company) %></h4>
+  <ul>
+    <% company.venues.each do |venue| %>
+    <li><%= venue.name %> | <%= venue.contract_type %></li>
+    <% end %>
+  </ul></li>
+<% end %>
+</ul>
