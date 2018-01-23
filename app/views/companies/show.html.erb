@@ -1,0 +1,12 @@
+<h1>Analytics for <%= @company.name %></h1>
+<% @venues.each do |v| %>
+  <div class="venue_data">
+    <h2><%= v.name %></h2>
+    <div class="fee_data">
+      <p>Average Fee: <%= v.mean_fee %> | Lowest Fee: <%= v.min_fee %> | Highest Fee: <%= v.max_fee %> | Median Fee: <%= v.median_fee %> | Most Frequent: <%= v.mode_fee %></p>
+    </div>
+      <div id='chart'></div>
+    
+      <%= render_chart(@chart, 'chart') %>
+  </div>
+<% end %>
