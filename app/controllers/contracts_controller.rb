@@ -42,6 +42,6 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:contract).permit(:venue_id, :show_name, :opening_date, :musical, :fee, :category_ids, :company_id)
+    params.require(:contract).permit(:venue_id, :show_name, :opening_date, :musical, :fee, :company_id, category_ids: [])
   end
 end
