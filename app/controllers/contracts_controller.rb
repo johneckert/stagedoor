@@ -2,20 +2,36 @@ class ContractsController < ApplicationController
 
   def index
     data_table = GoogleVisualr::DataTable.new
-    con_type_hash = Hash.new(0)
+    contract_type = Hash.new(0)
+    fees_by_date = Hash.new
     current_user.contracts.map do |con|
-      con_type_hash[con.venue.contract_type] += 1
+      contract_type[con.venue.contract_type] += 1
+      fees_by_date[con.opening_date] = con.fee
     end
 
+    #pie chart of contract type
     data_table.new_column('string', 'Contract Type')
     data_table.new_column('number', 'Number of Contracts')
-    data_table.add_rows(con_type_hash.keys.count)
-    con_type_hash.each do |h|
+    data_table.add_rows(contract_type.keys.count)
+    contract_type.each do |h|
       data_table.add_rows([h])
     end
-
     opts   = { :width => 400, :height => 240, :title => 'My Daily Activities', :is3D => true }
     @piechart = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
+
+    #line chart of fee over time
+    data_table = GoogleVisualr::DataTable.new
+    data_table.new_column('date', 'Date' )
+    data_table.new_column('number', 'Fee')
+
+    sorted_fees = fees_by_date.sort
+    sorted_fees.each do |k,v|
+      data_table.add_rows([[k, v]])
+    end
+
+    option = { width: 600, height: 240, title: 'Company Performance' }
+    @feechart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+
   end
 
   def new
