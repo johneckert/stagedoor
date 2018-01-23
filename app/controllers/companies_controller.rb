@@ -3,11 +3,13 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @venues = @company.venues
+
+    @venues.each do |venue|
     data_table = GoogleVisualr::DataTable.new
     data_table.new_column('string', 'Year' )
     data_table.new_column('number', 'Fee')
 
-    sorted_contracts = @venues.first.contracts.sort_by{|contract| contract.opening_date}
+    sorted_contracts = venue.contracts.sort_by{|contract| contract.opening_date}
     sorted_contracts.each do |contract|
       data_table.add_rows([[contract.opening_date.year.to_s, contract.fee]])
     end
