@@ -12,9 +12,12 @@ class ApplicationController < ActionController::Base
     session[:designer_id] ? Designer.find(session[:designer_id]) : nil
   end
 
-  def anayltics_select
-    byebug
-    redirect_to
+  def analytics_select
+    if params[:company] != nil
+      redirect_to company_path(params[:company])
+    else
+      redirect_to location_path(params[:location])
+    end
   end
 
   private
