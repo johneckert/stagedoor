@@ -6,6 +6,6 @@
       <p>Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
     </div>
       <div id="chart_<%= ven.id %>"></div>
-      <%= render_chart(@chart, "chart_#{ven.id}") %>
+      <%= render_chart(@charts[ven.id], "chart_#{ven.id}") %>
     </div>
 <% end %>
