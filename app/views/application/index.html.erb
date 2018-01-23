@@ -1,10 +1,25 @@
 <% if !current_user %>
-  <%= "fuck you log in" %>
+  <h2><%= "fuck you log in" %></h2>
 <% else %>
-  <%= "welcome!" %><br />
+  <h4><%= "Welcome home!" %></h4>
 
-  <%= link_to "new contract", new_contract_path %><br />
-  <%= link_to "view all contracts", contracts_path %>
+  <%= link_to "New Contract", new_contract_path %><br />
+  <%= link_to "View All Contracts", contracts_path %><br />
 
+  <u><h5>View Analytics</h5></u>
+
+  View by company:
+  <%= form_tag analytics_select_path do %>
+    <%= select_tag "company", options_from_collection_for_select(@companies, "id", "name")%>
+    <%= submit_tag "Go!"%>
+  <% end %><br />
+
+  View by location:
+  <%= form_tag analytics_select_path do %>
+    <%= select_tag "location", options_from_collection_for_select(@locations, "id", "name")%>
+    <%= submit_tag "Go!"%>
+  <% end %><br />
+
+  <%= link_to "View all", designers_path %>
 
 <% end %>

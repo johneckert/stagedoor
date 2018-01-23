@@ -12,8 +12,9 @@
   <body>
     <h2>StageDoor</h2>
     <h5><% if current_user %>
-          <%= "logged in -> #{current_user.username}" %> ||
-          <%= link_to "logout?", logout_path, method: 'post' %>
+          <%= "Logged in -> #{current_user.username}" %> <br />
+           <%= link_to "Home", root_path %> ||
+          <%= link_to "Logout?", logout_path, method: 'post' %>
         <% else %>
           <%= link_to "login", login_path %>
         <% end %>
