@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt'
-
+#charts
+gem "google_visualr", ">= 2.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
