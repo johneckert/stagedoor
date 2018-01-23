@@ -6,12 +6,12 @@ class LocationsController < ApplicationController
     @charts = {}
     @venues.each do |ven|
       data_table = GoogleVisualr::DataTable.new
-      data_table.new_column('string', 'Year' )
+      data_table.new_column('date', 'Year' )
       data_table.new_column('number', 'Fee')
 
       sorted_contracts = ven.contracts.sort_by{|contract| contract.opening_date}
       sorted_contracts.each do |contract|
-        data_table.add_rows([[contract.opening_date.year.to_s, contract.fee]])
+        data_table.add_rows([[contract.opening_date, contract.fee]])
       end
 
       option = { width: 600, height: 240, title: 'Company Performance' }
