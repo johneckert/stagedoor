@@ -4,18 +4,20 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     @venues = @company.venues
 
-    @venues.each do |venue|
-    data_table = GoogleVisualr::DataTable.new
-    data_table.new_column('string', 'Year' )
-    data_table.new_column('number', 'Fee')
+    @charts = {}
+    @venues.each do |ven|
+      data_table = GoogleVisualr::DataTable.new
+      data_table.new_column('string', 'Year' )
+      data_table.new_column('number', 'Fee')
 
-    sorted_contracts = venue.contracts.sort_by{|contract| contract.opening_date}
-    sorted_contracts.each do |contract|
-      data_table.add_rows([[contract.opening_date.year.to_s, contract.fee]])
+      sorted_contracts = ven.contracts.sort_by{|contract| contract.opening_date}
+      sorted_contracts.each do |contract|
+        data_table.add_rows([[contract.opening_date.year.to_s, contract.fee]])
+      end
+
+      option = { width: 600, height: 240, title: 'Company Performance' }
+      @charts[ven.id] = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
     end
-
-    option = { width: 600, height: 240, title: 'Company Performance' }
-    @chart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
   end
 
   private
