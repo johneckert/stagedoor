@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :contracts, only: [:new, :create, :index]
   resources :companies, only: :show
   resources :locations, only: :show
-  resources :categories
+  resources :categories, only: []
   resources :designers, only: [:new, :create, :index]
   get '/sessions/new', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'authenticate'

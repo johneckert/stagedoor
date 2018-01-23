@@ -1,5 +1,9 @@
 class ContractsController < ApplicationController
 
+
+  def index
+  end
+  
   def new
     @contract = Contract.new
     @venues = Venue.all
@@ -18,9 +22,6 @@ class ContractsController < ApplicationController
       flash[:error] = @contract.errors.full_messages
       render :new
     end
-  end
-
-  def show
   end
 
   private
