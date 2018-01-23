@@ -3,11 +3,12 @@ class ContractsController < ApplicationController
 
   def index
   end
-  
+
   def new
     @contract = Contract.new
     @venues = Venue.all
     @companies = Company.all
+    @categories = Category.all
   end
 
   def create
