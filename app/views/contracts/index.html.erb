@@ -11,6 +11,9 @@
 <div id='pie_chart'></div>
   <%= render_chart @piechart, 'pie_chart' %>
 
+  <div id='fee_chart'></div>
+    <%= render_chart @feechart, 'fee_chart' %>
+
 <h4>Average Fee:
   <%total_of_fees = current_user.contracts.map do |con| %>
     <% con.fee %>
