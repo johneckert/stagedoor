@@ -1,6 +1,10 @@
 class DesignersController < ApplicationController
   skip_before_action :logged_in?, only: [:new, :create]
 
+
+  def index
+  end
+  
   def new
     @designer = Designer.new
   end
