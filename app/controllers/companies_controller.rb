@@ -36,8 +36,10 @@ class CompaniesController < ApplicationController
         end
       end
 
-      option = { width: 600, height: 240, title: 'Company Performance' }
-      @charts[ven.id] = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+      option = { width: 600, height: 240, title: 'Company Performance', trendlines: {
+        0 => {type: 'polynomial', degree: 3}
+        } }
+      @charts[ven.id] = GoogleVisualr::Interactive::ScatterChart.new(data_table, option)
     end
   end
 
