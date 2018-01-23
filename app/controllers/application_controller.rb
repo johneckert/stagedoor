@@ -4,10 +4,20 @@ class ApplicationController < ActionController::Base
   before_action :logged_in?, except: :index
 
   def index
+    @companies = Company.all
+    @locations = Location.all
   end
 
   def current_user
     session[:designer_id] ? Designer.find(session[:designer_id]) : nil
+  end
+
+  def analytics_select
+    if params[:company] != nil
+      redirect_to company_path(params[:company])
+    else
+      redirect_to location_path(params[:location])
+    end
   end
 
   private

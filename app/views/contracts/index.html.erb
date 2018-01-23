@@ -1,0 +1,9 @@
+<h4>Your Contracts:</h4>
+<ul>
+  <%  current_user.contracts.each do |contract| %>
+    <li><%= contract.show_name %> |
+      <%= link_to contract.company.name, company_path(contract.company) %> |
+      $<%= contract.fee %>
+      </li>
+  <% end %>
+</ul>

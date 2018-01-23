@@ -5,6 +5,7 @@
 
   <%= f.label :show_name %>
   <%= f.text_field :show_name %><br />
+  <br />
 
   <%= f.label :opening_date %>
   <%= f.date_field :opening_date %><br />
@@ -14,14 +15,17 @@
   <%= f.check_box :musical %><br />
   <br />
 
-  <%= f.label :venue %>:
-  <%= f.collection_select :venue_id, @venues, :id, :name %><br />
-
   <%= f.label :company %>:
   <%= f.collection_select :company_id, @companies, :id, :name %><br />
+  <br />
+
+  <%= f.label :venue %>:
+  <%= f.collection_select :venue_id, @venues, :id, :name %><br />
+  <br />
 
   <%= f.label :categories %>:
   <%= f.collection_check_boxes :category_ids, @categories, :id, :name %><br />
+  <br />
 
   <%= f.label :fee %>:
   <%= f.number_field :fee %><br />
