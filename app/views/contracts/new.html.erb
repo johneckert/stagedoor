@@ -1,3 +1,4 @@
+<%= render 'error' %>
 <u><h3>Create New Contract</h3></u>
 
 <%= form_for @contract do |f| %>
@@ -13,11 +14,12 @@
   <%= f.check_box :musical %><br />
   <br />
 
+  <%= f.label :venue %>:
+  <%= f.collection_select :venue_id, @venues, :id, :name %><br />
+
   <%= f.label :company %>:
   <%= f.collection_select :company_id, @companies, :id, :name %><br />
 
-  <%= f.label :venue %>:
-  <%= f.collection_select :venue_id, @venues, :id, :name %><br />
 
   <%= f.label :fee %>:
   <%= f.number_field :fee %><br />
