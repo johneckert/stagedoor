@@ -23,7 +23,7 @@ class Venue < ApplicationRecord
   def mode_fee
     if all_fees.length > 0
       fee_hash = all_fees.reduce(Hash.new(0)) { |a, b| a[b] += 1; a }
-      fee_hash.invert.sort.last
+      fee_hash.invert.sort.last.last
     else
       "N/A"
     end
