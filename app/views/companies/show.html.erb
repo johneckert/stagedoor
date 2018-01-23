@@ -1,12 +1,20 @@
 <h1>Analytics for <%= @company.name %></h1>
-<% @venues.each do |v| %>
+<% @venues.each do |ven| %>
   <div class="venue_data">
-    <h2><%= v.name %></h2>
+    <h2><%= ven.name %></h2>
     <div class="fee_data">
-      <p>Average Fee: <%= v.mean_fee %> | Lowest Fee: <%= v.min_fee %> | Highest Fee: <%= v.max_fee %> | Median Fee: <%= v.median_fee %> | Most Frequent: <%= v.mode_fee %></p>
+      <p>Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
     </div>
+      <% data_table = GoogleVisualr::DataTable.new %>
+      <% data_table.new_column('string', 'Year' ) %>
+      <% data_table.new_column('number', 'Fee') %>
+      <% @sorted_contracts = ven.contracts.sort_by{|contract| contract.opening_date} %>
+      <% @sorted_contracts.each do |contract| %>
+      <% data_table.add_rows([[contract.opening_date.year.to_s, contract.fee]]) %>
+      <% end %>
+      <% option = { width: 600, height: 240, title: 'Company Performance' } %>
+      <% @chart = GoogleVisualr::Interactive::AreaChart.new(data_table, option) %>
       <div id='chart'></div>
-    
       <%= render_chart(@chart, 'chart') %>
-  </div>
+    </div>
 <% end %>
