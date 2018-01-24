@@ -6,7 +6,43 @@
     <div class="fee_data">
       <p class="stats">Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
     </div>
-      <div id="chart_<%= ven.id %>"></div>
-      <%= render_chart(@charts[ven.id], "chart_#{ven.id}") %>
+      Overall Fees Across Time
+
+      <div id="all_charts_<%= ven.id %>"></div>
+      <%= render_chart(@all_charts[ven.id], "all_charts_#{ven.id}") %>
+
+      Fees Across Time By Gender Per Category
+
+      <div id="gender_scenic_charts_<%= ven.id %>"></div>
+      <%= render_chart(@gender_scenic_charts[ven.id], "gender_scenic_charts_#{ven.id}") %>
+
+      <div id="gender_costume_charts_<%= ven.id %>"></div>
+      <%= render_chart(@gender_costume_charts[ven.id], "gender_costume_charts_#{ven.id}") %>
+
+      <div id="gender_lighting_charts_<%= ven.id %>"></div>
+      <%= render_chart(@gender_lighting_charts[ven.id], "gender_lighting_charts_#{ven.id}") %>
+
+      <div id="gender_sound_charts_<%= ven.id %>"></div>
+      <%= render_chart(@gender_sound_charts[ven.id], "gender_sound_charts_#{ven.id}") %>
+
+      <div id="gender_projection_charts_<%= ven.id %>"></div>
+      <%= render_chart(@gender_projection_charts[ven.id], "gender_projection_charts_#{ven.id}") %>
+
+      Fees Across Time By Ethnicity Per Category
+
+      <div id="ethnicity_scenic_charts_<%= ven.id %>"></div>
+      <%= render_chart(@ethnicity_scenic_charts[ven.id], "ethnicity_scenic_charts_#{ven.id}") %>
+
+      <div id="ethnicity_costume_charts_<%= ven.id %>"></div>
+      <%= render_chart(@ethnicity_costume_charts[ven.id], "ethnicity_costume_charts_#{ven.id}") %>
+
+      <div id="ethnicity_lighting_charts_<%= ven.id %>"></div>
+      <%= render_chart(@ethnicity_lighting_charts[ven.id], "ethnicity_lighting_charts_#{ven.id}") %>
+
+      <div id="ethnicity_sound_charts_<%= ven.id %>"></div>
+      <%= render_chart(@ethnicity_sound_charts[ven.id], "ethnicity_sound_charts_#{ven.id}") %>
+
+      <div id="ethnicity_projection_charts_<%= ven.id %>"></div>
+      <%= render_chart(@ethnicity_projection_charts[ven.id], "ethnicity_projection_charts_#{ven.id}") %>
     </div>
 <% end %>
