@@ -57,7 +57,7 @@ class CompaniesController < ApplicationController
         i +=1
       end unless i == nil
 
-      option = { width: 600, height: 240, title: 'Company Performance'}
+      option = { width: 600, height: 240, title: 'Average Fees over Time'}
       @charts[ven.id] = GoogleVisualr::Interactive::LineChart.new(data_table, option)
     end
   end
