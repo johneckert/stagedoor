@@ -53,7 +53,21 @@ padding: 0 0 0 50px;
 }
 
 .login {
+  background-color: rgb(97, 43, 48);
+  color: white;
+}
 
+.login label {
+  margin: 5px 5px 5px 5px;
+}
+
+.login button {
+  background-color: #
+  margin: 5px 5px 5px 5px;
+}
+
+.login input {
+  margin: 5px 5px 5px 5px;
 }
 
 
