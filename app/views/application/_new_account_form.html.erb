@@ -3,23 +3,47 @@
   <div class="col-sm-8 create_acct card">
     <div class="card-block">
       <h4 class="card-title">Sign Up:</h4>
-      <%= form_for @designer, html: {class: :designer_form } do |f| %>
-        <%= f.label :username %>: <%= f.text_field :username %><br />
+      <div class="form-group">
+        <%= form_for @designer, html: {class: :designer_form } do |f| %>
 
-        <%= f.label :gender %>:
-        <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :to_s, :to_s %><br />
+          <div class="form-group row">
+            <%= f.label :username, class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+              <%= f.text_field :username, class: "form-control" %>
+            </div>
+          </div>
 
-        <%= f.label :ethnicity %>:
-        <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :to_s, :to_s %><br />
+          <div class="form-group row">
+            <%= f.label :gender, class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-4">
+              <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :to_s, :to_s, {}, {class: "custom-select"} %>
+            </div>
+            <div class="form-group row">
+              <%= f.label :birth_year, class: "col-sm-2 col-form-label" %>
+              <div class="col-sm-4">
+                <%= f.number_field :birth_year, class: "form-control" %>
+              </div>
+            </div>
+          </div>
 
-        <%= f.label :birth_year %>: <%= f.number_field :birth_year %><br />
+          <div class="form-check form-check-inline">
+            <%= f.label :ethnicity, class: "col-sm-2 col-form-label" %>
+            <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :to_s, :to_s, {}, {class: "form-check-input"} %>
+          </div>
 
-        <%= f.label :password %>: <%= f.password_field :password %><br />
+          <%= f.label :password, class: "col-sm-2 col-form-label" %>
+          <div class="col-sm-4">
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
 
-        <%= f.label :password_confirmation %>: <%= f.password_field :password_confirmation %><br />
+          <%= f.label :password_confirmation, class: "col-sm-2 col-form-label" %>
+          <div class="col-sm-4">
+            <%= f.password_field :password_confirmation, class: "form-control"  %>
+          </div>
 
-        <%= f.submit %>
-      <% end %>
+          <%= f.submit %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
