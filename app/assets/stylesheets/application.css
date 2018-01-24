@@ -68,6 +68,7 @@ padding: 0 0 0 50px;
 
 .login input {
   margin: 5px 5px 5px 5px;
+  color: black;
 }
 
 
@@ -82,6 +83,15 @@ padding: 0 0 0 50px;
   color: #ffffff;
   font-weight: 700;
 }
+
+.venue_info_show {
+  background-color: white;
+}
+
+.company_name_showpage {
+  background-color: white;
+}
+
 
 .nav_link {
   padding: 10px;
