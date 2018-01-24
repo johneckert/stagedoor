@@ -7,7 +7,10 @@ class Designer < ApplicationRecord
   validates :gender, presence: true
   validates :username, presence: true
   validates :password_digest, presence: true
-  validates :birth_year, presence: true
-  validates :ethnicity, presence: true
-  # Birth Year cant be greater than Time.now or less than 1900 or something, as well as show date
+  validates :birth_year, presence: true, numericality: {greater_than: 1900}
+  validates :ethnicity, inclusion: {
+    in: ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"],
+    message: "must be selected."
+    }
+
 end
