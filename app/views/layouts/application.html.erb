@@ -3,7 +3,8 @@
   <head>
     <title>StageDoor</title>
     <%= csrf_meta_tags %>
-
+    <!-- typekit -->
+    <link rel="stylesheet" href="https://use.typekit.net/qfj3uah.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src='https://www.google.com/jsapi'></script>
@@ -20,35 +21,27 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-          <h1 class="logo navbar-brand navbar-text">StageDoor</h1>
-      </div>
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Contracts", contracts_path %></li>
-        <li><%= link_to "Companies", companies_path %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+    <nav id="navigation">
+      <div class="nav navbar-nav navbar-right" id="right_nav">
         <% if current_user %>
-          <li><%= link_to "#{current_user.username}", root_path %></li>
-          <li><%= link_to "logout", logout_path, method: 'post' %></li>
+        <%= link_to "#{current_user.username}", root_path, class: "nav-item nav_link" %> |
+        <%= link_to "logout", logout_path, method: 'post', class: "nav-item nav_link" %>
         <% else %>
-          <li><%= link_to "login", login_path %></li>
+        <%= link_to "login", login_path, class: "nav-item nav_link" %>
         <% end %>
-      </ul>
-    </div>
-  </nav>
-
-    <!-- <h5><% if current_user %>
-          <%= "Logged in -> #{current_user.username}" %> <br />
-          <%= link_to "Logout?", logout_path, method: 'post' %>
-        <% else %>
-          <%= link_to "login", login_path %>
-        <% end %>
-    </h5> -->
-  </div>
+      </div>
+      <div class="container-fluid" id="logo_nav">
+        <div class="logo_padding" id="logo_image">
+          <img src="../../assets/images/nav_image.jpg" alt="">
+          <h1 id="logo" class="navbar-txt">StageDoor</h1>
+        </div>
+        <div class="nav navbar-nav" id="left_nav">
+          <%= link_to "Home", root_path, class: "nav-item nav_link" %> |
+          <%= link_to "Contracts", contracts_path, class: "nav-item nav_link" %> |
+          <%= link_to "Companies", companies_path, class: "nav-item nav_link" %>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
