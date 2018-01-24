@@ -7,9 +7,9 @@ class DesignersController < ApplicationController
     @all_chart = generate_all_designers_graph
     @gender_scenic_chart = generate_gender_graph(Category.find(1), "gender")
     @gender_costume_chart = generate_gender_graph(Category.find(2), "gender")
-    @gender_lighting_chart = generate_gender_graph(Category.find(3))
-    @gender_sound_chart = generate_gender_graph(Category.find(4))
-    @gender_projection_chart = generate_gender_graph(Category.find(5))
+    @gender_lighting_chart = generate_gender_graph(Category.find(3), "gender")
+    @gender_sound_chart = generate_gender_graph(Category.find(4), "gender")
+    @gender_projection_chart = generate_gender_graph(Category.find(5), "gender")
   end
 
   def new
@@ -118,44 +118,49 @@ class DesignersController < ApplicationController
       data_table.new_column('number', "#{category.name} Fees, White")
       data_table.new_column('number', "#{category.name} Fees, Other")
 
-      asian_category = category.name + "Asian"
+      asian_category = category.name + "Asian/Indian subcontinent"
       black_category = category.name + "Black"
       hispanic_category = category.name + "Hispanic"
-      native_category = category.name + "Native"
-      pacific_category = category.name + "Pacific"
+      native_category = category.name + "Native American"
+      pacific_category = category.name + "Pacific Islander"
       white_category = category.name + "White"
       other_category = category.name + "Other"
 
-      male_category = category.name + "Male"
-      female_category = category.name + "Female"
-
       fees = {
-        male_category => {},
-        female_category => {}
-      }
+        asian_category => {},
+        black_category => {},
+        hispanic_category => {},
+        native_category => {},
+        pacific_category => {},
+        white_category => {},
+        other_category => {}
+        }
     end
 
     sorted_contracts.each do |contract|
       year = contract.opening_date.year.to_s
-      key = category.name + contract.designer.gender
+      if stat == "gender"
+        key = category.name + contract.designer.gender
+      elsif stat == "ethnicity"
+        key = category.name + contract.designer.ethnicity
+      end
       fees[key][year] == nil ? fees[key][year] = [] : true
       fees[key][year] << contract.fee
     end
 
     start_year = sorted_contracts.map{|con| con.opening_date.year}.min
     end_year = sorted_contracts.map{|con| con.opening_date.year}.max
-    i = start_year
+    year = start_year
 
-    while i <= end_year do
+    while year <= end_year do
 
       data_table.add_row(
         [
-        i.to_s,
-        avg(fees[male_category][i.to_s]),
-        avg(fees[female_category][i.to_s]),
+        year.to_s,
+        fees.each{|stat_cat| avg(fees[stat_cat][year.to_s])}
       ])
-      i +=1
-    end unless i == nil
+      year +=1
+    end unless year == nil
 
     option = { width: 1000, height: 240, title: "Average #{category.name} Fees over Time"}
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
