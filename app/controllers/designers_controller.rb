@@ -5,9 +5,11 @@ class DesignersController < ApplicationController
   def index
     @designers = Designer.all
     @all_chart = generate_all_designers_graph
-    @gender_chart = generate_gender_graph
-    @ethnicity_chart = generate_ethnicity_graph
-    @age_chart = generate_age_graph
+    @gender_scenic_chart = generate_gender_graph(Category.find(1))
+    @gender_costume_chart = generate_gender_graph(Category.find(2))
+    @gender_lighting_chart = generate_gender_graph(Category.find(3))
+    @gender_sound_chart = generate_gender_graph(Category.find(4))
+    @gender_projection_chart = generate_gender_graph(Category.find(5))
   end
 
   def new
@@ -86,50 +88,22 @@ class DesignersController < ApplicationController
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def generate_gender_graph
+  def generate_gender_graph(category)
     all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
     sorted_contracts = all_contracts.sort_by{|contract| contract.opening_date}
 
     data_table = GoogleVisualr::DataTable.new
     data_table.new_column('string', 'Year' )
 
-    data_table.new_column('number', 'Scenic Design Fees, Male')
-    data_table.new_column('number', 'Scenic Design Fees, Female')
+    data_table.new_column('number', "#{category.name} Fees, Male")
+    data_table.new_column('number', "#{category.name} Fees, Female")
 
-    data_table.new_column('number', 'Costume Design Fees, Male')
-    data_table.new_column('number', 'Costume Design Fees, Female')
-
-    data_table.new_column('number', 'Lighting Design Fees, Male')
-    data_table.new_column('number', 'Lighting Design Fees, Female')
-
-    data_table.new_column('number', 'Sound Design Fees, Male')
-    data_table.new_column('number', 'Sound Design Fees, Female')
-
-    data_table.new_column('number', 'Projection Design Fees, Male')
-    data_table.new_column('number', 'Projection Design Fees, Female')
-
-    scenic_male = Category.find(1).name + "Male"
-    scenic_female = Category.find(1).name + "Female"
-    costume_male = Category.find(2).name + "Male"
-    costume_female = Category.find(2).name + "Female"
-    lighting_male = Category.find(3).name + "Male"
-    lighting_female = Category.find(3).name + "Female"
-    sound_male = Category.find(4).name + "Male"
-    sound_female = Category.find(4).name + "Female"
-    projection_male = Category.find(5).name + "Male"
-    projection_female = Category.find(5).name + "Female"
+    male = category.name + "Male"
+    female = category.name + "Female"
 
     fees = {
-      scenic_male => {},
-      scenic_female => {},
-      costume_male => {},
-      costume_female => {},
-      lighting_male => {},
-      lighting_female => {},
-      sound_male => {},
-      sound_female => {},
-      projection_male => {},
-      projection_female => {}
+      male => {},
+      female => {}
     }
 
     sorted_contracts.each do |contract|
