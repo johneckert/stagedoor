@@ -30,15 +30,9 @@ font-family: 'Reem Kufi', sans-serif;
   list-style-type: none;
 }
 
-.logo_reg {
-  font-family: 'Syncopate', sans-serif;
+.logo {
+font-family: 'Julius Sans One', sans-serif;
   font-weight: bolder;
   color: white;
 
-}
-
-.logo_invert {
-  font-family: 'Syncopate', sans-serif;
-  font-weight: bolder;
-  color: orange;
 }
