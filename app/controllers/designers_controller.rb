@@ -153,12 +153,11 @@ class DesignersController < ApplicationController
     year = start_year
 
     while year <= end_year do
-
-      data_table.add_row(
-        [
-        year.to_s,
-        fees.each{|stat_cat| avg(fees[stat_cat][year.to_s])}
-      ])
+      row = [year.to_s]
+      fees.each do |stat_category|
+        row << avg(fees[stat_category[0]][year.to_s])
+      end
+      data_table.add_row(row)
       year +=1
     end unless year == nil
 
