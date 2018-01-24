@@ -1,4 +1,4 @@
-<h1>Analytics for <%= @location.name %></h1>
+<h2>Analytics for <%= @location.name %></h2>
     <div class="fee_data">
       <p>Average Fee: <%= cons_mean_fee(@location_contracts) %> | Lowest Fee: <%= cons_min_fee(@location_contracts)%> | Highest Fee: <%= cons_max_fee(@location_contracts)%> | Median Fee: <%= cons_median_fee(@location_contracts) %> | Most Frequent: <%= cons_mode_fee(@location_contracts) %></p>
     </div>

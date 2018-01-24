@@ -1,25 +1,24 @@
 <% if !current_user %>
-  <h2><%= "fuck you log in" %></h2>
+  <h2><%= "Please log in" %></h2>
 <% else %>
-  <h4><%= "Welcome home!" %></h4>
+  <h2><%= "#{current_user.username}'s Contracts" %></h2>
+  <ul>
+    <li><%= link_to "New Contract", new_contract_path %></li>
+    <li><%= link_to "View My Contracts", contracts_path %></li>
+  </ul>
 
-  <%= link_to "New Contract", new_contract_path %><br />
-  <%= link_to "View My Contracts", contracts_path %><br />
-
-  <h5>View Analytics</h5>
-
-  View by company:
-  <%= form_tag analytics_select_path do %>
-    <%= select_tag "company", options_from_collection_for_select(@companies, "id", "name")%>
-    <%= submit_tag "Go!"%>
-  <% end %><br />
-
-  View by location:
-  <%= form_tag analytics_select_path do %>
-    <%= select_tag "location", options_from_collection_for_select(@locations, "id", "name")%>
-    <%= submit_tag "Go!"%>
-  <% end %><br />
-
-  <%= link_to "View all", designers_path %>
-
+  <h2>View Analytics</h2>
+  <ul>
+    <li>View by company:
+      <%= form_tag analytics_select_path do %>
+        <%= select_tag "company", options_from_collection_for_select(@companies, "id", "name")%>
+        <%= submit_tag "Go!"%>
+      <% end %></li>
+    <li>View by location:
+      <%= form_tag analytics_select_path do %>
+        <%= select_tag "location", options_from_collection_for_select(@locations, "id", "name")%>
+        <%= submit_tag "Go!"%>
+      <% end %></li>
+    <li><%= link_to "View all", designers_path %></li>
+  </ul>
 <% end %>

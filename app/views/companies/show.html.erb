@@ -1,10 +1,10 @@
-<h1>Analytics for <%= @company.name %></h1>
+<h2>Analytics for <%= @company.name %></h2>
 <% @venues.each_with_index do |ven, i| %>
   <div class="venue_data">
-    <h2><%= ven.name %></h2>
-    <p><%= ven.location.name %></p>
+    <h3><%= ven.name %></h3>
+    <p class="location"><%= ven.location.name %></p>
     <div class="fee_data">
-      <p>Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
+      <p class="stats">Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
     </div>
       <div id="chart_<%= ven.id %>"></div>
       <%= render_chart(@charts[ven.id], "chart_#{ven.id}") %>
