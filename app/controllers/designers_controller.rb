@@ -5,8 +5,8 @@ class DesignersController < ApplicationController
   def index
     @designers = Designer.all
     @all_chart = generate_all_designers_graph
-    @gender_scenic_chart = generate_gender_graph(Category.find(1))
-    @gender_costume_chart = generate_gender_graph(Category.find(2))
+    @gender_scenic_chart = generate_gender_graph(Category.find(1), "gender")
+    @gender_costume_chart = generate_gender_graph(Category.find(2), "gender")
     @gender_lighting_chart = generate_gender_graph(Category.find(3))
     @gender_sound_chart = generate_gender_graph(Category.find(4))
     @gender_projection_chart = generate_gender_graph(Category.find(5))
@@ -88,7 +88,7 @@ class DesignersController < ApplicationController
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def generate_gender_graph(category)
+  def generate_gender_graph(category, stat)
     all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
     selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
     sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
@@ -96,16 +96,43 @@ class DesignersController < ApplicationController
     data_table = GoogleVisualr::DataTable.new
     data_table.new_column('string', 'Year' )
 
-    data_table.new_column('number', "#{category.name} Fees, Male")
-    data_table.new_column('number', "#{category.name} Fees, Female")
+    if stat == "gender"
+      data_table.new_column('number', "#{category.name} Fees, Male")
+      data_table.new_column('number', "#{category.name} Fees, Female")
 
-    male_category = category.name + "Male"
-    female_category = category.name + "Female"
+      male_category = category.name + "Male"
+      female_category = category.name + "Female"
 
-    fees = {
-      male_category => {},
-      female_category => {}
-    }
+      fees = {
+        male_category => {},
+        female_category => {}
+      }
+
+    elsif stat == "ethnicity"
+      data_table.new_column('number', "#{category.name} Fees, Asian/Indian subcontinent")
+      data_table.new_column('number', "#{category.name} Fees, Black")
+      data_table.new_column('number', "#{category.name} Fees, Hispanic")
+      data_table.new_column('number', "#{category.name} Fees, Native American")
+      data_table.new_column('number', "#{category.name} Fees, Pacific Islander")
+      data_table.new_column('number', "#{category.name} Fees, White")
+      data_table.new_column('number', "#{category.name} Fees, Other")
+
+      asian_category = category.name + "Asian"
+      black_category = category.name + "Black"
+      hispanic_category = category.name + "Hispanic"
+      native_category = category.name + "Native"
+      pacific_category = category.name + "Pacific"
+      white_category = category.name + "White"
+      other_category = category.name + "Other"
+
+      male_category = category.name + "Male"
+      female_category = category.name + "Female"
+
+      fees = {
+        male_category => {},
+        female_category => {}
+      }
+    end
 
     sorted_contracts.each do |contract|
       year = contract.opening_date.year.to_s
