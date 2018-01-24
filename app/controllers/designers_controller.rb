@@ -90,7 +90,8 @@ class DesignersController < ApplicationController
 
   def generate_gender_graph(category)
     all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
-    sorted_contracts = all_contracts.sort_by{|contract| contract.opening_date}
+    selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
+    sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
 
     data_table = GoogleVisualr::DataTable.new
     data_table.new_column('string', 'Year' )
@@ -98,19 +99,19 @@ class DesignersController < ApplicationController
     data_table.new_column('number', "#{category.name} Fees, Male")
     data_table.new_column('number', "#{category.name} Fees, Female")
 
-    male = category.name + "Male"
-    female = category.name + "Female"
+    male_category = category.name + "Male"
+    female_category = category.name + "Female"
 
     fees = {
-      male => {},
-      female => {}
+      male_category => {},
+      female_category => {}
     }
 
     sorted_contracts.each do |contract|
       year = contract.opening_date.year.to_s
-      category = contract.categories.first.name + contract.designer.gender
-      fees[category][year] == nil ? fees[category][year] = [] : true
-      fees[category][year] << contract.fee
+      key = category.name + contract.designer.gender
+      fees[key][year] == nil ? fees[key][year] = [] : true
+      fees[key][year] << contract.fee
     end
 
     start_year = sorted_contracts.map{|con| con.opening_date.year}.min
@@ -122,21 +123,13 @@ class DesignersController < ApplicationController
       data_table.add_row(
         [
         i.to_s,
-        avg(fees[scenic_male][i.to_s]),
-        avg(fees[scenic_female][i.to_s]),
-        avg(fees[costume_male][i.to_s]),
-        avg(fees[costume_female][i.to_s]),
-        avg(fees[lighting_male][i.to_s]),
-        avg(fees[lighting_female][i.to_s]),
-        avg(fees[sound_male][i.to_s]),
-        avg(fees[sound_female][i.to_s]),
-        avg(fees[projection_male][i.to_s]),
-        avg(fees[projection_female][i.to_s])
+        avg(fees[male_category][i.to_s]),
+        avg(fees[female_category][i.to_s]),
       ])
       i +=1
     end unless i == nil
 
-    option = { width: 1000, height: 500, title: 'Average Fees over Time'}
+    option = { width: 1000, height: 240, title: "Average #{category.name} Fees over Time"}
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
