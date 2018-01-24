@@ -4,8 +4,37 @@ class DesignersController < ApplicationController
 
   def index
     @designers = Designer.all
+    @all_chart = generate_all_designers_graph
+    @gender_scenic_chart = generate_gender_graph(Category.find(1))
+    @gender_costume_chart = generate_gender_graph(Category.find(2))
+    @gender_lighting_chart = generate_gender_graph(Category.find(3))
+    @gender_sound_chart = generate_gender_graph(Category.find(4))
+    @gender_projection_chart = generate_gender_graph(Category.find(5))
+  end
 
-    all_contracts = @designers.map{|designer| designer.contracts}.flatten
+  def new
+    @designer = Designer.new
+  end
+
+  def create
+    designer_check = Designer.new(designer_params).save
+    if designer_check
+      @designer = Designer.last
+      session[:designer_id] = @designer.id
+      redirect_to root_path
+    else
+      redirect_to new_designer_path
+    end
+  end
+
+  def designer_params
+    params.require(:designer).permit(:username, :gender, :ethnicity, :birth_year, :password, :password_confirmation)
+  end
+
+  private
+
+  def generate_all_designers_graph
+    all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
     sorted_contracts = all_contracts.sort_by{|contract| contract.opening_date}
 
     data_table = GoogleVisualr::DataTable.new
@@ -55,30 +84,61 @@ class DesignersController < ApplicationController
       i +=1
     end unless i == nil
 
-    option = { width: 600, height: 240, title: 'Average Fees over Time'}
-    @chart = GoogleVisualr::Interactive::LineChart.new(data_table, option)
+    option = { width: 1000, height: 240, title: 'Average Fees over Time'}
+    GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def new
-    @designer = Designer.new
-  end
+  def generate_gender_graph(category)
+    all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
+    selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
+    sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
 
-  def create
-    designer_check = Designer.new(designer_params).save
-    if designer_check
-      @designer = Designer.last
-      session[:designer_id] = @designer.id
-      redirect_to root_path
-    else
-      redirect_to new_designer_path
+    data_table = GoogleVisualr::DataTable.new
+    data_table.new_column('string', 'Year' )
+
+    data_table.new_column('number', "#{category.name} Fees, Male")
+    data_table.new_column('number', "#{category.name} Fees, Female")
+
+    male_category = category.name + "Male"
+    female_category = category.name + "Female"
+
+    fees = {
+      male_category => {},
+      female_category => {}
+    }
+
+    sorted_contracts.each do |contract|
+      year = contract.opening_date.year.to_s
+      key = category.name + contract.designer.gender
+      fees[key][year] == nil ? fees[key][year] = [] : true
+      fees[key][year] << contract.fee
     end
+
+    start_year = sorted_contracts.map{|con| con.opening_date.year}.min
+    end_year = sorted_contracts.map{|con| con.opening_date.year}.max
+    i = start_year
+
+    while i <= end_year do
+
+      data_table.add_row(
+        [
+        i.to_s,
+        avg(fees[male_category][i.to_s]),
+        avg(fees[female_category][i.to_s]),
+      ])
+      i +=1
+    end unless i == nil
+
+    option = { width: 1000, height: 240, title: "Average #{category.name} Fees over Time"}
+    GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def designer_params
-    params.require(:designer).permit(:username, :gender, :ethnicity, :birth_year, :password, :password_confirmation)
+  def generate_ethnicity_graph
+
   end
 
-  private
+  def generate_age_graph
+  end
 
   def avg(num_array)
     if num_array == nil
