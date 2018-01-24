@@ -16,7 +16,7 @@ class ContractsController < ApplicationController
     contract_type.each do |h|
       data_table.add_rows([h])
     end
-    opts   = { :width => 400, :height => 240, :title => 'My Daily Activities', :is3D => true }
+    opts   = { :width => 400, :height => 240, :title => 'Contract Overview', :is3D => true }
     @piechart = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
 
     #line chart of fee over time
@@ -29,7 +29,7 @@ class ContractsController < ApplicationController
       data_table.add_rows([[k, v]])
     end
 
-    option = { width: 600, height: 240, title: 'Company Performance' }
+    option = { width: 600, height: 240, title: 'Fee History' }
     @feechart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
 
   end
