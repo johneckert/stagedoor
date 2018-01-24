@@ -25,7 +25,9 @@
         <%= link_to "logout", logout_path, method: 'post', class: "nav-item nav_link" %>
         <% else %>
         <%= form_tag authenticate_path, method: 'post', html: {class: :login_form } do %>
-          <div class="col-sm-12"><%= label_tag :username %>: <%= text_field_tag :username %> <%= label_tag :password %>: <%= password_field_tag :password %><%= submit_tag "Login", id: "submit_button" %></div>
+          <div class="col-sm-12">
+            <%= label_tag :username %>: <%= text_field_tag :username %> <%= label_tag :password %>: <%= password_field_tag :password %><%= submit_tag "Login", id: "submit_button" %>
+          </div>
         <% end %>
         <% end %>
       </div>
