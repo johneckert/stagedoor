@@ -1,5 +1,7 @@
 <% if !current_user %>
-  <h2><%= "Please log in" %></h2>
+  <h2>Welcome to StageDoor.</h2>
+  <p>Curious about what you should be paid for your next gig? Want to know how a company pays its freelancers, or how it hires? Need to track your contracts across time, and see how you stack up?</p>
+  <p>Join StageDoor. Submit your information anonymously. Contribute to everyone's fair share.</p>
 <% else %>
   <h2><%= "#{current_user.username}'s Contracts" %></h2>
   <ul>
