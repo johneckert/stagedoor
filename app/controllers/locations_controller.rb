@@ -58,13 +58,4 @@ class LocationsController < ApplicationController
     @chart = GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  private
-
-  def avg(num_array)
-    if num_array == nil
-      return 0
-    else
-      num_array.inject(:+) / num_array.count
-    end
-  end
 end

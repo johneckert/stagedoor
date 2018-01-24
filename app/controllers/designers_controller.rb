@@ -5,16 +5,16 @@ class DesignersController < ApplicationController
   def index
     @designers = Designer.all
     @all_chart = generate_all_designers_graph
-    @gender_scenic_chart = generate_graph(Category.find(1), "gender")
-    @gender_costume_chart = generate_graph(Category.find(2), "gender")
-    @gender_lighting_chart = generate_graph(Category.find(3), "gender")
-    @gender_sound_chart = generate_graph(Category.find(4), "gender")
-    @gender_projection_chart = generate_graph(Category.find(5), "gender")
-    @ethnicity_scenic_chart = generate_graph(Category.find(1), "ethnicity")
-    @ethnicity_costume_chart = generate_graph(Category.find(2), "ethnicity")
-    @ethnicity_lighting_chart = generate_graph(Category.find(3), "ethnicity")
-    @ethnicity_sound_chart = generate_graph(Category.find(4), "ethnicity")
-    @ethnicity_projection_chart = generate_graph(Category.find(5), "ethnicity")
+    @gender_scenic_chart = generate_stat_graph(Category.find(1), "gender", Designer)
+    @gender_costume_chart = generate_stat_graph(Category.find(2), "gender", Designer)
+    @gender_lighting_chart = generate_stat_graph(Category.find(3), "gender", Designer)
+    @gender_sound_chart = generate_stat_graph(Category.find(4), "gender", Designer)
+    @gender_projection_chart = generate_stat_graph(Category.find(5), "gender", Designer)
+    @ethnicity_scenic_chart = generate_stat_graph(Category.find(1), "ethnicity", Designer)
+    @ethnicity_costume_chart = generate_stat_graph(Category.find(2), "ethnicity", Designer)
+    @ethnicity_lighting_chart = generate_stat_graph(Category.find(3), "ethnicity", Designer)
+    @ethnicity_sound_chart = generate_stat_graph(Category.find(4), "ethnicity", Designer)
+    @ethnicity_projection_chart = generate_stat_graph(Category.find(5), "ethnicity", Designer)
   end
 
   def new
@@ -94,80 +94,6 @@ class DesignersController < ApplicationController
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def generate_graph(category, stat)
-    all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
-    selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
-    sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
 
-    data_table = GoogleVisualr::DataTable.new
-    data_table.new_column('string', 'Year' )
-
-    if stat == "gender"
-      data_table.new_column('number', "Male")
-      data_table.new_column('number', "Female")
-
-      male_category = category.name + "Male"
-      female_category = category.name + "Female"
-
-      fees = {
-        male_category => {},
-        female_category => {}
-      }
-
-    elsif stat == "ethnicity"
-      data_table.new_column('number', "Asian/Indian subcontinent")
-      data_table.new_column('number', "Black")
-      data_table.new_column('number', "Hispanic")
-      data_table.new_column('number', "Native American")
-      data_table.new_column('number', "Pacific Islander")
-      data_table.new_column('number', "White")
-      data_table.new_column('number', "Other")
-
-      asian_category = category.name + "Asian/Indian subcontinent"
-      black_category = category.name + "Black"
-      hispanic_category = category.name + "Hispanic"
-      native_category = category.name + "Native American"
-      pacific_category = category.name + "Pacific Islander"
-      white_category = category.name + "White"
-      other_category = category.name + "Other"
-
-      fees = {
-        asian_category => {},
-        black_category => {},
-        hispanic_category => {},
-        native_category => {},
-        pacific_category => {},
-        white_category => {},
-        other_category => {}
-        }
-    end
-
-    sorted_contracts.each do |contract|
-      year = contract.opening_date.year.to_s
-      if stat == "gender"
-        key = category.name + contract.designer.gender
-      elsif stat == "ethnicity"
-        key = category.name + contract.designer.ethnicity
-      end
-      fees[key][year] == nil ? fees[key][year] = [] : true
-      fees[key][year] << contract.fee
-    end
-
-    start_year = sorted_contracts.map{|con| con.opening_date.year}.min
-    end_year = sorted_contracts.map{|con| con.opening_date.year}.max
-    year = start_year
-
-    while year <= end_year do
-      row = [year.to_s]
-      fees.each do |stat_category|
-        row << avg(fees[stat_category[0]][year.to_s])
-      end
-      data_table.add_row(row)
-      year +=1
-    end unless year == nil
-
-    option = { width: 1000, height: 240, title: "Average #{category.name} Fees over Time"}
-    GoogleVisualr::Interactive::LineChart.new(data_table, option)
-  end
 
 end
