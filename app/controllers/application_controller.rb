@@ -35,9 +35,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def generate_all_graph(klass)
-    all_contracts = klass.all.map{|designer| designer.contracts}.flatten
-    sorted_contracts = all_contracts.sort_by{|contract| contract.opening_date}
+  def generate_all_graph(contract_array)
+    sorted_contracts = contract_array.sort_by{|contract| contract.opening_date}
 
     data_table = GoogleVisualr::DataTable.new
     data_table.new_column('string', 'Year' )
@@ -90,9 +89,8 @@ class ApplicationController < ActionController::Base
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def generate_stat_graph(category, stat, klass)
-    all_contracts = klass.all.map{|designer| designer.contracts}.flatten
-    selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
+  def generate_stat_graph(category, stat, contract_array)
+    selected_contracts = contract_array.select{|contract| contract.categories.first == category}
     sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
 
     data_table = GoogleVisualr::DataTable.new
