@@ -3,7 +3,11 @@ module ContractsHelper
 
   def average_fee(user)
     fees = all_fees_for_user(user)
-    fees.sum / fees.length
+    if fees.length > 0
+      fees.sum / fees.length
+    else
+      "N/A"
+    end
   end
 
   def max_fee(user)
@@ -25,15 +29,7 @@ module ContractsHelper
   end
 
   def all_fees_for_user(user)
-    all_contracts_for_user(user).map {|c| c.fee}
+    user.contracts.map {|c| c.fee}
   end
 
-  def all_contracts_for_user(user)
-    users_contracts = []
-    Contract.all.each do |c|
-      if c.designer = user
-        users_contracts << c
-      end
-    end
-  end
 end
