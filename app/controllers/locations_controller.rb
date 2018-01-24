@@ -54,7 +54,7 @@ class LocationsController < ApplicationController
       i +=1
     end unless i == nil
 
-    option = { width: 600, height: 240, title: 'Average Fees over Time'}
+    option = { width: 1000, height: 240, title: 'Average Fees over Time'}
     @chart = GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
