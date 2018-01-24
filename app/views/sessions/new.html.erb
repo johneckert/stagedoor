@@ -1,9 +1,10 @@
 <%= render 'error' %>
-
-<%= form_tag authenticate_path, method: 'post' do %>
+<div class="login">
+<%= form_tag authenticate_path, method: 'post', html: {class: :login_form } do %>
   <%= label_tag :username %>: <%= text_field_tag :username %><br />
   <%= label_tag :password %>: <%= password_field_tag :password %><br />
   <%= submit_tag "Login" %>
 <% end %>
 
 <%= link_to "Create an Account", new_designer_path %>
+</div>
