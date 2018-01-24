@@ -5,11 +5,10 @@ class SessionsController < ApplicationController
     @designer = Designer.find_by(username: params[:username])
     if @designer && @designer.authenticate(params[:password])
       session[:designer_id] = @designer.id
-      redirect_to root_path
     else
       flash[:error] = ["Incorrect login."]
-      redirect_to login_path
     end
+    redirect_to root_path
   end
 
   def destroy
