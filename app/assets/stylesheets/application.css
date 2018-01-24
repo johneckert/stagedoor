@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Alef|Julius+Sans+One|Jura|Kanit|Montserrat+Alternates|Reem+Kufi|Syncopate');
+
+/*
+font-family: 'Kanit', sans-serif;
+font-family: 'Jura', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Alef', sans-serif;
+font-family: 'Syncopate', sans-serif;
+font-family: 'Reem Kufi', sans-serif;
+*/
+
+.nav_menu {
+  list-style-type: none;
+}
+
+.logo_reg {
+  font-family: 'Syncopate', sans-serif;
+  font-weight: bolder;
+  color: white;
+
+}
+
+.logo_invert {
+  font-family: 'Syncopate', sans-serif;
+  font-weight: bolder;
+  color: orange;
+}
