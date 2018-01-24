@@ -4,17 +4,18 @@ class DesignersController < ApplicationController
 
   def index
     @designers = Designer.all
-    @all_chart = generate_all_graph(Designer)
-    @gender_scenic_chart = generate_stat_graph(Category.find(1), "gender", Designer)
-    @gender_costume_chart = generate_stat_graph(Category.find(2), "gender", Designer)
-    @gender_lighting_chart = generate_stat_graph(Category.find(3), "gender", Designer)
-    @gender_sound_chart = generate_stat_graph(Category.find(4), "gender", Designer)
-    @gender_projection_chart = generate_stat_graph(Category.find(5), "gender", Designer)
-    @ethnicity_scenic_chart = generate_stat_graph(Category.find(1), "ethnicity", Designer)
-    @ethnicity_costume_chart = generate_stat_graph(Category.find(2), "ethnicity", Designer)
-    @ethnicity_lighting_chart = generate_stat_graph(Category.find(3), "ethnicity", Designer)
-    @ethnicity_sound_chart = generate_stat_graph(Category.find(4), "ethnicity", Designer)
-    @ethnicity_projection_chart = generate_stat_graph(Category.find(5), "ethnicity", Designer)
+    designer_contracts = Designer.all.map{|designer| designer.contracts}.flatten
+    @all_chart = generate_all_graph(designer_contracts)
+    @gender_scenic_chart = generate_stat_graph(Category.find(1), "gender", designer_contracts)
+    @gender_costume_chart = generate_stat_graph(Category.find(2), "gender", designer_contracts)
+    @gender_lighting_chart = generate_stat_graph(Category.find(3), "gender", designer_contracts)
+    @gender_sound_chart = generate_stat_graph(Category.find(4), "gender", designer_contracts)
+    @gender_projection_chart = generate_stat_graph(Category.find(5), "gender", designer_contracts)
+    @ethnicity_scenic_chart = generate_stat_graph(Category.find(1), "ethnicity", designer_contracts)
+    @ethnicity_costume_chart = generate_stat_graph(Category.find(2), "ethnicity", designer_contracts)
+    @ethnicity_lighting_chart = generate_stat_graph(Category.find(3), "ethnicity", designer_contracts)
+    @ethnicity_sound_chart = generate_stat_graph(Category.find(4), "ethnicity", designer_contracts)
+    @ethnicity_projection_chart = generate_stat_graph(Category.find(5), "ethnicity", designer_contracts)
   end
 
   def new
