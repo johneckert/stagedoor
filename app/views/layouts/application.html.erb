@@ -24,11 +24,15 @@
         <%= link_to "#{current_user.username}", root_path, class: "nav-item nav_link" %> |
         <%= link_to "logout", logout_path, method: 'post', class: "nav-item nav_link" %>
         <% else %>
-        <%= form_tag authenticate_path, method: 'post', html: {class: :login_form } do %>
-          <div class="col-sm-12">
-            <%= label_tag :username %>: <%= text_field_tag :username %> <%= label_tag :password %>: <%= password_field_tag :password %><%= submit_tag "Login", id: "submit_button" %>
-          </div>
-        <% end %>
+        <div class="login row">
+          <%= form_tag authenticate_path, method: 'post', html: {class: :login_form } do %>
+            <div class="col-sm-2 form-control-static"><%= label_tag :username %>:</div>
+            <div class="col-sm-3 form-control-static"><%= text_field_tag :username,"", class: "form-control" %></div>
+            <div class="col-sm-2 form-control-static"><%= label_tag :password %>:</div>
+            <div class="col-sm-3 form-control-static"><%= password_field_tag :password,"", class: "form-control" %></div>
+            <div class="col-sm-1 form-control-static"><%= submit_tag "Login", id: "submit_button", class: "btn btn-primary" %></div>
+          <% end %>
+        </div>
         <% end %>
       </div>
       <div class="container-fluid" id="logo_nav">
@@ -43,6 +47,7 @@
         </div>
       </div>
     </nav>
+      <%= render 'error' %>
       <%= yield %>
   </body>
 </html>
