@@ -3,9 +3,9 @@ class LocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
 
-    location_contracts = @location.venues.map{|venue| venue.contracts}.flatten
+    @location_contracts = @location.venues.map{|venue| venue.contracts}.flatten
 
-    sorted_location_contracts = location_contracts.sort_by{|contract| contract.opening_date}
+    sorted_location_contracts = @location_contracts.sort_by{|contract| contract.opening_date}
 
     data_table = GoogleVisualr::DataTable.new
     data_table.new_column('string', 'Year' )
