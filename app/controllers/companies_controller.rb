@@ -55,7 +55,7 @@ class CompaniesController < ApplicationController
           avg(fees[projection][i.to_s])
         ])
         i +=1
-      end
+      end unless i == nil
 
       option = { width: 600, height: 240, title: 'Company Performance'}
       @charts[ven.id] = GoogleVisualr::Interactive::LineChart.new(data_table, option)
