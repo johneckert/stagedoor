@@ -1,18 +1,17 @@
-<h1>Your Contracts:</h1>
+<h2>Your Contracts:</h2>
 <ul>
-  <%  current_user.contracts.each do |contract| %>
+  <% current_user.contracts.each do |contract| %>
     <li><%= link_to contract.show_name, edit_contract_path(contract) %> |
       <%= link_to contract.company.name, company_path(contract.company) %> |
-      $<%= contract.fee %>
-      </li>
+      $<%= contract.fee %></li>
   <% end %>
 </ul>
 
 <div id='pie_chart'></div>
   <%= render_chart @piechart, 'pie_chart' %>
 
-  <div id='fee_chart'></div>
-    <%= render_chart @feechart, 'fee_chart' %>
+<div id='fee_chart'></div>
+  <%= render_chart @feechart, 'fee_chart' %>
 
-<h4>Average Fee: <%= average_fee(current_user) %> | Lowest Fee: <%= min_fee(current_user) %> | Highest Fee: <%= max_fee(current_user) %>
-</h4>
+<p class="contract_data">Average Fee: <%= average_fee(current_user) %> | Lowest Fee: <%= min_fee(current_user) %> | Highest Fee: <%= max_fee(current_user) %>
+</p>
