@@ -17,6 +17,7 @@ class DesignersController < ApplicationController
   end
 
   def create
+    byebug
     designer_check = Designer.new(designer_params).save
     if designer_check
       @designer = Designer.last
@@ -28,7 +29,7 @@ class DesignersController < ApplicationController
   end
 
   def designer_params
-    params.require(:designer).permit(:username, :gender, :ethnicity, :birth_year, :password, :password_confirmation)
+    params.require(:designer).permit(:username, :gender, :birth_year, :password, :password_confirmation, ethnicity: [])
   end
 
   private
