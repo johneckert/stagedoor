@@ -14,25 +14,66 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Alef|Julius+Sans+One|Jura|Kanit|Montserrat+Alternates|Reem+Kufi|Syncopate');
+ body {
+     background-color: #f1f1f1;
+ }
 
-/*
-font-family: 'Kanit', sans-serif;
-font-family: 'Jura', sans-serif;
-font-family: 'Julius Sans One', sans-serif;
-font-family: 'Montserrat Alternates', sans-serif;
-font-family: 'Alef', sans-serif;
-font-family: 'Syncopate', sans-serif;
-font-family: 'Reem Kufi', sans-serif;
-*/
-
-.nav_menu {
-  list-style-type: none;
+#navigation,.navbar .navbar-default {
+  background-image: url("nav_image.jpg");
+  background-size: cover;
+  height: 500px;
+  color: white;
 }
 
-.logo {
-font-family: 'Julius Sans One', sans-serif;
-  font-weight: bolder;
-  color: white;
+#logo {
+font-family: "league-gothic", sans-serif;
+font-size: 300%;
+color: white;
+display: inline;
+padding: 0 0 0 50px;
+}
 
+#logo_image {
+  background-image: url("templogo.png");
+  background-size: cover;
+  width: 1%;
+  height: 1%;
+}
+
+#right_nav {
+  padding : 1% 1% 0 0;
+}
+
+#left_nav {
+  padding : 1% 0% 0 1%;
+}
+
+#logo_nav {
+  padding : 1% 0% 0 0%;
+}
+
+
+.logo_padding {
+  padding: 1% 5% 1% 2%;
+}
+
+.nav_link {
+  padding: 10px;
+  font-size: 120%;
+}
+
+.nav_link:link {
+  color:white;
+}
+
+.nav_link:visited {
+  color:white;
+}
+
+.nav_link:hover {
+  color:white;
+}
+
+.nav_link:active {
+  color:white;
 }
