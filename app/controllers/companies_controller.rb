@@ -7,58 +7,29 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @venues = @company.venues
-    @charts = {}
-
+    @all_charts = {}
+    @gender_scenic_charts = {}
+    @gender_costume_charts = {}
+    @gender_lighting_charts = {}
+    @gender_sound_charts = {}
+    @gender_projection_charts = {}
+    @ethnicity_scenic_charts = {}
+    @ethnicity_costume_charts = {}
+    @ethnicity_lighting_charts = {}
+    @ethnicity_sound_charts = {}
+    @ethnicity_projection_charts = {}
     @venues.each do |ven|
-      data_table = GoogleVisualr::DataTable.new
-      data_table.new_column('string', 'Year' )
-      data_table.new_column('number', 'Scenic Design Fees')
-      data_table.new_column('number', 'Costume Design Fees')
-      data_table.new_column('number', 'Lighting Design Fees')
-      data_table.new_column('number', 'Sound Design Fees')
-      data_table.new_column('number', 'Projection Design Fees')
-
-      scenic = Category.find(1)
-      costume = Category.find(2)
-      lighting = Category.find(3)
-      sound = Category.find(4)
-      projection = Category.find(5)
-
-      fees = {
-        scenic => {},
-        costume => {},
-        lighting => {},
-        sound => {},
-        projection => {}
-      }
-
-      ven.contracts.each do |contract|
-        year = contract.opening_date.year.to_s
-        category = contract.categories.first
-        fees[category][year] == nil ? fees[category][year] = [] : true
-        fees[category][year] << contract.fee
-      end
-
-      start_year = ven.contracts.map{|con| con.opening_date.year}.min
-      end_year = ven.contracts.map{|con| con.opening_date.year}.max
-      i = start_year
-
-      while i <= end_year do
-
-        data_table.add_row(
-          [
-          i.to_s,
-          avg(fees[scenic][i.to_s]),
-          avg(fees[costume][i.to_s]),
-          avg(fees[lighting][i.to_s]),
-          avg(fees[sound][i.to_s]),
-          avg(fees[projection][i.to_s])
-        ])
-        i +=1
-      end unless i == nil
-
-      option = { width: 1000, height: 240, title: 'Average Fees over Time'}
-      @charts[ven.id] = GoogleVisualr::Interactive::LineChart.new(data_table, option)
+      @all_charts[ven.id] = generate_all_graph(ven.contracts)
+      @gender_scenic_charts[ven.id] = generate_stat_graph(Category.find(1), "gender", ven.contracts)
+      @gender_costume_charts[ven.id] = generate_stat_graph(Category.find(2), "gender", ven.contracts)
+      @gender_lighting_charts[ven.id] = generate_stat_graph(Category.find(3), "gender", ven.contracts)
+      @gender_sound_charts[ven.id] = generate_stat_graph(Category.find(4), "gender", ven.contracts)
+      @gender_projection_charts[ven.id] = generate_stat_graph(Category.find(5), "gender", ven.contracts)
+      @ethnicity_scenic_charts[ven.id] = generate_stat_graph(Category.find(1), "ethnicity", ven.contracts)
+      @ethnicity_costume_charts[ven.id] = generate_stat_graph(Category.find(2), "ethnicity", ven.contracts)
+      @ethnicity_lighting_charts[ven.id] = generate_stat_graph(Category.find(3), "ethnicity", ven.contracts)
+      @ethnicity_sound_charts[ven.id] = generate_stat_graph(Category.find(4), "ethnicity", ven.contracts)
+      @ethnicity_projection_charts[ven.id] = generate_stat_graph(Category.find(5), "ethnicity", ven.contracts)
     end
   end
 
@@ -68,87 +39,4 @@ class CompaniesController < ApplicationController
     params.require(:company).permit(:name)
   end
 
-  def generate_graph(category, stat, class)
-    all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
-    selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
-    sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
-
-    data_table = GoogleVisualr::DataTable.new
-    data_table.new_column('string', 'Year' )
-
-    if stat == "gender"
-      data_table.new_column('number', "Male")
-      data_table.new_column('number', "Female")
-
-      male_category = category.name + "Male"
-      female_category = category.name + "Female"
-
-      fees = {
-        male_category => {},
-        female_category => {}
-      }
-
-    elsif stat == "ethnicity"
-      data_table.new_column('number', "Asian/Indian subcontinent")
-      data_table.new_column('number', "Black")
-      data_table.new_column('number', "Hispanic")
-      data_table.new_column('number', "Native American")
-      data_table.new_column('number', "Pacific Islander")
-      data_table.new_column('number', "White")
-      data_table.new_column('number', "Other")
-
-      asian_category = category.name + "Asian/Indian subcontinent"
-      black_category = category.name + "Black"
-      hispanic_category = category.name + "Hispanic"
-      native_category = category.name + "Native American"
-      pacific_category = category.name + "Pacific Islander"
-      white_category = category.name + "White"
-      other_category = category.name + "Other"
-
-      fees = {
-        asian_category => {},
-        black_category => {},
-        hispanic_category => {},
-        native_category => {},
-        pacific_category => {},
-        white_category => {},
-        other_category => {}
-        }
-    end
-
-    sorted_contracts.each do |contract|
-      year = contract.opening_date.year.to_s
-      if stat == "gender"
-        key = category.name + contract.designer.gender
-      elsif stat == "ethnicity"
-        key = category.name + contract.designer.ethnicity
-      end
-      fees[key][year] == nil ? fees[key][year] = [] : true
-      fees[key][year] << contract.fee
-    end
-
-    start_year = sorted_contracts.map{|con| con.opening_date.year}.min
-    end_year = sorted_contracts.map{|con| con.opening_date.year}.max
-    year = start_year
-
-    while year <= end_year do
-      row = [year.to_s]
-      fees.each do |stat_category|
-        row << avg(fees[stat_category[0]][year.to_s])
-      end
-      data_table.add_row(row)
-      year +=1
-    end unless year == nil
-
-    option = { width: 1000, height: 240, title: "Average #{category.name} Fees over Time"}
-    GoogleVisualr::Interactive::LineChart.new(data_table, option)
-  end
-
-  def avg(num_array)
-    if num_array == nil
-      return 0
-    else
-      num_array.inject(:+) / num_array.count
-    end
-  end
 end
