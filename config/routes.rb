@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :categories, only: []
   resources :designers, only: [:new, :create, :index]
 
-  get '/sessions/new', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'authenticate'
   post '/sessions/destroy', to: 'sessions#destroy', as: 'logout'
 end
