@@ -5,11 +5,16 @@ class DesignersController < ApplicationController
   def index
     @designers = Designer.all
     @all_chart = generate_all_designers_graph
-    @gender_scenic_chart = generate_gender_graph(Category.find(1), "gender")
-    @gender_costume_chart = generate_gender_graph(Category.find(2), "gender")
-    @gender_lighting_chart = generate_gender_graph(Category.find(3), "gender")
-    @gender_sound_chart = generate_gender_graph(Category.find(4), "gender")
-    @gender_projection_chart = generate_gender_graph(Category.find(5), "gender")
+    @gender_scenic_chart = generate_graph(Category.find(1), "gender")
+    @gender_costume_chart = generate_graph(Category.find(2), "gender")
+    @gender_lighting_chart = generate_graph(Category.find(3), "gender")
+    @gender_sound_chart = generate_graph(Category.find(4), "gender")
+    @gender_projection_chart = generate_graph(Category.find(5), "gender")
+    @ethnicity_scenic_chart = generate_graph(Category.find(1), "ethnicity")
+    @ethnicity_costume_chart = generate_graph(Category.find(2), "ethnicity")
+    @ethnicity_lighting_chart = generate_graph(Category.find(3), "ethnicity")
+    @ethnicity_sound_chart = generate_graph(Category.find(4), "ethnicity")
+    @ethnicity_projection_chart = generate_graph(Category.find(5), "ethnicity")
   end
 
   def new
@@ -89,7 +94,7 @@ class DesignersController < ApplicationController
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def generate_gender_graph(category, stat)
+  def generate_graph(category, stat)
     all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
     selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
     sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
@@ -98,8 +103,8 @@ class DesignersController < ApplicationController
     data_table.new_column('string', 'Year' )
 
     if stat == "gender"
-      data_table.new_column('number', "#{category.name} Fees, Male")
-      data_table.new_column('number', "#{category.name} Fees, Female")
+      data_table.new_column('number', "Male")
+      data_table.new_column('number', "Female")
 
       male_category = category.name + "Male"
       female_category = category.name + "Female"
@@ -110,13 +115,13 @@ class DesignersController < ApplicationController
       }
 
     elsif stat == "ethnicity"
-      data_table.new_column('number', "#{category.name} Fees, Asian/Indian subcontinent")
-      data_table.new_column('number', "#{category.name} Fees, Black")
-      data_table.new_column('number', "#{category.name} Fees, Hispanic")
-      data_table.new_column('number', "#{category.name} Fees, Native American")
-      data_table.new_column('number', "#{category.name} Fees, Pacific Islander")
-      data_table.new_column('number', "#{category.name} Fees, White")
-      data_table.new_column('number', "#{category.name} Fees, Other")
+      data_table.new_column('number', "Asian/Indian subcontinent")
+      data_table.new_column('number', "Black")
+      data_table.new_column('number', "Hispanic")
+      data_table.new_column('number', "Native American")
+      data_table.new_column('number', "Pacific Islander")
+      data_table.new_column('number', "White")
+      data_table.new_column('number', "Other")
 
       asian_category = category.name + "Asian/Indian subcontinent"
       black_category = category.name + "Black"
