@@ -1,4 +1,6 @@
-<h2>All Companies</h2>
+<h2>All Companies</h2><%= form_tag companies_path, method: 'get' do %>
+  <%= text_field_tag "search", nil, placeholder: "Search for a company" %>
+<% end %>
 <ul>
 <% @companies.each do |company| %>
 <li><p class ="theatre_name"><%= link_to company.name, company_path(company) %></p>
@@ -7,5 +9,9 @@
       <li><p class="venue_name"><%= venue.name %> | <%= venue.contract_type %></li></p>
     <% end %>
   </ul></li>
+<% end %>
+<br />
+<% if @companies.empty? %>
+  <%= "No companies matched your search query." %>
 <% end %>
 </ul>
