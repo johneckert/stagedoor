@@ -170,12 +170,4 @@ class DesignersController < ApplicationController
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def avg(num_array)
-    if num_array == nil
-      return 0
-    else
-      num_array.inject(:+) / num_array.count
-    end
-  end
-
 end

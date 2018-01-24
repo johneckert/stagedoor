@@ -68,7 +68,7 @@ class CompaniesController < ApplicationController
     params.require(:company).permit(:name)
   end
 
-  def generate_graph(category, stat)
+  def generate_graph(category, stat, class)
     all_contracts = Designer.all.map{|designer| designer.contracts}.flatten
     selected_contracts = all_contracts.select{|contract| contract.categories.first == category}
     sorted_contracts = selected_contracts.sort_by{|contract| contract.opening_date}
