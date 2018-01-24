@@ -8,5 +8,6 @@ class Designer < ApplicationRecord
   validates :username, presence: true
   validates :password_digest, presence: true
   validates :birth_year, presence: true
+  validates :ethnicity, presence: true
   # Birth Year cant be greater than Time.now or less than 1900 or something, as well as show date
 end
