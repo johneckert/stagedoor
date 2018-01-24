@@ -170,13 +170,6 @@ class DesignersController < ApplicationController
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
-  def generate_ethnicity_graph
-
-  end
-
-  def generate_age_graph
-  end
-
   def avg(num_array)
     if num_array == nil
       return 0
