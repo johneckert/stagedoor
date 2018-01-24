@@ -23,15 +23,14 @@ class DesignersController < ApplicationController
   end
 
   def create
-    byebug
     designer_check = Designer.new(designer_params).save
+    @designer = Designer.last
     if designer_check
-      @designer = Designer.last
       session[:designer_id] = @designer.id
-      redirect_to root_path
     else
-      redirect_to new_designer_path
+      flash[:error] = @designer.errors.full_messages
     end
+    redirect_to root_path
   end
 
   def designer_params

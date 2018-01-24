@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   def index
     @companies = Company.all
     @locations = Location.all
+    @designer = Designer.new
   end
 
   def analytics_select
