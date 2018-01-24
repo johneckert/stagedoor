@@ -1,11 +1,15 @@
-<%= render 'error' %>
 <div class="container-fluid login">
   <div class="row">
     <%= form_tag authenticate_path, method: 'post', html: {class: :login_form } do %>
       <div class="col-sm-3"></div>
-      <div class="col-sm-5"><%= label_tag :username %>: <%= text_field_tag :username %>   <%= label_tag :password %>: <%= password_field_tag :password %><%= submit_tag "Login" %></div>
+      <div class="col-sm-5"><%= label_tag :username %>: <%= text_field_tag :username %>   <%= label_tag :password %>: <%= password_field_tag :password %><%= submit_tag "Login", id: "submit_button" %></div>
     <% end %>
-    <div class="col-sm-2"><%= link_to "Create an Account", new_designer_path %></div>
+    <div class="col-sm-2"><%= button_to "Create an Account", new_designer_path, class: "new_user_link" %></div>
     <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-6"><%= render 'error' %></div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
