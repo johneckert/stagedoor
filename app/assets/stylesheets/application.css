@@ -18,6 +18,25 @@
      background-color: #f1f1f1;
  }
 
+
+
+ a:link {
+   color:black;
+ }
+
+ a:visited {
+   color:black;
+ }
+
+ a:hover {
+   color:black;
+ }
+
+ a:active {
+   color:black;
+ }
+
+
  .login {
    color: white;
  }
@@ -56,9 +75,24 @@
 
 .padding_row {
   padding-top: 30px;
+}
+
+.white {
   background-color: white;
 }
 
+.fill_div {
+  color: white;
+}
+
+.contract_data {
+  font-weight: bold;
+}
+
+.pitch {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
 
                                       /* NAVIGATION */
 

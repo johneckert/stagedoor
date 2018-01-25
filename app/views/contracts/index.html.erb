@@ -1,19 +1,26 @@
 <div class="row">
-   <div class="col-sm-12 padding_row"></div>
+   <div class="col-sm-12 padding_row white"></div>
+</div>
+<div class="row">
+  <div class="col-sm-1 white fill_div"><h2>_</h2></div>
+  <div class="col-sm-11 white">
+     <h2>Your Contracts:</h2>
+   </div>
 </div>
 <div class="row">
   <div class="col-sm-1 contract_list_tile"></div>
   <div class="col-sm-4 contract_list_tile">
-    <h2>Your Contracts:</h2>
     <p class="contract_data">Average Fee: $<%= average_fee(current_user) %> | Lowest Fee: $<%= min_fee(current_user) %> | Highest Fee: $<%= max_fee(current_user) %></p>
-    <ul>
+    <table>
       <% current_user.contracts.each do |contract| %>
-        <li><%= link_to contract.show_name, edit_contract_path(contract) %> |
-          <%= link_to contract.company.name, company_path(contract.company) %> |
-          $<%= contract.fee %></li>
+      <tr>
+        <td><%= link_to contract.show_name, edit_contract_path(contract) %></td>
+        <td><%= link_to contract.company.name, company_path(contract.company) %></td>
+        <td>$<%= contract.fee %></td>
+        </tr>
       <% end %>
-    </ul>
-     <large><%= link_to "Create New Contract", new_contract_path %></large>
+    </table>
+     <h3><%= link_to "Create New Contract", new_contract_path %></h3>
   </div>
   <div class="col-sm-1 contract_list_tile"></div>
   <div class="col-sm-6 contract_line_tile">
