@@ -63,6 +63,9 @@ random_date = DateTime.new(year,month,day)
   month = [*01..12].sample
   random_date = DateTime.new(year,month,day)
 
-
   contract = Contract.create(venue_id: [*1..159].sample, fee: [*1500..5000].sample, opening_date: random_date, musical: [true, false].sample, designer_id: [*1..100].sample, show_name: plays.sample)
+
+  contract.categories << Category.find([*1..5].sample)
+
+  contract.save
 }
