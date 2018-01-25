@@ -1,4 +1,5 @@
 class ContractsController < ApplicationController
+  before_action
 
   def index
     data_table = GoogleVisualr::DataTable.new
