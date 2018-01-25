@@ -1,4 +1,5 @@
 require 'csv'
+require 'faker'
 
 #create design categories
 scenic = Category.find_or_create_by(name: "Scenic Design")
@@ -30,3 +31,20 @@ theatre_data.each do |theatre_hash|
   venue.location = location
   venue.save
 end
+
+#make some users
+eth = ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"]
+
+gen = ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer']
+birth_year = [*1950..1995]
+
+100.times {designer = Designer.create(username: Faker::Simpsons.character, gender: gen.sample, birth_year: birth_year.sample, password: "password", ethnicity: eth.sample )}
+
+#make some contracts
+year = [*1996..2017].sample
+day = [*01..28].sample
+month = [*01..12].sample
+random_date = Date.new(year,month,day)
+########DATETIME GENERATION DOESNT WORK!!!!!!!!!
+
+contract = Contract.create(venue_id: [1..159].sample, fee: [1500..5000], opening_date: random_date, musical: [true, false].sample, designer_id: [1..100], show_name: Faker::Book.title)
