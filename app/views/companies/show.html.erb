@@ -4,56 +4,117 @@
     <h2>Analytics for <%= @company.name %></h2>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-1"></div>
-  <div class="container col-sm-8 venue_info_show">
-    <% @venues.each_with_index do |ven, i| %>
-      <div class="venue_data">
-        <h3 class="venue_location"><%= ven.name %> | <%= ven.location.name %></h3>
-        <div class="fee_data">
-          <p class="stats">Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
-        </div>
-        <div class="padding_row"></div>
-        <h4>Design Category</h4>
-
-          <div id="all_charts_<%= ven.id %>"></div>
-          <%= render_chart(@all_charts[ven.id], "all_charts_#{ven.id}") %>
-
-          <h4>Gender</h4>
-
-          <div id="gender_scenic_charts_<%= ven.id %>"></div>
-          <%= render_chart(@gender_scenic_charts[ven.id], "gender_scenic_charts_#{ven.id}") %>
-
-          <div id="gender_costume_charts_<%= ven.id %>"></div>
-          <%= render_chart(@gender_costume_charts[ven.id], "gender_costume_charts_#{ven.id}") %>
-
-          <div id="gender_lighting_charts_<%= ven.id %>"></div>
-          <%= render_chart(@gender_lighting_charts[ven.id], "gender_lighting_charts_#{ven.id}") %>
-
-          <div id="gender_sound_charts_<%= ven.id %>"></div>
-          <%= render_chart(@gender_sound_charts[ven.id], "gender_sound_charts_#{ven.id}") %>
-
-          <div id="gender_projection_charts_<%= ven.id %>"></div>
-          <%= render_chart(@gender_projection_charts[ven.id], "gender_projection_charts_#{ven.id}") %>
-
-          <h4>Ethnicity</h4>
-
-          <div id="ethnicity_scenic_charts_<%= ven.id %>"></div>
-          <%= render_chart(@ethnicity_scenic_charts[ven.id], "ethnicity_scenic_charts_#{ven.id}") %>
-
-          <div id="ethnicity_costume_charts_<%= ven.id %>"></div>
-          <%= render_chart(@ethnicity_costume_charts[ven.id], "ethnicity_costume_charts_#{ven.id}") %>
-
-          <div id="ethnicity_lighting_charts_<%= ven.id %>"></div>
-          <%= render_chart(@ethnicity_lighting_charts[ven.id], "ethnicity_lighting_charts_#{ven.id}") %>
-
-          <div id="ethnicity_sound_charts_<%= ven.id %>"></div>
-          <%= render_chart(@ethnicity_sound_charts[ven.id], "ethnicity_sound_charts_#{ven.id}") %>
-
-          <div id="ethnicity_projection_charts_<%= ven.id %>"></div>
-          <%= render_chart(@ethnicity_projection_charts[ven.id], "ethnicity_projection_charts_#{ven.id}") %>
-        </div>
-    <% end %>
+  <% @venues.each_with_index do |ven, i| %>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="container col-sm-8 white_bg">
+      <h3 class="grey"><%= ven.name %> | <%= ven.location.name %></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="container col-sm-8 white_bg">
+      <p class="stats">Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
+    </div>
+  </div>
+  <div class="padding_row"></div>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="container col-sm-8 white_bg">
+      <h4 class="grey">Design Category</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="container col-sm-8 white_bg">
+      <div id="all_charts_<%= ven.id %>"></div>
+      <%= render_chart(@all_charts[ven.id], "all_charts_#{ven.id}") %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="container col-sm-8 white_bg">
+      <h4 class="grey">Gender</h4>
+    </div>
   </div>
 
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="container col-sm-8 white_bg">
+        <div id="gender_scenic_charts_<%= ven.id %>"></div>
+        <%= render_chart(@gender_scenic_charts[ven.id], "gender_scenic_charts_#{ven.id}") %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="gender_costume_charts_<%= ven.id %>"></div>
+        <%= render_chart(@gender_costume_charts[ven.id], "gender_costume_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="gender_lighting_charts_<%= ven.id %>"></div>
+        <%= render_chart(@gender_lighting_charts[ven.id], "gender_lighting_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="gender_sound_charts_<%= ven.id %>"></div>
+        <%= render_chart(@gender_sound_charts[ven.id], "gender_sound_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="gender_projection_charts_<%= ven.id %>"></div>
+        <%= render_chart(@gender_projection_charts[ven.id], "gender_projection_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <h4 class="grey">Ethnicity</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="ethnicity_scenic_charts_<%= ven.id %>"></div>
+        <%= render_chart(@ethnicity_scenic_charts[ven.id], "ethnicity_scenic_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="ethnicity_costume_charts_<%= ven.id %>"></div>
+        <%= render_chart(@ethnicity_costume_charts[ven.id], "ethnicity_costume_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="ethnicity_lighting_charts_<%= ven.id %>"></div>
+        <%= render_chart(@ethnicity_lighting_charts[ven.id], "ethnicity_lighting_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="ethnicity_sound_charts_<%= ven.id %>"></div>
+        <%= render_chart(@ethnicity_sound_charts[ven.id], "ethnicity_sound_charts_#{ven.id}") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="container col-sm-8 white_bg">
+        <div id="ethnicity_projection_charts_<%= ven.id %>"></div>
+        <%= render_chart(@ethnicity_projection_charts[ven.id], "ethnicity_projection_charts_#{ven.id}") %>
+      </div>
+    </div>
+  <% end %>
+  </div>
 </div>
