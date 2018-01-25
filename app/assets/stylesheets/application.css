@@ -34,7 +34,7 @@
 }
 
 .contract_list_tile {
-  margin: 0 0 0 50px;
+  /* margin: 0 0 0 50px; */
   background-color: white;
   height: 400px;
 }
@@ -51,9 +51,13 @@
 
 .contract_list_tile ul {
   list-style-type: none;
-  margin-left: -25px;
+  /* margin-left: -25px; */
 }
 
+.padding_row {
+  padding-top: 30px;
+  background-color: white;
+}
 
 
                                       /* NAVIGATION */
