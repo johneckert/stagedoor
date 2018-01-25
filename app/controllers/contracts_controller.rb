@@ -2,36 +2,54 @@ class ContractsController < ApplicationController
   before_action
 
   def index
-    data_table = GoogleVisualr::DataTable.new
+    data_table_a = GoogleVisualr::DataTable.new
+    data_table_b = GoogleVisualr::DataTable.new
+    data_table_c = GoogleVisualr::DataTable.new
     contract_type = Hash.new(0)
     fees_by_date = Hash.new
+    category = Hash.new(0)
+
     current_user.contracts.map do |con|
       contract_type[con.venue.contract_type] += 1
       fees_by_date[con.opening_date] = con.fee
+      con.categories.each do |cat|
+        category[cat.name] += 1
+      end
     end
+
+    #bar chart of category type
+    data_table_a.new_column('string', 'Category')
+    data_table_a.new_column('number', 'Number of Contracts')
+    data_table_a.add_rows(category.keys.count)
+    category.each do |h|
+      data_table_a.add_rows([h])
+    end
+    opts_a   = { :width => 600, :height => 360, :title => 'Category Breakdown', :is3D => true}
+    @barchart = GoogleVisualr::Interactive::BarChart.new(data_table_a, opts_a)
+
 
     #pie chart of contract type
-    data_table.new_column('string', 'Contract Type')
-    data_table.new_column('number', 'Number of Contracts')
-    data_table.add_rows(contract_type.keys.count)
+    data_table_b.new_column('string', 'Contract Type')
+    data_table_b.new_column('number', 'Number of Contracts')
+    data_table_b.add_rows(contract_type.keys.count)
     contract_type.each do |h|
-      data_table.add_rows([h])
+      data_table_b.add_rows([h])
     end
-    opts   = { :width => 400, :height => 240, :title => 'Contract Overview', :is3D => true }
-    @piechart = GoogleVisualr::Interactive::PieChart.new(data_table, opts)
+    opts_b   = { :width => 600, :height => 360, :title => 'Contract Overview', :is3D => true }
+    @piechart = GoogleVisualr::Interactive::PieChart.new(data_table_b, opts_b)
 
     #line chart of fee over time
-    data_table = GoogleVisualr::DataTable.new
-    data_table.new_column('date', 'Date' )
-    data_table.new_column('number', 'Fee')
+    data_table_c = GoogleVisualr::DataTable.new
+    data_table_c.new_column('date', 'Date' )
+    data_table_c.new_column('number', 'Fee')
 
     sorted_fees = fees_by_date.sort
     sorted_fees.each do |k,v|
-      data_table.add_rows([[k, v]])
+      data_table_c.add_rows([[k, v]])
     end
 
-    option = { width: 600, height: 240, title: 'Fee History' }
-    @feechart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+    option_c = { width: 600, height: 240, title: 'Fee History' }
+    @feechart = GoogleVisualr::Interactive::AreaChart.new(data_table_c, option_c)
 
   end
 
