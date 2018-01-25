@@ -1,17 +1,47 @@
-<h2>All Companies</h2><%= form_tag companies_path, method: 'get' do %>
-  <%= text_field_tag "search", nil, placeholder: "Search for a company" %>
-<% end %>
-<ul>
-<% @companies.each do |company| %>
-<li><p class ="theatre_name"><%= link_to company.name, company_path(company) %></p>
-  <ul>
-    <% company.venues.each do |venue| %>
-      <li><p class="venue_name"><%= venue.name %> | <%= venue.contract_type %></li></p>
+<div class="padding_row"></div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-3">
+    <%= form_tag companies_path, method: 'get' do %>
+      <%= text_field_tag "search", nil, placeholder: "Search for a company", class: "form-control" %>
     <% end %>
-  </ul></li>
-<% end %>
-<br />
-<% if @companies.empty? %>
-  <%= "No companies matched your search query." %>
-<% end %>
-</ul>
+  </div>
+</div>
+
+<div class="padding_row"></div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-3">
+    <h2>All Companies</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <ul>
+      <li>
+        <% @companies.each do |company| %>
+          <h4 class ="theatre_name"><%= link_to company.name, company_path(company) %></h4>
+          <table>
+            <% company.venues.each do |venue| %>
+              <tr>
+                <td class="company_table_name_cell"><%= venue.name %></td>
+                <td class="company_table_contract_cell"><%= venue.contract_type %></td>
+              </tr>
+            <% end %>
+          </table>
+          <br />
+        <% end %>
+      </li>
+
+        <% if @companies.empty? %>
+          <li>
+            <%= "No companies matched your search query." %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+</div>
