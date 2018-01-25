@@ -19,7 +19,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
+  def contract_mapper(venues_or_designers)
+    venues_or_designers.map{|model| model.contracts}.flatten
+  end
+
+  def analytics
+    @designers = Designer.all
+    @contracts = Contract.all
+    @companies = Company.all
+    @locations = Location.all
+    @busy_location = @locations.max_by{|loc| contract_mapper(loc.venues).count}
+    @slow_location = @locations.min_by{|loc| contract_mapper(loc.venues).count}
+    @busy_company = @companies.max_by{|company| contract_mapper(company.venues).count}
+    @slow_company = @companies.min_by{|company| contract_mapper(company.venues).count}
+  end
 
   def logged_in?
     current_user ? true : redirect_to(root_path)

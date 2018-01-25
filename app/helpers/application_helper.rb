@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def contract_mapper(venues_or_designers)
+    venues_or_designers.map{|model| model.contracts}.flatten
+  end
+
   def cons_mean_fee(contracts)
     fees = all_fees(contracts)
     if fees.length > 0

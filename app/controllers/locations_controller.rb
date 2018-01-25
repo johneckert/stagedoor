@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :logged_in?
 
   def show
     @location = Location.find(params[:id])
