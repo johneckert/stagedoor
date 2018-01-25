@@ -57,4 +57,12 @@ day = [*01..28].sample
 month = [*01..12].sample
 random_date = DateTime.new(year,month,day)
 
-1000.times {contract = Contract.create(venue_id: [*1..159].sample, fee: [*1500..5000].sample, opening_date: random_date, musical: [true, false].sample, designer_id: [*1..100].sample, show_name: plays.sample)}
+1000.times {
+  year = [*1996..2017].sample
+  day = [*01..28].sample
+  month = [*01..12].sample
+  random_date = DateTime.new(year,month,day)
+
+
+  contract = Contract.create(venue_id: [*1..159].sample, fee: [*1500..5000].sample, opening_date: random_date, musical: [true, false].sample, designer_id: [*1..100].sample, show_name: plays.sample)
+}
