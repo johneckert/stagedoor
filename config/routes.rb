@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :categories, only: []
   resources :designers, only: [:create, :index]
 
+  get 'analytics', to: 'application#analytics'
+
   post '/sessions', to: 'sessions#create', as: 'authenticate'
   post '/sessions/destroy', to: 'sessions#destroy', as: 'logout'
 end

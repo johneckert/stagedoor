@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
-
+  before_action :logged_in?
+  
   def index
     if params[:search]
       query = "%" + params[:search] + "%"

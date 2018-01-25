@@ -11,7 +11,7 @@
 /test/version_tmp/
 /tmp/
 /db/development.sqlite3
-/log/*.log
+/log
 *.byebug_history
 
 # Used by dotenv library to load environment variables.

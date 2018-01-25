@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action
+  before_action :logged_in?
 
   def index
     data_table_a = GoogleVisualr::DataTable.new

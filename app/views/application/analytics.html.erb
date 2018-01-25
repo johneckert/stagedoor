@@ -1,0 +1,21 @@
+<h2>StageDoor Site Analytics</h2>
+
+<ul>
+  <li>Total number of designers on StageDoor: <%= @designers.count %></li><br />
+  <li>Total number of contracts on StageDoor: <%= @contracts.count %></li><br />
+  <li>Total number of companies on StageDoor: <%= @companies.count %></li><br />
+  <li>Total number of locations on StageDoor: <%= @locations.count %></li><br />
+
+  <li>Location with the most business: <%= @busy_location.name %>, with
+  <%= contract_mapper(@busy_location.venues).count %> contracts.</li><br />
+  <li>Location with the least business: <%= @slow_location.name %>, with
+  <%= contract_mapper(@slow_location.venues).count %> contracts.</li><br />
+
+  <li>Biggest company: <%= @busy_company.name %> with
+  <%= contract_mapper(@busy_company.venues).count %> contracts.</li><br />
+  <li>Smallest company: <%= @slow_company.name %>, with
+  <%= contract_mapper(@slow_company.venues).count %> contracts.</li><br />
+  <li>Best paying company: </li><br />
+  <li>Shitty cheapest company: </li><br />
+
+</ul>
