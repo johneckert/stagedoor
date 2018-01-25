@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :companies, only: [:index, :show]
   resources :locations, only: :show
   resources :categories, only: []
-  resources :designers, only: [:new, :create, :index]
+  resources :designers, only: [:create, :index]
 
   post '/sessions', to: 'sessions#create', as: 'authenticate'
   post '/sessions/destroy', to: 'sessions#destroy', as: 'logout'

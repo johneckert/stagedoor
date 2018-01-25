@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :avg, :generate_stat_graph
+  helper_method :current_user, :avg, :generate_stat_graph, :generate_all_graph
   helper :all
   before_action :logged_in?, except: :index
 
@@ -100,13 +100,20 @@ class ApplicationController < ActionController::Base
     if stat == "gender"
       data_table.new_column('number', "Male")
       data_table.new_column('number', "Female")
+      data_table.new_column('number', "Non-Binary")
+      data_table.new_column('number', "Prefer not to answer")
+
 
       male_category = category.name + "Male"
       female_category = category.name + "Female"
+      nb_category = category.name + "Non-Binary"
+      no_category = category.name + "Prefer not to answer"
 
       fees = {
         male_category => {},
-        female_category => {}
+        female_category => {},
+        nb_category => {},
+        no_category => {}
       }
 
     elsif stat == "ethnicity"

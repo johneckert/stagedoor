@@ -18,10 +18,6 @@ class DesignersController < ApplicationController
     @ethnicity_projection_chart = generate_stat_graph(Category.find(5), "ethnicity", designer_contracts)
   end
 
-  def new
-    @designer = Designer.new
-  end
-
   def create
     maybe_designer = Designer.new(designer_params)
     designer_check = maybe_designer.save
@@ -35,7 +31,7 @@ class DesignersController < ApplicationController
   end
 
   def designer_params
-    params.require(:designer).permit(:username, :gender, :birth_year, :password, :password_confirmation, ethnicity: [])
+    params.require(:designer).permit(:username, :gender, :birth_year, :password, :password_confirmation, :ethnicity)
   end
 
 end
