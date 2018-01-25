@@ -16,7 +16,7 @@
           <div class="form-group row">
             <%= f.label :gender, class: "col-sm-1 col-form-label" %>
             <div class="col-sm-3">
-              <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer'], :to_s, :to_s, {}, {class: "custom-select"} %>
+              <%= f.collection_select :gender, ['Male', 'Female', 'Non-Binary', 'Prefer not to answer'], :to_s, :to_s, {}, {class: "custom-select"} %>
             </div>
             <div class="form-group row">
               <%= f.label :birth_year, "Birth Yr", class: "col-sm-1 col-form-label" %>
@@ -29,9 +29,7 @@
             <div class="col-sm-1">
               <%= f.label :ethnicity, class: "form-check-label" %>
             </div>
-            <div class="col-sm-10">
-              <%= f.collection_check_boxes :ethnicity, ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"], :to_s, :to_s, {}, {class: "form-check-input"} %>
-            </div>
+              <%= f.collection_radio_buttons :ethnicity,['Asian or Indian subcontinent','Black','Hispanic','Native American','Pacific Islander','White','Other'], :to_s, :to_s, {}, {class: "form-check-input"} %>
           </div>
           <div class="form-group row">
           <%= f.label :password, class: "col-sm-1 col-form-label" %>

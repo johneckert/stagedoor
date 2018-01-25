@@ -9,8 +9,11 @@ class Designer < ApplicationRecord
   validates :password_digest, presence: true
   validates :birth_year, presence: true, numericality: {greater_than: 1900}
   validates :ethnicity, inclusion: {
-    in: ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"],
+    in: ["Asian or Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"],
     message: "must be selected."
     }
+
+
+
 
 end
