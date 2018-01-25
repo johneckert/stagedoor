@@ -109,12 +109,15 @@
 }
 
 .company_table_contract_cell {
-  width: 200px;
+  width: 300px;
   text-align: left;
   padding: 5px 5px;
   color: #767676
 }
 
+.grey {
+  color: #767676
+}
 
                                       /* NAVIGATION */
 
@@ -166,7 +169,7 @@ padding: 0 0 0 50px;
   font-weight: 700;
 }
 
-.venue_info_show {
+.white_bg {
   background-color: white;
 }
 
