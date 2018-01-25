@@ -11,11 +11,14 @@
     </ul>
      <large><%= link_to "Create New Contract", new_contract_path %></large>
   </div>
-  <div class="col-sm-3 contract_pie_tile">
+  <div class="col-sm-6 contract_pie_tile">
     <div id='pie_chart'></div>
     <%= render_chart @piechart, 'pie_chart' %>
   </div>
-  <div class="col-sm-4 contract_line_tile">
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6 contract_line_tile">
     <div id='fee_chart'></div>
     <%= render_chart @feechart, 'fee_chart' %>
   </div>
