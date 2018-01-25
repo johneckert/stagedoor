@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   private
 
   def logged_in?
-    current_user ? true : redirect_to(login_path)
+    current_user ? true : redirect_to(root_path)
   end
 
   def current_user
