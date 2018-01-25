@@ -15,9 +15,14 @@
  */
 
  body {
-     background-color: #f1f1f1;
+     /* background-color: #f1f1f1; */
+     background-color: white;
  }
 
+ ul, li{
+     margin: 0;
+     padding: 0;
+ }
 
 
  a:link {
@@ -70,7 +75,7 @@
 
 .contract_list_tile ul {
   list-style-type: none;
-  /* margin-left: -25px; */
+
 }
 
 .padding_row {
@@ -93,6 +98,7 @@
   padding-top: 20px;
   padding-bottom: 30px;
 }
+
 
                                       /* NAVIGATION */
 

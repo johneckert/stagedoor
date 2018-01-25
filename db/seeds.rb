@@ -57,7 +57,7 @@ day = [*01..28].sample
 month = [*01..12].sample
 random_date = DateTime.new(year,month,day)
 
-1000.times {
+10000.times {
   year = [*1996..2017].sample
   day = [*01..28].sample
   month = [*01..12].sample

@@ -2,6 +2,17 @@
    <div class="col-sm-12 padding_row white"></div>
 </div>
 <div class="row">
+  <div class="col-sm-1 contract_list_tile"></div>
+  <div class="col-sm-4 contract_pie_tile">
+    <div id='pie_chart'></div>
+    <%= render_chart @piechart, 'pie_chart' %>
+  </div>
+  <div class="col-sm-1 contract_list_tile"></div>
+  <div class="col-sm-6 contract_pie_tile">
+    <div id='bar_chart'></div>
+    <%= render_chart @barchart, 'bar_chart' %>
+  </div>
+<div class="row">
   <div class="col-sm-1 white fill_div"><h2>_</h2></div>
   <div class="col-sm-11 white">
      <h2>Your Contracts:</h2>
@@ -28,15 +39,4 @@
     <%= render_chart @feechart, 'fee_chart' %>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-1 contract_list_tile"></div>
-  <div class="col-sm-4 contract_pie_tile">
-    <div id='pie_chart'></div>
-    <%= render_chart @piechart, 'pie_chart' %>
-  </div>
-  <div class="col-sm-1 contract_list_tile"></div>
-  <div class="col-sm-6 contract_pie_tile">
-    <div id='bar_chart'></div>
-    <%= render_chart @barchart, 'bar_chart' %>
-  </div>
 </div>
