@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'faker'
+
 gem 'bcrypt'
 #charts
 gem "google_visualr", ">= 2.5"
