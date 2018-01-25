@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
       i +=1
     end unless i == nil
 
-    option = { width: 1400, height: 400, title: 'Average Fees over Time'}
+    option = { width: 1100, height: 400, title: 'Average Fees over Time'}
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
@@ -169,7 +169,7 @@ class ApplicationController < ActionController::Base
       year +=1
     end unless year == nil
 
-    option = { width: 1300, height: 400, title: "Average #{category.name} Fees over Time"}
+    option = { width: 1100, height: 400, title: "Average #{category.name} Fees over Time"}
     GoogleVisualr::Interactive::LineChart.new(data_table, option)
   end
 
