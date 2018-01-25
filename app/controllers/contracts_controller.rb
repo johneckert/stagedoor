@@ -1,4 +1,5 @@
 class ContractsController < ApplicationController
+  before_action
 
   def index
     data_table = GoogleVisualr::DataTable.new
@@ -44,6 +45,7 @@ class ContractsController < ApplicationController
   def create
     @venues = Venue.all
     @companies = Company.all
+    @categories = Category.all
     @contract = Contract.new(contract_params)
     @contract.designer = current_user
     if @contract.valid?

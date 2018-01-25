@@ -5,7 +5,7 @@ class Designer < ApplicationRecord
 
   validates :ethnicity, presence: true
   validates :gender, presence: true
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :birth_year, presence: true, numericality: {greater_than: 1900}
   validates :ethnicity, inclusion: {
