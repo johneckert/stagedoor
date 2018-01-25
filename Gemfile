@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'faker'
+group :production, :development, :test do
+  gem 'rspec-rails'
+end
 
 gem 'bcrypt'
 #charts
