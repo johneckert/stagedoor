@@ -25,16 +25,22 @@
         <ul>
           <div class="form-group">
             <li>View by company:</li>
-              <li><%= form_tag analytics_select_path do %>
-                <%= select_tag "company", options_from_collection_for_select(@companies, "id", "name"), {:class => 'form-control'}%>
-                <%= submit_tag "Go!", {:class => 'btn btn-success' }%>
-              <% end %>
+            <li>
+              <div class="form-inline">
+                <%= form_tag analytics_select_path do %>
+                  <%= select_tag "company", options_from_collection_for_select(@companies, "id", "name"), {:class => 'form-control'}%>
+                  <%= submit_tag "Go!", {:class => 'btn btn-success' }%>
+                <% end %>
+              </div>
             </li>
             <li>View by location:</li>
-              <li><%= form_tag analytics_select_path do %>
-                <%= select_tag "location", options_from_collection_for_select(@locations, "id", "name"), {:class => 'form-control'}%>
-                <%= submit_tag "Go!", {:class => 'btn btn-success' }%>
-              <% end %>
+            <li>
+              <div class="form-inline">
+                <%= form_tag analytics_select_path do %>
+                  <%= select_tag "location", options_from_collection_for_select(@locations, "id", "name"), {:class => 'form-control'}%>
+                  <%= submit_tag "Go!", {:class => 'btn btn-success' }%>
+                <% end %>
+              </div>
             </li>
             <li><%= link_to "View all", designers_path %></li>
           </div>
