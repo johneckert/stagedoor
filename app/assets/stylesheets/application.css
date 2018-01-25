@@ -33,6 +33,26 @@
   /* padding: 3%; */
 }
 
+.contract_list_tile {
+  margin: 0 0 0 50px;
+  background-color: white;
+  height: 400px;
+}
+
+.contract_pie_tile {
+  background-color: white;
+  height: 400px;
+}
+
+.contract_line_tile {
+  background-color: white;
+  height: 400px;
+}
+
+.contract_list_tile ul {
+  list-style-type: none;
+  margin-left: -25px;
+}
 
 
 

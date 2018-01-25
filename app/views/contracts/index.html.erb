@@ -1,19 +1,22 @@
-<h2>Your Contracts:</h2>
-<ul>
-  <% current_user.contracts.each do |contract| %>
-    <li><%= link_to contract.show_name, edit_contract_path(contract) %> |
-      <%= link_to contract.company.name, company_path(contract.company) %> |
-      $<%= contract.fee %></li>
-  <% end %>
-</ul>
-
- <large><%= link_to "Create New Contract", new_contract_path %></large>
-
-<div id='pie_chart'></div>
-  <%= render_chart @piechart, 'pie_chart' %>
-
-<div id='fee_chart'></div>
-  <%= render_chart @feechart, 'fee_chart' %>
-
-<p class="contract_data">Average Fee: <%= average_fee(current_user) %> | Lowest Fee: <%= min_fee(current_user) %> | Highest Fee: <%= max_fee(current_user) %>
-</p>
+<div class="row">
+  <div class="col-sm-4 contract_list_tile">
+    <h2>Your Contracts:</h2>
+    <p class="contract_data">Average Fee: $<%= average_fee(current_user) %> | Lowest Fee: $<%= min_fee(current_user) %> | Highest Fee: $<%= max_fee(current_user) %></p>
+    <ul>
+      <% current_user.contracts.each do |contract| %>
+        <li><%= link_to contract.show_name, edit_contract_path(contract) %> |
+          <%= link_to contract.company.name, company_path(contract.company) %> |
+          $<%= contract.fee %></li>
+      <% end %>
+    </ul>
+     <large><%= link_to "Create New Contract", new_contract_path %></large>
+  </div>
+  <div class="col-sm-3 contract_pie_tile">
+    <div id='pie_chart'></div>
+    <%= render_chart @piechart, 'pie_chart' %>
+  </div>
+  <div class="col-sm-4 contract_line_tile">
+    <div id='fee_chart'></div>
+    <%= render_chart @feechart, 'fee_chart' %>
+  </div>
+</div>
