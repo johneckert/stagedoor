@@ -15,7 +15,7 @@
   <%= contract_mapper(@busy_company.venues).count %> contracts.</li><br />
   <li>Smallest company: <%= @slow_company.name %>, with
   <%= contract_mapper(@slow_company.venues).count %> contracts.</li><br />
-  <li>Best paying company: </li><br />
-  <li>Shitty cheapest company: </li><br />
+  <li>Best paying company: <%= @nice_company.name %>, with an average fee of <%=  cons_mean_fee(contract_mapper(@nice_company.venues))%></li><br />
+  <li>Shitty cheapest company: <%= @cheap_company.name %>, with an average fee of <%=cons_mean_fee(contract_mapper(@cheap_company.venues))  %></li><br />
 
 </ul>

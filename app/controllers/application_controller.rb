@@ -32,6 +32,8 @@ class ApplicationController < ActionController::Base
     @slow_location = @locations.min_by{|loc| contract_mapper(loc.venues).count}
     @busy_company = @companies.max_by{|company| contract_mapper(company.venues).count}
     @slow_company = @companies.min_by{|company| contract_mapper(company.venues).count}
+    @nice_company = @companies.max_by{|company| cons_mean_fee(contract_mapper(company.venues))}
+    @cheap_company = @companies.min_by{|company| cons_mean_fee(contract_mapper(company.venues))}
   end
 
   def logged_in?
@@ -48,6 +50,19 @@ class ApplicationController < ActionController::Base
     else
       num_array.inject(:+) / num_array.count
     end
+  end
+
+  def cons_mean_fee(contracts)
+    fees = all_fees(contracts)
+    if fees.length > 0
+      fees.sum / fees.length
+    else
+      0
+    end
+  end
+
+  def all_fees(contracts)
+    contracts.map { |c| c.fee }
   end
 
   def generate_all_graph(contract_array)
