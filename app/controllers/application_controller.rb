@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :avg, :generate_stat_graph, :generate_all_graph
   helper :all
-  before_action :logged_in?, except: :index
+  before_action :logged_in?
+  skip_before_action :logged_in?, only: [:index]
 
   def index
     @companies = Company.all
