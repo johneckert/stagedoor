@@ -35,7 +35,7 @@ end
 #make some users
 eth = ["Asian/Indian subcontinent", "Black", "Hispanic", "Native American", "Pacific Islander", "White", "Other"]
 
-gen = ['Male', 'Female', 'Non-Binary', 'Prefer not to Answer']
+gen = ['Male', 'Female', 'Non-Binary', 'Prefer not to answer']
 birth_year = [*1950..1995]
 
 100.times {designer = Designer.create(username: Faker::Pokemon.name, gender: gen.sample, birth_year: birth_year.sample, password: "password", ethnicity: eth.sample )}
