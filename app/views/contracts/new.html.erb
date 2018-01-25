@@ -1,27 +1,68 @@
-<h3>Create New Contract</h3>
-
-<%= form_for @contract, html: {class: :contract_form } do |f| %>
-
-  <%= f.label :show_name %>
-  <%= f.text_field :show_name %><br />
-
-  <%= f.label :opening_date %>
-  <%= f.date_field :opening_date %><br />
-
-  <%= f.label :musical, "Musical?" %>:
-  <%= f.check_box :musical %><br />
-
-  <%= f.label :company %>:
-  <%= f.collection_select :company_id, @companies, :id, :name %><br />
-
-  <%= f.label :venue %>:
-  <%= f.collection_select :venue_id, @venues, :id, :name %><br />
-
-  <%= f.label :category_ids %>:
-  <%= f.collection_check_boxes :category_ids, @categories, :id, :name %><br />
-
-  <%= f.label :fee %>:
-  <%= f.number_field :fee %><br />
-
-  <%= f.submit "Submit New Contract." %>
-<% end %>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-3">
+    <h3>Create New Contract</h3>
+  </div>
+</div>
+  <%= form_for @contract, html: {class: :contract_form } do |f| %>
+    <div class="row">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <%= f.label :show_name %>
+            <%= f.text_field :show_name, {:class=>'form-control'} %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <%= f.label :opening_date %>
+            <%= f.date_field :opening_date, {:class=>'form-control'} %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <%= f.label :musical, "Musical?" %>
+            <%= f.check_box :musical %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <%= f.label :company, "Company: " %>
+            <%= f.collection_select :company_id, @companies, :id, :name, {}, {:class=>'form-control'} %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <%= f.label :venue, "Venue: " %>
+            <%= f.collection_select :venue_id, @venues, :id, :name, {}, {:class=>'form-control'} %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-6">
+            <%= f.label :category_ids, "Category: " %>
+            <%= f.collection_check_boxes :category_ids, @categories, :id, :name %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <%= f.label :fee, "Fee: " %>
+            <%= f.number_field :fee, {:class=>'form-control'} %>
+          </div>
+        </div>
+        <div class="padding_row row"></div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-3">
+            <%= f.submit "Submit New Contract", {:class => 'btn btn-success' } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
