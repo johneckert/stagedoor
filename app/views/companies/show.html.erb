@@ -1,25 +1,25 @@
 <div class="row">
-  <div class="col-sm-1"></div>
-  <div class="container col-sm-10 company_name_showpage">
+  <div class="col-sm-4"></div>
+  <div class="container col-sm-8 company_name_showpage">
     <h2>Analytics for <%= @company.name %></h2>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-1"></div>
-  <div class="container col-sm-10 venue_info_show">
+  <div class="container col-sm-8 venue_info_show">
     <% @venues.each_with_index do |ven, i| %>
       <div class="venue_data">
-        <h3><%= ven.name %></h3>
-        <p class="location"><%= ven.location.name %></p>
+        <h3 class="venue_location"><%= ven.name %> | <%= ven.location.name %></h3>
         <div class="fee_data">
           <p class="stats">Average Fee: <%= ven.mean_fee %> | Lowest Fee: <%= ven.min_fee %> | Highest Fee: <%= ven.max_fee %> | Median Fee: <%= ven.median_fee %> | Most Frequent: <%= ven.mode_fee %></p>
         </div>
-        <h4>Overall Fees Across Time</h4>
+        <div class="padding_row"></div>
+        <h4>Design Category</h4>
 
           <div id="all_charts_<%= ven.id %>"></div>
           <%= render_chart(@all_charts[ven.id], "all_charts_#{ven.id}") %>
 
-          <h4>Fees Across Time By Gender Per Category</h4>
+          <h4>Gender</h4>
 
           <div id="gender_scenic_charts_<%= ven.id %>"></div>
           <%= render_chart(@gender_scenic_charts[ven.id], "gender_scenic_charts_#{ven.id}") %>
@@ -36,7 +36,7 @@
           <div id="gender_projection_charts_<%= ven.id %>"></div>
           <%= render_chart(@gender_projection_charts[ven.id], "gender_projection_charts_#{ven.id}") %>
 
-          <h4>Fees Across Time By Ethnicity Per Category</h4>
+          <h4>Ethnicity</h4>
 
           <div id="ethnicity_scenic_charts_<%= ven.id %>"></div>
           <%= render_chart(@ethnicity_scenic_charts[ven.id], "ethnicity_scenic_charts_#{ven.id}") %>
