@@ -15,7 +15,7 @@
     <div class="col-sm-2"></div>
       <div class="col-sm-5 contract_list_tile">
         <h2><%= "#{current_user.username}'s Contracts" %></h2>
-        <ul>
+        <ul class="user_index">
           <li><%= link_to "Create New Contract", new_contract_path %></li>
           <li><%= link_to "View My Contracts", contracts_path %></li>
         </ul>

@@ -1,21 +1,30 @@
-<h2>StageDoor Site Analytics</h2>
+<div class="<padding_row"></div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <h2>StageDoor Site Analytics</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-8">
+    <ul id="analytics">
+      <li>Total number of designers on StageDoor: <span><%= @designers.count %></span></li>
+      <li>Total number of contracts on StageDoor: <span><%= @contracts.count %></span></li>
+      <li>Total number of companies on StageDoor: <span><%= @companies.count %></span></li>
+      <li>Total number of locations on StageDoor: <span><%= @locations.count %></span></li>
 
-<ul>
-  <li>Total number of designers on StageDoor: <%= @designers.count %></li><br />
-  <li>Total number of contracts on StageDoor: <%= @contracts.count %></li><br />
-  <li>Total number of companies on StageDoor: <%= @companies.count %></li><br />
-  <li>Total number of locations on StageDoor: <%= @locations.count %></li><br />
+      <li>Location with the most business: <span><%= @busy_location.name %></span> with
+      <span><%= contract_mapper(@busy_location.venues).count %></span> contracts.</li>
+      <li>Location with the least business: <span><%= @slow_location.name %></span> with
+      <span><%= contract_mapper(@slow_location.venues).count %></span> contracts.</li>
 
-  <li>Location with the most business: <%= @busy_location.name %>, with
-  <%= contract_mapper(@busy_location.venues).count %> contracts.</li><br />
-  <li>Location with the least business: <%= @slow_location.name %>, with
-  <%= contract_mapper(@slow_location.venues).count %> contracts.</li><br />
-
-  <li>Biggest company: <%= @busy_company.name %> with
-  <%= contract_mapper(@busy_company.venues).count %> contracts.</li><br />
-  <li>Smallest company: <%= @slow_company.name %>, with
-  <%= contract_mapper(@slow_company.venues).count %> contracts.</li><br />
-  <li>Best paying company: <%= @nice_company.name %>, with an average fee of <%=  cons_mean_fee(contract_mapper(@nice_company.venues))%></li><br />
-  <li>Shitty cheapest company: <%= @cheap_company.name %>, with an average fee of <%=cons_mean_fee(contract_mapper(@cheap_company.venues))  %></li><br />
-
-</ul>
+      <li>Biggest company: <span><%= @busy_company.name %></span> with
+      <span><%= contract_mapper(@busy_company.venues).count %></span> contracts.</li>
+      <li>Smallest company: <span><%= @slow_company.name %></span> with
+      <span><%= contract_mapper(@slow_company.venues).count %></span> contracts.</li>
+      <li>Best paying company: <span><%= @nice_company.name %></span> with an average fee of <span><%=  cons_mean_fee(contract_mapper(@nice_company.venues))%></span></li>
+      <li>Shitty cheapest company: <span><%= @cheap_company.name %></span> with an average fee of <span><%=cons_mean_fee(contract_mapper(@cheap_company.venues))  %></span></li>
+    </ul>
+  </div>
+</div>
