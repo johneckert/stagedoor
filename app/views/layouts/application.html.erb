@@ -39,10 +39,12 @@
           <h1 id="logo" class="navbar-txt">StageDoor</h1>
         </div>
         <div class="nav navbar-nav" id="left_nav">
-          <%= link_to "Home", root_path, class: "nav-item nav_link" %> |
-          <%= link_to "Contracts", contracts_path, class: "nav-item nav_link" %> |
-          <%= link_to "Companies", companies_path, class: "nav-item nav_link" %> |
-          <%= link_to "Site Analytics", analytics_path, class: "nav-item nav_link" %>
+          <%= link_to "Home", root_path, class: "nav-item nav_link" %>
+          | <%= link_to "Contracts", contracts_path, class: "nav-item nav_link" %>
+          | <%= link_to "Companies", companies_path, class: "nav-item nav_link" %>
+          <% if current_user && current_user.admin == true %>
+            | <%= link_to "Site Analytics", analytics_path, class: "nav-item nav_link" %>
+          <% end %>
         </div>
       </div>
     </nav>
