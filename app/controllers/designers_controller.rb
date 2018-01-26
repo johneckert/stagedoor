@@ -1,5 +1,5 @@
 class DesignersController < ApplicationController
-  before_action :logged_in?
+  before_action :logged_in?, except: :create
 
 
   def index
