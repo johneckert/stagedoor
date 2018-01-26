@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     else
       flash[:error] = ["Incorrect login."]
     end
-    buybug
     redirect_to root_path
   end
 
