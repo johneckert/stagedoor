@@ -119,6 +119,24 @@
   color: #767676
 }
 
+.user_index  li {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+
+#analytics {
+  padding: 10px;
+}
+
+#analytics li {
+  padding: 7px;
+}
+
+#analytics li span {
+  font-weight: bold;
+}
+
                                       /* NAVIGATION */
 
 #navigation,.navbar .navbar-default {
@@ -128,19 +146,16 @@
   color: white;
 }
 
-#logo {
+#logo_text {
 font-family: "league-gothic", sans-serif;
 font-size: 300%;
 color: white;
 display: inline;
-padding: 0 0 0 50px;
 }
 
 #logo_image {
-  background-image: url("templogo.png");
-  background-size: cover;
-  width: 1%;
-  height: 1%;
+  width: 6%;
+  height: 6%;
 }
 
 #right_nav {
@@ -148,7 +163,7 @@ padding: 0 0 0 50px;
 }
 
 #left_nav {
-  padding : 1% 0% 0 1%;
+  padding : 0 0 0 1%;
 }
 
 #logo_nav {
