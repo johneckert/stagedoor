@@ -33,5 +33,5 @@ Ruby v5.1.4
 
 ### Contributors
 
-![John Eckert]("https://github.com/johneckert")
-![Julien Tregoat]("https://github.com/julientregoat")
+* [John Eckert]("https://github.com/johneckert")
+* [Julien Tregoat]("https://github.com/julientregoat")
