@@ -1,24 +1,20 @@
-# README
+# StageDoor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Empowering users to negotiate from a position of knowledge by providing helpful tools for tracking company hiring data and personal work history.
 
-Things you may want to cover:
+![StageDoor Image](page_capture.png)
 
-* Ruby version
+StageDoor - https://github.com/johneckert/stagedoor
 
-* System dependencies
+### Prerequsites
 
-* Configuration
+Ruby v5.1.5 PostgreSQL 10 React
 
-* Database creation
+### Setup
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1.  Fork and Clone this repo - https://github.com/johneckert/dr-meowrio-backend
+2.  Install Gems `bundle install`
+3.  Setup Database `rake db:create`, then run `rake db:migrate`
+4.  You may run `rake db:seed`, to seed database with randomly generated user data.
+5.  Start your server `rails s`
+6.  Navigate to the web address of your Node server http://localhost:3000 (or whatever yours is) and start a new game
