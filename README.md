@@ -6,9 +6,21 @@ Empowering users to negotiate from a position of knowledge by providing helpful 
 
 StageDoor - https://github.com/johneckert/stagedoor
 
+### Motivation
+
+This project was conceived to help freelance theatre designers have access to information about average fees and past hiring practices of the companies they work for. It is hoped that access to this information will individuals to negotiate the best rates possible for their contracts as well as providing information about different hiring trends among companies.
+
+We have attempted to keep all information as anonymous as possible while allowing all users access to aggregated data.
+
+### Built With
+
+* Ruby on Rails
+* Google Charts using [google_visular]("https://github.com/winston/google_visualr")
+* Fake seed data created with [faker]("https://github.com/stympy/faker")
+
 ### Prerequsites
 
-Ruby v5.1.5 PostgreSQL 10 React
+Ruby v5.1.4
 
 ### Setup
 
@@ -18,3 +30,8 @@ Ruby v5.1.5 PostgreSQL 10 React
 4.  You may run `rake db:seed`, to seed database with randomly generated user data.
 5.  Start your server `rails s`
 6.  Navigate to the web address of your Node server http://localhost:3000 (or whatever yours is) and start a new game
+
+### Contributors
+
+[John Eckert]("https://github.com/johneckert")
+[Julien Tregoat]("https://github.com/julientregoat")
