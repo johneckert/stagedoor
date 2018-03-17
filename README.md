@@ -2,7 +2,7 @@
 
 Empowering users to negotiate from a position of knowledge by providing helpful tools for tracking company hiring data and personal work history.
 
-![StageDoor Image](page_capture.png)
+![StageDoor Image](screen_capture.png)
 
 StageDoor - https://github.com/johneckert/stagedoor
 
