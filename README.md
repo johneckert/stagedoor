@@ -29,9 +29,9 @@ Ruby v5.1.4
 3.  Setup Database `rake db:create`, then run `rake db:migrate`
 4.  You may run `rake db:seed`, to seed database with randomly generated user data.
 5.  Start your server `rails s`
-6.  Navigate to the web address of your Node server http://localhost:3000 (or whatever yours is) and start a new game
+6.  Navigate to http://localhost:3000
 
 ### Contributors
 
-[John Eckert]("https://github.com/johneckert")
-[Julien Tregoat]("https://github.com/julientregoat")
+![John Eckert]("https://github.com/johneckert")
+![Julien Tregoat]("https://github.com/julientregoat")
