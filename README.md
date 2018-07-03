@@ -4,7 +4,7 @@ Empowering users to negotiate from a position of knowledge by providing helpful 
 
 ![StageDoor Image](screen_capture.png)
 
-StageDoor - https://github.com/johneckert/stagedoor
+[StageDoor Demo](https://youtu.be/iS5QUAysheo)
 
 ### Motivation
 
